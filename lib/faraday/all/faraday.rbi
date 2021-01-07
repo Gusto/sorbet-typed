@@ -673,6 +673,8 @@ class Faraday::Request::Multipart < Faraday::Request::UrlEncoded
   def unique_boundary; end
 end
 class Faraday::Response::RaiseError < Faraday::Response::Middleware
+  ClientErrorStatuses = T.let(nil, T::Range[Integer])
+
   def on_complete(env); end
   def response_values(env); end
 end
