@@ -1,5 +1,7 @@
 # typed: strong
 
+module Grape; end;
+
 class Grape::API
   sig do
     params(
@@ -237,3 +239,34 @@ class Grape::API
   sig { params(middleware_class: T.untyped, args: T.untyped, block: T.untyped).void }
   def self.use(middleware_class, *args, &block); end
 end
+
+class Grape::API::Boolean; end
+
+class Grape::Schema::Migrations; end
+
+module Grape::Env
+  API_VERSION = T.let(T.unsafe(nil), String)
+  API_ENDPOINT = T.let(T.unsafe(nil), String)
+  API_REQUEST_INPUT = T.let(T.unsafe(nil), String)
+  API_REQUEST_BODY = T.let(T.unsafe(nil), String)
+  API_TYPE = T.let(T.unsafe(nil), String)
+  API_SUBTYPE = T.let(T.unsafe(nil), String)
+  API_VENDOR = T.let(T.unsafe(nil), String)
+  API_FORMAT = T.let(T.unsafe(nil), String)
+
+  RACK_INPUT = T.let(T.unsafe(nil), String)
+  RACK_REQUEST_QUERY_HASH = T.let(T.unsafe(nil), String)
+  RACK_REQUEST_FORM_HASH = T.let(T.unsafe(nil), String)
+  RACK_REQUEST_FORM_INPUT = T.let(T.unsafe(nil), String)
+
+  GRAPE_REQUEST = T.let(T.unsafe(nil), String)
+  GRAPE_REQUEST_HEADERS = T.let(T.unsafe(nil), String)
+  GRAPE_REQUEST_PARAMS = T.let(T.unsafe(nil), String)
+  GRAPE_ROUTING_ARGS = T.let(T.unsafe(nil), String)
+  GRAPE_ALLOWED_METHODS = T.let(T.unsafe(nil), String)
+end
+
+class Grape::Request < Rack::Request; end
+
+class Grape::Exceptions::Base; end
+class Grape::Exceptions::ValidationErrors < Grape::Exceptions::Base; end
