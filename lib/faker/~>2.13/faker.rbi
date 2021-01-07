@@ -4,13 +4,13 @@
 module Faker
   class Config
     # Sets the attribute locale
-    # 
+    #
     # _@param_ `value` — the value to set the attribute locale to.
     sig { params(value: T.untyped).returns(T.untyped) }
     def self.locale=(value); end
 
     # Sets the attribute random
-    # 
+    #
     # _@param_ `value` — the value to set the attribute random to.
     sig { params(value: T.untyped).returns(T.untyped) }
     def self.random=(value); end
@@ -39,20 +39,20 @@ module Faker
     # Given a regular expression, attempt to generate a string
     # that would match it.  This is a rather simple implementation,
     # so don't be shocked if it blows up on you in a spectacular fashion.
-    # 
+    #
     # It does not handle ., *, unbounded ranges such as {1,},
     # extensions such as (?=), character classes, some abbreviations
     # for character classes, and nested parentheses.
-    # 
+    #
     # I told you it was simple. :) It's also probably dog-slow,
     # so you shouldn't use it.
-    # 
+    #
     # It will take a regex like this:
-    # 
+    #
     # /^[A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}$/
-    # 
+    #
     # and generate a string like this:
-    # 
+    #
     # "U3V  3TP"
     sig { params(reg: T.untyped).returns(T.untyped) }
     def self.regexify(reg); end
@@ -106,7 +106,7 @@ module Faker
     def self.resolve(value); end
 
     # Return unique values from the generator every time.
-    # 
+    #
     # _@param_ `max_retries` — The max number of retries that should be done before giving up.
     sig { params(max_retries: Integer).returns(T.self_type) }
     def self.unique(max_retries = 10_000); end
@@ -153,7 +153,7 @@ module Faker
   class Games
     class DnD < Faker::Base
       # Produces the name of a race from Dungeons and Dragons (PHB).
-      # 
+      #
       # ```ruby
       # Faker::Games::DnD.race #=> "Dwarf"
       # ```
@@ -161,7 +161,7 @@ module Faker
       def self.species; end
 
       # Produces the name of a class from Dungeons and Dragons (PHB).
-      # 
+      #
       # ```ruby
       # Faker::Games::DnD.klass #=> "Warlock"
       # ```
@@ -169,7 +169,7 @@ module Faker
       def self.klass; end
 
       # Produces the name of a background from Dungeons and Dragons (PHB).
-      # 
+      #
       # ```ruby
       # Faker::Games::DnD.background #=> "Urchin"
       # ```
@@ -177,7 +177,7 @@ module Faker
       def self.background; end
 
       # Produces the name of an alignment from Dungeons and Dragons.
-      # 
+      #
       # ```ruby
       # Faker::Games::DnD.alignment #=> "Lawful Neutral"
       # ```
@@ -187,7 +187,7 @@ module Faker
 
     class Dota < Faker::Base
       # Produces the name of a hero from Dota.
-      # 
+      #
       # ```ruby
       # Faker::Games::Dota.hero #=> "Abaddon"
       # ```
@@ -195,7 +195,7 @@ module Faker
       def self.hero; end
 
       # Produces the name of an item from Dota.
-      # 
+      #
       # ```ruby
       # Faker::Games::Dota.item #=> "Armlet of Mordiggian"
       # ```
@@ -203,7 +203,7 @@ module Faker
       def self.item; end
 
       # Produces the name of a professional Dota team.
-      # 
+      #
       # ```ruby
       # Faker::Games::Dota.team #=> "Evil Geniuses"
       # ```
@@ -211,7 +211,7 @@ module Faker
       def self.team; end
 
       # Produces the name of a professional Dota player.
-      # 
+      #
       # ```ruby
       # Faker::Games::Dota.player #=> "Dendi"
       # ```
@@ -219,9 +219,9 @@ module Faker
       def self.player; end
 
       # Produces the name of a hero from Dota.
-      # 
+      #
       # _@param_ `hero` — The name of a Dota hero.
-      # 
+      #
       # ```ruby
       # Faker::Games::Dota.quote #=> "You have called death upon yourself."
       # Faker::Games::Dota.quote(hero: 'alchemist') #=> "Better living through alchemy!"
@@ -232,7 +232,7 @@ module Faker
 
     class Myst < Faker::Base
       # Produces the name of a game from the Myst series.
-      # 
+      #
       # ```ruby
       # Faker::Games::Myst.game #=> "Myst III: Exile"
       # ```
@@ -240,7 +240,7 @@ module Faker
       def self.game; end
 
       # Produces the name of a creature from Myst.
-      # 
+      #
       # ```ruby
       # Faker::Games::Myst.creature #=> "squee"
       # ```
@@ -248,7 +248,7 @@ module Faker
       def self.creature; end
 
       # Produces the name of an age from Myst.
-      # 
+      #
       # ```ruby
       # Faker::Games::Myst.age #=> "Relto"
       # ```
@@ -256,7 +256,7 @@ module Faker
       def self.age; end
 
       # Produces the name of a chracter from Myst.
-      # 
+      #
       # ```ruby
       # Faker::Games::Myst.character #=> "Gehn"
       # ```
@@ -264,7 +264,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from Myst.
-      # 
+      #
       # ```ruby
       # Faker::Games::Myst.quote #=> "I realized, the moment I fell into the fissure, that the Book would not be destroyed as I had planned."
       # ```
@@ -274,7 +274,7 @@ module Faker
 
     class Zelda < Faker::Base
       # Produces the name of a Legend of Zelda game.
-      # 
+      #
       # ```ruby
       # Faker::Games::Zelda.game #=> "Breath of the Wild"
       # ```
@@ -282,7 +282,7 @@ module Faker
       def self.game; end
 
       # Produces the name of a character from the Legend of Zelda games.
-      # 
+      #
       # ```ruby
       # Faker::Games::Zelda.character #=> "Link"
       # ```
@@ -290,7 +290,7 @@ module Faker
       def self.character; end
 
       # Produces the name of a character from the Legend of Zelda games.
-      # 
+      #
       # ```ruby
       # Faker::Games::Zelda.location #=> "Hyrule Castle"
       # ```
@@ -298,7 +298,7 @@ module Faker
       def self.location; end
 
       # Produces the name of an item from the Legend of Zelda games.
-      # 
+      #
       # ```ruby
       # Faker::Games::Zelda.item #=> "Boomerang"
       # ```
@@ -308,7 +308,7 @@ module Faker
 
     class Heroes < Faker::Base
       # Produces the name of a hero from Heroes 3.
-      # 
+      #
       # ```ruby
       # Faker::Games::Heroes.name #=> "Christian"
       # ```
@@ -316,7 +316,7 @@ module Faker
       def self.name; end
 
       # Produces the name of a specialty from Heroes 3.
-      # 
+      #
       # ```ruby
       # Faker::Games::Heroes.specialty #=> "Ballista"
       # ```
@@ -324,7 +324,7 @@ module Faker
       def self.specialty; end
 
       # Produces the name of a class from Heroes 3.
-      # 
+      #
       # ```ruby
       # Faker::Games::Heroes.klass #=> "Knight"
       # ```
@@ -334,7 +334,7 @@ module Faker
 
     class Control < Faker::Base
       # Produces the name of a character from Control.
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.character #=> "Jesse Faden"
       # ```
@@ -342,7 +342,7 @@ module Faker
       def self.character; end
 
       # Produces the name of a location from Control.
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.character #=> "Dimensional Research"
       # ```
@@ -350,7 +350,7 @@ module Faker
       def self.location; end
 
       # Produces the name of an Object of Power (OoP)
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.object_of_power #=> "Hotline"
       # ```
@@ -358,7 +358,7 @@ module Faker
       def self.object_of_power; end
 
       # Produces the name of an Altered Item
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.altered_item #=> "Rubber Duck"
       # ```
@@ -366,7 +366,7 @@ module Faker
       def self.altered_item; end
 
       # Produces the location of an Altered World Event (AWE)
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.altered_world_event #=> "Ordinary, Wisconsin"
       # ```
@@ -374,7 +374,7 @@ module Faker
       def self.altered_world_event; end
 
       # Produces a line from the Hiss incantation
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.hiss #=> "Push the fingers through the surface into the wet."
       # ```
@@ -382,7 +382,7 @@ module Faker
       def self.hiss; end
 
       # < Produces a line/quote/message from The Board >
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.the_board #=> "< You/We wield the Gun/You. The Board appoints you. Congratulations, Director. >"
       # ```
@@ -390,7 +390,7 @@ module Faker
       def self.the_board; end
 
       # Produces a quote from Control
-      # 
+      #
       # ```ruby
       # Faker::Games::Control.quote #=> "He never liked fridge duty"
       # ```
@@ -400,7 +400,7 @@ module Faker
 
     class Fallout < Faker::Base
       # Produces the name of a character from the Fallout games.
-      # 
+      #
       # ```ruby
       # Faker::Games::Fallout.character #=> "Liberty Prime"
       # ```
@@ -408,7 +408,7 @@ module Faker
       def self.character; end
 
       # Produces the name of a faction from the Fallout games.
-      # 
+      #
       # ```ruby
       # Faker::Games::Fallout.faction #=> "Brotherhood of Steel"
       # ```
@@ -416,7 +416,7 @@ module Faker
       def self.faction; end
 
       # Produces the name of a location from the Fallout games.
-      # 
+      #
       # ```ruby
       # Faker::Games::Fallout.location #=> "New Vegas"
       # ```
@@ -424,7 +424,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from the Fallout games.
-      # 
+      #
       # ```ruby
       # Faker::Games::Fallout.quote
       #   #=> "Democracy is non-negotiable"
@@ -435,7 +435,7 @@ module Faker
 
     class Pokemon < Faker::Base
       # Produces the name of a Pokemon.
-      # 
+      #
       # ```ruby
       # Faker::Games::Pokemon.name #=> "Pikachu"
       # ```
@@ -443,7 +443,7 @@ module Faker
       def self.name; end
 
       # Produces a location from Pokemon.
-      # 
+      #
       # ```ruby
       # Faker::Games::Pokemon.location #=> "Pallet Town"
       # ```
@@ -451,7 +451,7 @@ module Faker
       def self.location; end
 
       # Produces a move from Pokemon.
-      # 
+      #
       # ```ruby
       # Faker::Games::Pokemon.move #=> "Thunder Shock"
       # ```
@@ -461,7 +461,7 @@ module Faker
 
     class Witcher < Faker::Base
       # Produces the name of a character from The Witcher.
-      # 
+      #
       # ```ruby
       # Faker::Games::Witcher.character #=> "Triss Merigold"
       # ```
@@ -469,7 +469,7 @@ module Faker
       def self.character; end
 
       # Produces the name of a witcher from The Witcher.
-      # 
+      #
       # ```ruby
       # Faker::Games::Witcher.witcher #=> "Geralt of Rivia"
       # ```
@@ -477,7 +477,7 @@ module Faker
       def self.witcher; end
 
       # Produces the name of a school from The Witcher.
-      # 
+      #
       # ```ruby
       # Faker::Games::Witcher.school #=> "Wolf"
       # ```
@@ -485,7 +485,7 @@ module Faker
       def self.school; end
 
       # Produces the name of a location from The Witcher.
-      # 
+      #
       # ```ruby
       # Faker::Games::Witcher.location #=> "Novigrad"
       # ```
@@ -493,7 +493,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from The Witcher.
-      # 
+      #
       # ```ruby
       # Faker::Games::Witcher.quote #=> "No Lollygagin'!"
       # ```
@@ -501,7 +501,7 @@ module Faker
       def self.quote; end
 
       # Produces the name of a monster from The Witcher.
-      # 
+      #
       # ```ruby
       # Faker::Games::Witcher.monster #=> "Katakan"
       # ```
@@ -511,7 +511,7 @@ module Faker
 
     class HalfLife < Faker::Base
       # Produces the name of a character from the Half-Life games.
-      # 
+      #
       # ```ruby
       # Faker::Games::HalfLife.character #=> "Gordon Freeman"
       # ```
@@ -519,7 +519,7 @@ module Faker
       def self.character; end
 
       # Produces the name of an enemy from the Half-Life games.
-      # 
+      #
       # ```ruby
       # Faker::Games::HalfLife.enemy #=> "Headcrab"
       # ```
@@ -527,7 +527,7 @@ module Faker
       def self.enemy; end
 
       # Produces the name of a location from the Half-Life games.
-      # 
+      #
       # ```ruby
       # Faker::Games::HalfLife.location #=> "Black Mesa Research Facility"
       # ```
@@ -537,7 +537,7 @@ module Faker
 
     class Minecraft < Faker::Base
       # Produces the name of a block from Minecraft.
-      # 
+      #
       # ```ruby
       # Faker::Games::Minecraft.block #=> "Stone"
       # ```
@@ -545,7 +545,7 @@ module Faker
       def self.block; end
 
       # Produces the name of an item from Minecraft.
-      # 
+      #
       # ```ruby
       # Faker::Games::Minecraft.item #=> "Iron Shovel"
       # ```
@@ -553,7 +553,7 @@ module Faker
       def self.item; end
 
       # Produces the name of a mob from Minecraft.
-      # 
+      #
       # ```ruby
       # Faker::Games::Minecraft.item #=> "Sheep"
       # ```
@@ -563,7 +563,7 @@ module Faker
 
     class Overwatch < Faker::Base
       # Produces the name of a hero from Overwatch.
-      # 
+      #
       # ```ruby
       # Faker::Games::Overwatch.hero #=> "Tracer"
       # ```
@@ -571,7 +571,7 @@ module Faker
       def self.hero; end
 
       # Produces the name of a location from Overwatch.
-      # 
+      #
       # ```ruby
       # Faker::Games::Overwatch.location #=> "Numbani"
       # ```
@@ -579,7 +579,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Overwatch.
-      # 
+      #
       # ```ruby
       # Faker::Games::Overwatch.quote #=> "It's high noon"
       # ```
@@ -589,7 +589,7 @@ module Faker
 
     class ElderScrolls < Faker::Base
       # Produces the name of a race from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.race #=> "Argonian"
       # ```
@@ -597,7 +597,7 @@ module Faker
       def self.race; end
 
       # Produces the name of a city from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.city #=> "Whiterun"
       # ```
@@ -605,7 +605,7 @@ module Faker
       def self.city; end
 
       # Produces the name of a creature from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.creature #=> "Frost Troll"
       # ```
@@ -613,7 +613,7 @@ module Faker
       def self.creature; end
 
       # Produces the name of a region from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.region #=> "Cyrodiil"
       # ```
@@ -621,7 +621,7 @@ module Faker
       def self.region; end
 
       # Produces the name of a dragon from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.dragon #=> "Blood Dragon"
       # ```
@@ -629,7 +629,7 @@ module Faker
       def self.dragon; end
 
       # Produces a randomly generated name from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.name #=> "Balgruuf The Old"
       # ```
@@ -637,7 +637,7 @@ module Faker
       def self.name; end
 
       # Produces a first name from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.first_name #=> "Balgruuf"
       # ```
@@ -645,7 +645,7 @@ module Faker
       def self.first_name; end
 
       # Produces a last name from the Elder Scrolls universe.
-      # 
+      #
       # ```ruby
       # Faker::Games::ElderScrolls.last_name #=> "The Old"
       # ```
@@ -655,7 +655,7 @@ module Faker
 
     class SuperSmashBros < Faker::Base
       # Produces the name of a fighter from the Smash Bros games.
-      # 
+      #
       # ```ruby
       # Faker::Games::SuperSmashBros.fighter #=> "Mario"
       # ```
@@ -663,7 +663,7 @@ module Faker
       def self.fighter; end
 
       # Produces the name of a stage from the Smash Bros games.
-      # 
+      #
       # ```ruby
       # Faker::Games::SuperSmashBros.stage #=> "Final Destination"
       # ```
@@ -673,7 +673,7 @@ module Faker
 
     class LeagueOfLegends < Faker::Base
       # Produces the name of a champion from League of Legends.
-      # 
+      #
       # ```ruby
       # Faker::Games::LeagueOfLegends.champion #=> "Jarvan IV"
       # ```
@@ -681,7 +681,7 @@ module Faker
       def self.champion; end
 
       # Produces a location from League of Legends.
-      # 
+      #
       # ```ruby
       # Faker::Games::LeagueOfLegends.location #=> "Demacia"
       # ```
@@ -689,7 +689,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from League of Legends.
-      # 
+      #
       # ```ruby
       # Faker::Games::LeagueOfLegends.quote #=> "Purge the unjust."
       # ```
@@ -697,7 +697,7 @@ module Faker
       def self.quote; end
 
       # Produces a summoner spell from League of Legends.
-      # 
+      #
       # ```ruby
       # Faker::Games::LeagueOfLegends.summoner_spell #=> "Flash"
       # ```
@@ -705,7 +705,7 @@ module Faker
       def self.summoner_spell; end
 
       # Produces a mastery from League of Legends.
-      # 
+      #
       # ```ruby
       # Faker::Games::LeagueOfLegends.masteries #=> "Double Edged Sword"
       # ```
@@ -713,7 +713,7 @@ module Faker
       def self.masteries; end
 
       # Produces a rank from League of Legends.
-      # 
+      #
       # ```ruby
       # Faker::Games::LeagueOfLegends.rank #=> "Bronze V"
       # ```
@@ -723,7 +723,7 @@ module Faker
 
     class WarhammerFantasy < Faker::Base
       # Produces the name of a hero from the Warhammer Fantasy setting.
-      # 
+      #
       # ```ruby
       # Faker::Games::WarhammerFantasy.hero #=> "Sigmar Heldenhammer"
       # ```
@@ -731,7 +731,7 @@ module Faker
       def self.hero; end
 
       # Produces a quote from the Warhammer Fantasy setting.
-      # 
+      #
       # ```ruby
       # Faker::Games::WarhammerFantasy.quote #=> "The softest part of a castle is the belly of the man inside."
       # ```
@@ -739,7 +739,7 @@ module Faker
       def self.quote; end
 
       # Produces a location from the Warhammer Fantasy setting.
-      # 
+      #
       # ```ruby
       # Faker::Games::WarhammerFantasy.location #=> "Lustria"
       # ```
@@ -747,7 +747,7 @@ module Faker
       def self.location; end
 
       # Produces a faction from the Warhammer Fantasy setting.
-      # 
+      #
       # ```ruby
       # Faker::Games::WarhammerFantasy.faction #=> "Bretonnia"
       # ```
@@ -755,7 +755,7 @@ module Faker
       def self.faction; end
 
       # Produces a creature from the Warhammer Fantasy setting.
-      # 
+      #
       # ```ruby
       # Faker::Games::WarhammerFantasy.creature #=> "Hydra"
       # ```
@@ -765,7 +765,7 @@ module Faker
 
     class WorldOfWarcraft < Faker::Base
       # Produces the name of a hero from World of Warcraft.
-      # 
+      #
       # ```ruby
       # Faker::Games::WorldOfWarcraft.hero #=> "Uther the Lightbringer"
       # ```
@@ -773,7 +773,7 @@ module Faker
       def self.hero; end
 
       # Produces a quote from World of Warcraft.
-      # 
+      #
       # ```ruby
       # Faker::Games::WorldOfWarcraft.quote #=> "These are dark times indeed."
       # ```
@@ -783,7 +783,7 @@ module Faker
 
     class SonicTheHedgehog < Faker::Base
       # Produces the name of a character from Sonic the Hedgehog.
-      # 
+      #
       # ```ruby
       # Faker::Games::SonicTheHedgehog.character #=> "Sonic the Hedgehog"
       # ```
@@ -791,7 +791,7 @@ module Faker
       def self.character; end
 
       # Produces the name of a zone from Sonic the Hedgehog.
-      # 
+      #
       # ```ruby
       # Faker::Games::SonicTheHedgehog.zone #=> "Green Hill Zone"
       # ```
@@ -799,7 +799,7 @@ module Faker
       def self.zone; end
 
       # Produces the name of a game from the Sonic the Hedgehog series.
-      # 
+      #
       # ```ruby
       # Faker::Games::SonicTheHedgehog.game #=> "Waku Waku Sonic Patrol Car"
       # ```
@@ -809,7 +809,7 @@ module Faker
 
     class HeroesOfTheStorm < Faker::Base
       # Produces a battleground from Heroes of the Storm.
-      # 
+      #
       # ```ruby
       # Faker::Games::HeroesOfTheStorm.battleground #=> "Towers of Doom"
       # ```
@@ -818,13 +818,13 @@ module Faker
 
       # This method is deprecated. The implementation will be removed in a near future release.
       # Use `HeroesOfTheStorm.class_name` instead.
-      # 
+      #
       # _@deprecated_ — Use {#class_name} instead.
       sig { returns(T.untyped) }
       def self.class; end
 
       # Produces a class name from Heroes of the Storm.
-      # 
+      #
       # ```ruby
       # Faker::Games::HeroesOfTheStorm.class_name #=> "Support"
       # ```
@@ -832,7 +832,7 @@ module Faker
       def self.class_name; end
 
       # Produces a hero from Heroes of the Storm.
-      # 
+      #
       # ```ruby
       # Faker::Games::HeroesOfTheStorm.hero #=> "Illidan"
       # ```
@@ -840,7 +840,7 @@ module Faker
       def self.hero; end
 
       # Produces a quote from Heroes of the Storm.
-      # 
+      #
       # ```ruby
       # Faker::Games::HeroesOfTheStorm.quote #=> "MEAT!!!"
       # ```
@@ -851,7 +851,7 @@ module Faker
 
   class Book < Faker::Base
     # Produces a random book title
-    # 
+    #
     # ```ruby
     # Faker::Book.title #=> "The Odd Sister"
     # ```
@@ -859,7 +859,7 @@ module Faker
     def self.title; end
 
     # Produces a random book author
-    # 
+    #
     # ```ruby
     # Faker::Book.author #=> "Alysha Olsen"
     # ```
@@ -867,7 +867,7 @@ module Faker
     def self.author; end
 
     # Produces a random book publisher
-    # 
+    #
     # ```ruby
     # Faker::Book.publisher #=> "Opus Reader"
     # ```
@@ -875,7 +875,7 @@ module Faker
     def self.publisher; end
 
     # Produces a random genre
-    # 
+    #
     # ```ruby
     # Faker::Book.genre #=> "Mystery"
     # ```
@@ -884,11 +884,11 @@ module Faker
   end
 
   class Books
-    # 
+    #
     # A Faker module beyond your dreams, test data beyond your imagination.
     class Dune < Faker::Base
       # Produces the name of a character from Dune
-      # 
+      #
       # ```ruby
       # Faker::Books::Dune.character #=> "Leto Atreides"
       # ```
@@ -902,7 +902,7 @@ module Faker
       def self.title; end
 
       # Produces the name of a planet from Dune
-      # 
+      #
       # ```ruby
       # Faker::Books::Dune.planet #=> "Caladan"
       # ```
@@ -910,14 +910,14 @@ module Faker
       def self.planet; end
 
       # Produces a quote from Dune
-      # 
+      #
       # _@param_ `character` — The name of the character that the quote should be from
-      # 
+      #
       # ```ruby
       # Faker::Books::Dune.quote
       #   #=> "A dead man, surely, no longer requires that water."
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Dune.quote(character: "baron_harkonnen")
       #   #=> "He who controls the spice, controls the universe!"
@@ -926,13 +926,13 @@ module Faker
       def self.quote(legacy_character = T.unsafe(nil), character: nil); end
 
       # Produces a saying from Dune
-      # 
+      #
       # _@param_ `source`
-      # 
+      #
       # ```ruby
       # Faker::Books::Dune.saying #=> "You do not beg the sun for mercy."
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Dune.saying(source: "fremen")
       #   #=> "May thy knife chip and shatter."
@@ -943,7 +943,7 @@ module Faker
 
     class Lovecraft < Faker::Base
       # Produces the name of a location
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.location #=> "Kingsport"
       # ```
@@ -951,12 +951,12 @@ module Faker
       def self.location; end
 
       # _@param_ `number` — The number of times to repeat the chant
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.fhtagn
       #   #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn"
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.fhtagn(number: 3)
       #   #=> "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fht...
@@ -965,7 +965,7 @@ module Faker
       def self.fhtagn(legacy_number = T.unsafe(nil), number: 1); end
 
       # Produces the name of a deity
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.deity #=> "Shub-Niggurath"
       # ```
@@ -973,7 +973,7 @@ module Faker
       def self.deity; end
 
       # Produces the name of a tome
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.tome #=> "Book of Eibon"
       # ```
@@ -981,21 +981,21 @@ module Faker
       def self.tome; end
 
       # Produces a random sentence
-      # 
+      #
       # _@param_ `word_count` — The number of words to have in the sentence
-      # 
+      #
       # _@param_ `random_words_to_add`
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.sentence
       #   #=> "Furtive antiquarian squamous dank cat loathsome amorphous lurk."
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.sentence(word_count: 3)
       #   #=> "Daemoniac antediluvian fainted squamous comprehension gambrel nameless singular."
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.sentence(word_count: 3, random_words_to_add: 1)
       #   #=> "Amorphous indescribable tenebrous."
@@ -1011,7 +1011,7 @@ module Faker
       def self.sentence(legacy_word_count = T.unsafe(nil), legacy_random_words_to_add = T.unsafe(nil), word_count: 4, random_words_to_add: 6); end
 
       # Produces a random word
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.word #=> "furtive"
       # ```
@@ -1019,11 +1019,11 @@ module Faker
       def self.word; end
 
       # Produces a array of random words
-      # 
+      #
       # _@param_ `number` — Number of words to generate
-      # 
+      #
       # _@param_ `spaces_allowed` — If true, generated words can contain spaces
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.words
       # #=> [
@@ -1032,7 +1032,7 @@ module Faker
       # #     "singular",
       # #   ]
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.words(number: 2)
       # #=> [
@@ -1040,7 +1040,7 @@ module Faker
       # #     "cat",
       # #   ]
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.words(number: 2, spaces_allowed: 1)
       # #=> [
@@ -1059,9 +1059,9 @@ module Faker
       def self.words(legacy_number = T.unsafe(nil), legacy_spaces_allowed = T.unsafe(nil), number: 3, spaces_allowed: false); end
 
       # Produces a array of random sentences
-      # 
+      #
       # _@param_ `number` — Number of sentences to generate
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.sentences
       # #=> [
@@ -1070,7 +1070,7 @@ module Faker
       # #     "Decadent antediluvian non-euclidean tentacles amorphous tenebrous.",
       # #   ]
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.sentences(number: 2)
       # #=> [
@@ -1082,21 +1082,21 @@ module Faker
       def self.sentences(legacy_number = T.unsafe(nil), number: 3); end
 
       # Produces a random paragraph
-      # 
+      #
       # _@param_ `sentence_count` — Number of sentences to generate
-      # 
+      #
       # _@param_ `random_sentences_to_add`
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.paragraph
       #   #=> "Squamous nameless daemoniac fungus ululate. Cyclopean stygian decadent loathsome manuscript tenebrous. Foetid abnormal stench. Dank non-euclidean comprehension eldritch. Charnel singular shunned lurk effulgence fungus."
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.paragraph(sentence_count: 2)
       #   #=> "Decadent lurk tenebrous loathsome furtive spectral amorphous gibbous. Gambrel eldritch daemoniac cat madness comprehension stygian effulgence."
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.paragraph(sentence_count: 1, random_sentences_to_add: 1)
       #   #=> "Stench cyclopean fainted antiquarian nameless. Antiquarian ululate tenebrous non-euclidean effulgence."
@@ -1112,9 +1112,9 @@ module Faker
       def self.paragraph(legacy_sentence_count = T.unsafe(nil), legacy_random_sentences_to_add = T.unsafe(nil), sentence_count: 3, random_sentences_to_add: 3); end
 
       # Produces a array of random paragraphs
-      # 
+      #
       # _@param_ `number` — Number of paragraphs to generate
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.paragraphs
       # #=> [
@@ -1123,7 +1123,7 @@ module Faker
       # #     "Charnel antediluvian unnamable cat blasphemous comprehension tene...
       # #   ]
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.paragraphs(number: 2)
       # #=> [
@@ -1135,12 +1135,12 @@ module Faker
       def self.paragraphs(legacy_number = T.unsafe(nil), number: 3); end
 
       # _@param_ `characters` — Number of characters to generate in the paragraph
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.paragraph_by_chars
       #   #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Books::Lovecraft.paragraph_by_chars(characters: 128)
       #   #=> "Effulgence madness noisome. Fungus stygian mortal madness amorphous dank. Decadent noisome hideous effulgence. Tentacles charne."
@@ -1196,7 +1196,7 @@ module Faker
 
   class Game < Faker::Base
     # Produces the name of a video game.
-    # 
+    #
     # ```ruby
     # Faker::Game.title #=> "Half-Life 2"
     # ```
@@ -1204,7 +1204,7 @@ module Faker
     def self.title; end
 
     # Produces the name of a video game genre.
-    # 
+    #
     # ```ruby
     # Faker::Game.genre #=> "Real-time strategy"
     # ```
@@ -1212,7 +1212,7 @@ module Faker
     def self.genre; end
 
     # Produces the name of a video game console or platform.
-    # 
+    #
     # ```ruby
     # Faker::Game.platform #=> "Nintendo Switch"
     # ```
@@ -1223,7 +1223,7 @@ module Faker
   # A generator of titles of operas by Verdi, Rossini, Donizetti and Bellini
   class Music < Faker::Base
     # Produces the name of a key/note, using letter notation.
-    # 
+    #
     # ```ruby
     # Faker::Music.key #=> "A#"
     # ```
@@ -1231,7 +1231,7 @@ module Faker
     def self.key; end
 
     # Produces the name of a chord, using letter notation.
-    # 
+    #
     # ```ruby
     # Faker::Music.chord #=> "Adim7"
     # ```
@@ -1239,7 +1239,7 @@ module Faker
     def self.chord; end
 
     # Produces the name of an instrument.
-    # 
+    #
     # ```ruby
     # Faker::Music.instrument #=> "Acoustic Guitar"
     # ```
@@ -1255,7 +1255,7 @@ module Faker
     def self.key_variants; end
 
     # Produces an array of key types (with "major" denoted as an empty string).
-    # 
+    #
     # ```ruby
     # Faker::Music.key_types #=> ['', 'm']
     # ```
@@ -1267,7 +1267,7 @@ module Faker
     def self.chord_types; end
 
     # Produces the name of a band.
-    # 
+    #
     # ```ruby
     # Faker::Music.band #=> "The Beatles"
     # ```
@@ -1275,7 +1275,7 @@ module Faker
     def self.band; end
 
     # Produces the name of an album.
-    # 
+    #
     # ```ruby
     # Faker::Music.album #=> "Sgt. Pepper's Lonely Hearts Club"
     # ```
@@ -1283,7 +1283,7 @@ module Faker
     def self.album; end
 
     # Produces the name of a musical genre.
-    # 
+    #
     # ```ruby
     # Faker::Music.genre #=> "Rock"
     # ```
@@ -1292,7 +1292,7 @@ module Faker
 
     class Rush < Faker::Base
       # Produces the name of a member of Rush
-      # 
+      #
       # ```ruby
       # Faker::Music::Rush.player #=> "Geddy Lee"
       # ```
@@ -1300,7 +1300,7 @@ module Faker
       def self.player; end
 
       # Produces the name of an album by Rush
-      # 
+      #
       # ```ruby
       # Faker::Music::Rush.album #=> "Hold Your Fire"
       # ```
@@ -1310,7 +1310,7 @@ module Faker
 
     class Opera < Faker::Base
       # Produces the title of an opera by Giuseppe Verdi.
-      # 
+      #
       # ```ruby
       # Faker::Music::Opera.verdi #=> "Il Trovatore"
       # ```
@@ -1318,7 +1318,7 @@ module Faker
       def self.verdi; end
 
       # Produces the title of an opera by Gioacchino Rossini.
-      # 
+      #
       # ```ruby
       # Faker::Music::Opera.rossini #=> "Il Barbiere di Siviglia"
       # ```
@@ -1326,7 +1326,7 @@ module Faker
       def self.rossini; end
 
       # Produces the title of an opera by Gaetano Donizetti.
-      # 
+      #
       # ```ruby
       # Faker::Music::Opera.donizetti #=> "Lucia di Lammermoor"
       # ```
@@ -1334,7 +1334,7 @@ module Faker
       def self.donizetti; end
 
       # Produces the title of an opera by Vincenzo Bellini.
-      # 
+      #
       # ```ruby
       # Faker::Music::Opera.bellini #=> "Norma"
       # ```
@@ -1344,7 +1344,7 @@ module Faker
 
     class Phish < Faker::Base
       # Produces the name of a album by Phish.
-      # 
+      #
       # ```ruby
       # Faker::Music::Phish.album #=> "Fuego"
       # ```
@@ -1352,7 +1352,7 @@ module Faker
       def self.album; end
 
       # Produces the name of a musician in Phish.
-      # 
+      #
       # ```ruby
       # Faker::Music::Phish.musician #=> "Trey Anastasio"
       # ```
@@ -1360,7 +1360,7 @@ module Faker
       def self.musician; end
 
       # Produces the name of a song by Phish.
-      # 
+      #
       # ```ruby
       # Faker::Music::Phish.song #=> "Tweezer"
       # ```
@@ -1370,7 +1370,7 @@ module Faker
 
     class Prince < Faker::Base
       # Produces a random Prince song.
-      # 
+      #
       # ```ruby
       # Faker::Music::Prince.song #=> "Raspberry Beret"
       # Faker::Music::Prince.song #=> "Starfish And Coffee"
@@ -1379,7 +1379,7 @@ module Faker
       def self.song; end
 
       # Produces a random Prince song lyric.
-      # 
+      #
       # ```ruby
       # Faker::Music::Prince.lyric #=> "Dearly beloved, we are gathered here today to get through this thing called life."
       # Faker::Music::Prince.lyric #=> "You were so hard to find, the beautiful ones, they hurt you every time."
@@ -1388,7 +1388,7 @@ module Faker
       def self.lyric; end
 
       # Produces a random Prince album.
-      # 
+      #
       # ```ruby
       # Faker::Music::Prince.album #=> "The Gold Experience"
       # Faker::Music::Prince.album #=> "Purple Rain"
@@ -1397,7 +1397,7 @@ module Faker
       def self.album; end
 
       # Produces a random Prince-associated band.
-      # 
+      #
       # ```ruby
       # Faker::Music::Prince.band #=> "The New Power Generation"
       # ```
@@ -1407,7 +1407,7 @@ module Faker
 
     class PearlJam < Faker::Base
       # Produces the name of a member of Pearl Jam (current and former)
-      # 
+      #
       # ```ruby
       # Faker::Music::PearlJam.musician #=> "Eddie Vedder"
       # ```
@@ -1415,7 +1415,7 @@ module Faker
       def self.musician; end
 
       # Produces the name of an album by Pearl Jam.
-      # 
+      #
       # ```ruby
       # Faker::Music::PearlJam.album #=> "Ten"
       # ```
@@ -1423,7 +1423,7 @@ module Faker
       def self.album; end
 
       # Produces the name of a song by Pearl Jam.
-      # 
+      #
       # ```ruby
       # Faker::Music::PearlJam.song #=> "Even Flow"
       # ```
@@ -1433,7 +1433,7 @@ module Faker
 
     class RockBand < Faker::Base
       # Produces the name of a rock band.
-      # 
+      #
       # ```ruby
       # Faker::Music::RockBand.name #=> "Led Zeppelin"
       # ```
@@ -1443,7 +1443,7 @@ module Faker
 
     class GratefulDead < Faker::Base
       # Produces the name of a member of The Grateful Dead.
-      # 
+      #
       # ```ruby
       # Faker::Music::GratefulDead.player #=> "Jerry Garcia"
       # ```
@@ -1451,7 +1451,7 @@ module Faker
       def self.player; end
 
       # Produces the name of a song by The Grateful Dead.
-      # 
+      #
       # ```ruby
       # Faker::Music::GratefulDead.song #=> "Cassidy"
       # ```
@@ -1461,7 +1461,7 @@ module Faker
 
     class UmphreysMcgee < Faker::Base
       # Produces the name of a song by Umphrey's McGee.
-      # 
+      #
       # ```ruby
       # Faker::Music::UmphreysMcgee.song #=> "Dump City"
       # ```
@@ -1472,7 +1472,7 @@ module Faker
 
   class Show < Faker::Base
     # Produces the name of a musical for an older audience
-    # 
+    #
     # ```ruby
     # Faker::Alphanumeric.alpha
     #   #=> "West Side Story"
@@ -1481,7 +1481,7 @@ module Faker
     def self.adult_musical; end
 
     # Produces the name of a musical for a younger audience
-    # 
+    #
     # ```ruby
     # Faker::Alphanumeric.alpha
     #   #=> "Into the Woods JR."
@@ -1490,7 +1490,7 @@ module Faker
     def self.kids_musical; end
 
     # Produces the name of a play
-    # 
+    #
     # ```ruby
     # Faker::Alphanumeric.alpha
     #   #=> "Death of a Salesman"
@@ -1501,7 +1501,7 @@ module Faker
 
   class App < Faker::Base
     # Produces an app name.
-    # 
+    #
     # ```ruby
     # Faker::App.name #=> "Treeflex"
     # ```
@@ -1509,7 +1509,7 @@ module Faker
     def self.name; end
 
     # Produces a version string.
-    # 
+    #
     # ```ruby
     # Faker::App.version #=> "1.85"
     # ```
@@ -1517,7 +1517,7 @@ module Faker
     def self.version; end
 
     # Produces the name of an app's author.
-    # 
+    #
     # ```ruby
     # Faker::App.author #=> "Daphne Swift"
     # ```
@@ -1525,25 +1525,25 @@ module Faker
     def self.author; end
 
     # Produces a String representing a semantic version identifier.
-    # 
+    #
     # _@param_ `major` — An integer to use or a range to pick the integer from.
-    # 
+    #
     # _@param_ `minor` — An integer to use or a range to pick the integer from.
-    # 
+    #
     # _@param_ `patch` — An integer to use or a range to pick the integer from.
-    # 
+    #
     # ```ruby
     # Faker::App.semantic_version #=> "3.2.5"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::App.semantic_version(major: 42) #=> "42.5.2"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::App.semantic_version(minor: 100..101) #=> "42.100.4"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::App.semantic_version(patch: 5..6) #=> "7.2.6"
     # ```
@@ -1562,7 +1562,7 @@ module Faker
 
   class Job < Faker::Base
     # Produces a random job title.
-    # 
+    #
     # ```ruby
     # Faker::Job.title #=> "Construction Manager"
     # ```
@@ -1570,7 +1570,7 @@ module Faker
     def self.title; end
 
     # Produces a random job position.
-    # 
+    #
     # ```ruby
     # Faker::Job.position #=> "Strategist"
     # ```
@@ -1578,7 +1578,7 @@ module Faker
     def self.position; end
 
     # Produces a random job field.
-    # 
+    #
     # ```ruby
     # Faker::Job.field #=> "Banking"
     # ```
@@ -1586,7 +1586,7 @@ module Faker
     def self.field; end
 
     # Produces a random job skill.
-    # 
+    #
     # ```ruby
     # Faker::Job.key_skill #=> "Leadership"
     # ```
@@ -1596,7 +1596,7 @@ module Faker
 
   class NationalHealthService < Faker::Base
     # Produces a random British NHS number.
-    # 
+    #
     # ```ruby
     # Faker::NationalHealthService.british_number #=> "403 958 5577"
     # ```
@@ -1604,9 +1604,9 @@ module Faker
     def self.british_number; end
 
     # Produces a random British NHS number's check digit.
-    # 
+    #
     # _@param_ `number` — Specifies the NHS number the check digit belongs to.
-    # 
+    #
     # ```ruby
     # Faker::NationalHealthService.check_digit(number: 400_012_114) #=> 6
     # ```
@@ -1617,7 +1617,7 @@ module Faker
   class Creature
     class Cat < Faker::Base
       # Produces a random name for a cat
-      # 
+      #
       # ```ruby
       # Faker::Creature::Cat.name #=> "Felix"
       # ```
@@ -1625,7 +1625,7 @@ module Faker
       def self.name; end
 
       # Produces a random cat breed
-      # 
+      #
       # ```ruby
       # Faker::Creature::Cat.breed #=> "Scottish Fold"
       # ```
@@ -1633,7 +1633,7 @@ module Faker
       def self.breed; end
 
       # Produces a random cat breed registry
-      # 
+      #
       # ```ruby
       # Faker::Creature::Cat.registry #=> "Fancy Southern Africa Cat Council"
       # ```
@@ -1643,7 +1643,7 @@ module Faker
 
     class Dog < Faker::Base
       # Produces a random name for a dog
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.name #=> "Spike"
       # ```
@@ -1651,7 +1651,7 @@ module Faker
       def self.name; end
 
       # Produces a random dog breed
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.breed #=> "Yorkshire Terrier"
       # ```
@@ -1659,7 +1659,7 @@ module Faker
       def self.breed; end
 
       # Produces a random sound made by a dog
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.sound #=> "woof woof"
       # ```
@@ -1667,7 +1667,7 @@ module Faker
       def self.sound; end
 
       # Produces a random dog meme phrase
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.meme_phrase #=> "smol pupperino"
       # ```
@@ -1675,7 +1675,7 @@ module Faker
       def self.meme_phrase; end
 
       # Produces a random dog age
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.age #=> "puppy"
       # ```
@@ -1683,7 +1683,7 @@ module Faker
       def self.age; end
 
       # Produces a random gender
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.gender #=> "Female"
       # ```
@@ -1691,7 +1691,7 @@ module Faker
       def self.gender; end
 
       # Produces a random coat length
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.coat_length #=> "short"
       # ```
@@ -1699,7 +1699,7 @@ module Faker
       def self.coat_length; end
 
       # Produces a random size of a dog
-      # 
+      #
       # ```ruby
       # Faker::Creature::Dog.size #=> "small"
       # ```
@@ -1709,7 +1709,7 @@ module Faker
 
     class Horse < Faker::Base
       # Produces a random name for a horse
-      # 
+      #
       # ```ruby
       # Faker::Creature::Horse.name #=> "Noir"
       # ```
@@ -1717,7 +1717,7 @@ module Faker
       def self.name; end
 
       # Produces a random horse breed
-      # 
+      #
       # ```ruby
       # Faker::Creature::Horse.breed #=> "Spanish Barb see Barb Horse"
       # ```
@@ -1727,7 +1727,7 @@ module Faker
 
     class Animal < Faker::Base
       # Produces a random animal name
-      # 
+      #
       # ```ruby
       # Faker::Creature::Animal.name #=> "fly"
       # ```
@@ -1738,9 +1738,9 @@ module Faker
 
   class Bank < Faker::Base
     # Produces a bank account number.
-    # 
+    #
     # _@param_ `digits` — Number of digits that the generated account number should have.
-    # 
+    #
     # ```ruby
     # Faker::Bank.account_number #=> 6738582379
     # Faker::Bank.account_number(digits: 13) #=> 673858237902
@@ -1749,9 +1749,9 @@ module Faker
     def self.account_number(legacy_digits = T.unsafe(nil), digits: 10); end
 
     # Produces a bank iban number.
-    # 
+    #
     # _@param_ `country_code` — Specifies what country prefix is used to generate the iban code.
-    # 
+    #
     # ```ruby
     # Faker::Bank.iban #=> "GB76DZJM33188515981979"
     # Faker::Bank.iban(country_code: "be") #=> "BE6375388567752043"
@@ -1760,7 +1760,7 @@ module Faker
     def self.iban(legacy_country_code = T.unsafe(nil), country_code: 'GB'); end
 
     # Produces a bank name.
-    # 
+    #
     # ```ruby
     # Faker::Bank.name #=> "ABN AMRO CORPORATE FINANCE LIMITED"
     # ```
@@ -1768,7 +1768,7 @@ module Faker
     def self.name; end
 
     # Produces a routing number.
-    # 
+    #
     # ```ruby
     # Faker::Bank.routing_number #=> "729343831"
     # ```
@@ -1776,7 +1776,7 @@ module Faker
     def self.routing_number; end
 
     # Produces a valid routing number.
-    # 
+    #
     # ```ruby
     # Faker::Bank.routing_number #=> "729343831"
     # ```
@@ -1784,7 +1784,7 @@ module Faker
     def self.routing_number_with_format; end
 
     # Produces a swift / bic number.
-    # 
+    #
     # ```ruby
     # Faker::Bank.swift_bic #=> "AAFMGB21"
     # ```
@@ -1792,7 +1792,7 @@ module Faker
     def self.swift_bic; end
 
     # Produces an Australian BSB (Bank-State-Branch) number
-    # 
+    #
     # ```ruby
     # Faker::Bank.bsb_number
     #   #=> "036616"
@@ -1829,7 +1829,7 @@ module Faker
 
   class Beer < Faker::Base
     # Produces a random beer name.
-    # 
+    #
     # ```ruby
     # Faker::Beer.name #=> "Pliny The Elder"
     # ```
@@ -1837,7 +1837,7 @@ module Faker
     def self.name; end
 
     # Produces a random beer style.
-    # 
+    #
     # ```ruby
     # Faker::Beer.style #=> "Wood-aged Beer"
     # ```
@@ -1845,7 +1845,7 @@ module Faker
     def self.style; end
 
     # Produces a random beer hops.
-    # 
+    #
     # ```ruby
     # Faker::Beer.hop #=> "Sterling"
     # ```
@@ -1853,7 +1853,7 @@ module Faker
     def self.hop; end
 
     # Produces a random beer yeast.
-    # 
+    #
     # ```ruby
     # Faker::Beer.yeast #=> "5335 - Lactobacillus"
     # ```
@@ -1861,7 +1861,7 @@ module Faker
     def self.yeast; end
 
     # Produces a random beer malt.
-    # 
+    #
     # ```ruby
     # Faker::Beer.malts #=> "Munich"
     # ```
@@ -1869,7 +1869,7 @@ module Faker
     def self.malts; end
 
     # Produces a random beer IBU.
-    # 
+    #
     # ```ruby
     # Faker::Beer.ibu #=> "87 IBU"
     # ```
@@ -1877,7 +1877,7 @@ module Faker
     def self.ibu; end
 
     # Produces a random beer alcohol percentage.
-    # 
+    #
     # ```ruby
     # Faker::Beer.alcohol #=> "5.4%"
     # ```
@@ -1885,7 +1885,7 @@ module Faker
     def self.alcohol; end
 
     # Produces a random beer blg level.
-    # 
+    #
     # ```ruby
     # Faker::Beer.blg #=> "5.1Blg"
     # ```
@@ -1968,7 +1968,7 @@ module Faker
 
   class Coin < Faker::Base
     # Retrieves a random coin from any country.
-    # 
+    #
     # ```ruby
     # Faker::Coin.name #=> "Brazilian Real"
     # ```
@@ -1976,7 +1976,7 @@ module Faker
     def self.name; end
 
     # Retrieves a face to a flipped coin
-    # 
+    #
     # ```ruby
     # Faker::Coin.flip #=> "Heads"
     # ```
@@ -1986,16 +1986,16 @@ module Faker
 
   class Date < Faker::Base
     # Produce a random date between two dates.
-    # 
+    #
     # _@param_ `from` — The start of the usable date range.
-    # 
+    #
     # _@param_ `to` — The end of the usable date range.
-    # 
+    #
     # if used with or without Rails (Active Support)
     # ```ruby
     # Faker::Date.between(from: '2014-09-23', to: '2014-09-25') #=> #<Date: 2014-09-24>
     # ```
-    # 
+    #
     # if used with Rails (Active Support)
     # ```ruby
     # Faker::Date.between(from: 2.days.ago, to: ::Date.today) #=> #<Date: 2014-09-24>
@@ -2011,18 +2011,18 @@ module Faker
     def self.between(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), from:, to:); end
 
     # Produce a random date between two dates.
-    # 
+    #
     # _@param_ `from` — The start of the usable date range.
-    # 
+    #
     # _@param_ `to` — The end of the usable date range.
-    # 
+    #
     # _@param_ `excepted` — A date to exclude.
-    # 
+    #
     # if used with or without Rails (Active Support)
     # ```ruby
     # Faker::Date.between_except(from: '2014-09-23', to: '2015-09-25', excepted: '2015-01-24') #=> #<Date: 2014-10-03>
     # ```
-    # 
+    #
     # if used with Rails (Active Support)
     # ```ruby
     # Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: ::Date.today) #=> #<Date: 2014-10-03>
@@ -2040,9 +2040,9 @@ module Faker
     def self.between_except(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), legacy_excepted = T.unsafe(nil), from:, to:, excepted:); end
 
     # Produce a random date in the future (up to N days).
-    # 
+    #
     # _@param_ `days` — The maximum number of days to go into the future.
-    # 
+    #
     # ```ruby
     # Faker::Date.forward(days: 23) #=> #<Date: 2014-10-03>
     # ```
@@ -2050,9 +2050,9 @@ module Faker
     def self.forward(legacy_days = T.unsafe(nil), days: 365); end
 
     # Produce a random date in the past (up to N days).
-    # 
+    #
     # _@param_ `days` — The maximum number of days to go into the past.
-    # 
+    #
     # ```ruby
     # Faker::Date.backward(days: 14) #=> #<Date: 2019-09-12>
     # ```
@@ -2060,11 +2060,11 @@ module Faker
     def self.backward(legacy_days = T.unsafe(nil), days: 365); end
 
     # Produce a random date in the past (up to N days).
-    # 
+    #
     # _@param_ `min_age` — The minimum age that the birthday would imply.
-    # 
+    #
     # _@param_ `max_age` — The maximum age that the birthday would imply.
-    # 
+    #
     # ```ruby
     # Faker::Date.birthday(min_age: 18, max_age: 65) #=> #<Date: 1986-03-28>
     # ```
@@ -2079,19 +2079,19 @@ module Faker
     def self.birthday(legacy_min_age = T.unsafe(nil), legacy_max_age = T.unsafe(nil), min_age: 18, max_age: 65); end
 
     # Produces a date in the year and/or month specified.
-    # 
+    #
     # _@param_ `month` — represents the month of the date
-    # 
+    #
     # _@param_ `year` — represents the year of the date
-    # 
+    #
     # ```ruby
     # Faker::Date.in_date_period #=> #<Date: 2019-09-01>
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Date.in_date_period(year: 2018, month: 2) #=> #<Date: 2018-02-26>
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Date.in_date_period(month: 2) #=> #<Date: 2019-02-26>
     # ```
@@ -2107,15 +2107,15 @@ module Faker
 
   class File < Faker::Base
     # Produces a random directory name.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `segment_count` — Specifies the number of nested folders in the generated string.
-    # 
+    #
     # _@param_ `root` — Specifies the root of the generated string.
-    # 
+    #
     # _@param_ `directory_separator` — Specifies the separator between the segments.
-    # 
+    #
     # ```ruby
     # Faker::File.dir #=> "et_error/sint_voluptas/quas_veritatis"
     # Faker::File.dir(segment_count: 2) #=> "ea-suscipit/ut-deleniti"
@@ -2135,7 +2135,7 @@ module Faker
     def self.dir(legacy_segment_count = T.unsafe(nil), legacy_root = T.unsafe(nil), legacy_directory_separator = T.unsafe(nil), segment_count: 3, root: nil, directory_separator: ::File::Separator); end
 
     # Produces a random file extension.
-    # 
+    #
     # ```ruby
     # Faker::File.extension #=> "mp3"
     # ```
@@ -2143,7 +2143,7 @@ module Faker
     def self.extension; end
 
     # Produces a random mime type.
-    # 
+    #
     # ```ruby
     # Faker::File.mime_type #=> "application/pdf"
     # ```
@@ -2151,17 +2151,17 @@ module Faker
     def self.mime_type; end
 
     # Produces a random file name.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `dir` — Specifies the path used for the generated file.
-    # 
+    #
     # _@param_ `name` — Specifies the filename used for the generated file.
-    # 
+    #
     # _@param_ `ext` — Specifies the extension used the generated file.
-    # 
+    #
     # _@param_ `directory_separator` — Specifies the separator between the directory and name elements.
-    # 
+    #
     # ```ruby
     # Faker::File.file_name(dir: 'path/to') #=> "path/to/something_random.jpg"
     # Faker::File.file_name(dir: 'foo/bar', name: 'baz') #=> "foo/bar/baz.zip"
@@ -2185,7 +2185,7 @@ module Faker
 
   class Food < Faker::Base
     # Retrieves a typical dish from each country.
-    # 
+    #
     # ```ruby
     # Faker::Food.dish #=> "Feijoada"
     # ```
@@ -2193,7 +2193,7 @@ module Faker
     def self.dish; end
 
     # Retrieves a description about some dish
-    # 
+    #
     # ```ruby
     # Faker::Food.description #=> "Breaded fried chicken with waffles. Served with maple syrup."
     # ```
@@ -2201,7 +2201,7 @@ module Faker
     def self.description; end
 
     # Retrieves an ingredient
-    # 
+    #
     # ```ruby
     # Faker::Food.ingredient #=> "Olives"
     # ```
@@ -2209,7 +2209,7 @@ module Faker
     def self.ingredient; end
 
     # Retrieves a fruit
-    # 
+    #
     # ```ruby
     # Faker::Food.fruits #=> "Papaya"
     # ```
@@ -2217,7 +2217,7 @@ module Faker
     def self.fruits; end
 
     # Retrieves a vegetable
-    # 
+    #
     # ```ruby
     # Faker::Food.vegetables #=> "Broccolini"
     # ```
@@ -2225,7 +2225,7 @@ module Faker
     def self.vegetables; end
 
     # Retrieves some random spice
-    # 
+    #
     # ```ruby
     # Faker::Food.spice #=> "Garlic Chips"
     # ```
@@ -2233,7 +2233,7 @@ module Faker
     def self.spice; end
 
     # Retrieves cooking measures
-    # 
+    #
     # ```ruby
     # Faker::Food.measurement #=> "1/3"
     # ```
@@ -2241,7 +2241,7 @@ module Faker
     def self.measurement; end
 
     # Retrieves metric mesurements
-    # 
+    #
     # ```ruby
     # Faker::Food.metric_measurement #=> "centiliter"
     # ```
@@ -2251,11 +2251,11 @@ module Faker
 
   class Json < Faker::Base
     # Produces a random simple JSON formatted string.
-    # 
+    #
     # _@param_ `width` — Specifies the number of key-value pairs.
-    # 
+    #
     # _@param_ `options` — Specifies a Faker gem class to use for keys and for values, respectably. options_hash = {key: Class.method, value: Class.method}
-    # 
+    #
     # ```ruby
     # Faker::Json.shallow_json(width: 3, options: { key: 'RockBand.name', value: 'Seinfeld.quote' }) # =>
     #   {"Parliament Funkadelic":"They're real, and they're spectacular.",
@@ -2276,26 +2276,26 @@ module Faker
     def self.shallow_json(legacy_width = T.unsafe(nil), legacy_options = T.unsafe(nil), width: 3, options: { key: 'Name.first_name', value: 'Name.first_name' }); end
 
     # Produces a random nested JSON formatted string that can take JSON as an additional argument.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `json` — Specifies a Json.shallow_json and uses its keys as keys of the nested JSON.
-    # 
+    #
     # _@param_ `width` — Specifies the number of nested key-value pairs.
-    # 
+    #
     # _@param_ `options` — Specifies a Faker gem class to use for nested keys and for values, respectably. options_hash = {key: Class.method, value: Class.method}
-    # 
+    #
     # ```ruby
     # json = Faker::Json.shallow_json(width: 3, options: { key: 'Name.first_name', value: 'Name.last_name' })
     # puts json # =>
     #   {"Alisha":"Olson","Everardo":"DuBuque","Bridgette":"Turner"}
-    # 
+    #
     # json2 = Faker::Json.add_depth_to_json(json: json, width: 2, options: { key: 'Name.first_name', value: 'Name.last_name' })
     # puts json2 # =>
     #   {"Alisha":{"Daisy":"Trantow","Oda":"Haag"},
     #    "Everardo":{"Javier":"Marvin","Eliseo":"Schuppe"},
     #    "Bridgette":{"Jorge":"Kertzmann","Lelah":"MacGyver"}}
-    # 
+    #
     #  json3 = Faker::Json.add_depth_to_json(json: json2, width: 4, options: { key: 'Name.first_name', value: 'Name.last_name' })
     #    puts json3 # =>
     #      {"Alisha":
@@ -2355,7 +2355,7 @@ module Faker
 
   class Kpop < Faker::Base
     # Produces the name of a 1990's 'OG' K-Pop group.
-    # 
+    #
     # ```ruby
     # Faker::Kpop.i_groups #=> "Seo Taiji and Boys"
     # ```
@@ -2363,7 +2363,7 @@ module Faker
     def self.i_groups; end
 
     # Produces the name of a 2000's K-Pop group.
-    # 
+    #
     # ```ruby
     # Faker::Kpop.ii_groups #=> "Girls' Generation"
     # ```
@@ -2371,7 +2371,7 @@ module Faker
     def self.ii_groups; end
 
     # Produces the name of a 2010's K-Pop group.
-    # 
+    #
     # ```ruby
     # Faker::Kpop.iii_groups #=> "Trouble Maker"
     # ```
@@ -2379,7 +2379,7 @@ module Faker
     def self.iii_groups; end
 
     # Produces the name of a K-Pop girl group.
-    # 
+    #
     # ```ruby
     # Faker::Kpop.girl_groups #=> "2NE1"
     # ```
@@ -2387,7 +2387,7 @@ module Faker
     def self.girl_groups; end
 
     # Produces the name of a K-Pop boy band.
-    # 
+    #
     # ```ruby
     # Faker::Kpop.boy_bands #=> "Exo"
     # ```
@@ -2395,7 +2395,7 @@ module Faker
     def self.boy_bands; end
 
     # Produces the name of a solo K-Pop artist.
-    # 
+    #
     # ```ruby
     # Faker::Kpop.solo #=> "T.O.P"
     # ```
@@ -2405,7 +2405,7 @@ module Faker
 
   class Name < Faker::Base
     # Produces a random name.
-    # 
+    #
     # ```ruby
     # Faker::Name.name #=> "Tyshawn Johns Sr."
     # ```
@@ -2413,7 +2413,7 @@ module Faker
     def self.name; end
 
     # Produces a random name with middle name.
-    # 
+    #
     # ```ruby
     # Faker::Name.name_with_middle #=> "Aditya Elton Douglas"
     # ```
@@ -2421,7 +2421,7 @@ module Faker
     def self.name_with_middle; end
 
     # Produces a random first name.
-    # 
+    #
     # ```ruby
     # Faker::Name.first_name #=> "Kaci"
     # ```
@@ -2429,7 +2429,7 @@ module Faker
     def self.first_name; end
 
     # Produces a random male first name.
-    # 
+    #
     # ```ruby
     # Faker::Name.male_first_name #=> "Edward"
     # ```
@@ -2437,7 +2437,7 @@ module Faker
     def self.male_first_name; end
 
     # Produces a random female first name.
-    # 
+    #
     # ```ruby
     # Faker::Name.female_first_name #=> "Natasha"
     # ```
@@ -2445,7 +2445,7 @@ module Faker
     def self.female_first_name; end
 
     # Produces a random gender neutral first name.
-    # 
+    #
     # ```ruby
     # Faker::Name.neutral_first_name #=> "Casey"
     # ```
@@ -2453,7 +2453,7 @@ module Faker
     def self.neutral_first_name; end
 
     # Produces a random last name.
-    # 
+    #
     # ```ruby
     # Faker::Name.last_name #=> "Ernser"
     # ```
@@ -2461,7 +2461,7 @@ module Faker
     def self.last_name; end
 
     # Produces a random name prefix.
-    # 
+    #
     # ```ruby
     # Faker::Name.prefix #=> "Mr."
     # ```
@@ -2469,7 +2469,7 @@ module Faker
     def self.prefix; end
 
     # Produces a random name suffix.
-    # 
+    #
     # ```ruby
     # Faker::Name.suffix #=> "IV"
     # ```
@@ -2477,9 +2477,9 @@ module Faker
     def self.suffix; end
 
     # Produces random initials.
-    # 
+    #
     # _@param_ `number` — Number of digits that the generated initials should have.
-    # 
+    #
     # ```ruby
     # Faker::Name.initials            #=> "NJM"
     # Faker::Name.initials(number: 2) #=> "NM"
@@ -2490,7 +2490,7 @@ module Faker
 
   class Team < Faker::Base
     # Produces a team name from a state and a creature.
-    # 
+    #
     # ```ruby
     # Faker::Team.name #=> "Oregon vixens"
     # ```
@@ -2498,7 +2498,7 @@ module Faker
     def self.name; end
 
     # Produces a team creature.
-    # 
+    #
     # ```ruby
     # Faker::Team.creature #=> "geese"
     # ```
@@ -2506,7 +2506,7 @@ module Faker
     def self.creature; end
 
     # Produces a team state.
-    # 
+    #
     # ```ruby
     # Faker::Team.state #=> "Oregon"
     # ```
@@ -2514,7 +2514,7 @@ module Faker
     def self.state; end
 
     # Produces a team sport.
-    # 
+    #
     # ```ruby
     # Faker::Team.sport #=> "Lacrosse"
     # ```
@@ -2522,7 +2522,7 @@ module Faker
     def self.sport; end
 
     # Produces the name of a team mascot.
-    # 
+    #
     # ```ruby
     # Faker::Team.mascot #=> "Hugo"
     # ```
@@ -2532,13 +2532,13 @@ module Faker
 
   class Time < Faker::Base
     # Produce a random time between two times.
-    # 
+    #
     # _@param_ `from` — The start of the usable time range.
-    # 
+    #
     # _@param_ `to` — The end of the usable time range.
-    # 
+    #
     # _@param_ `format` — The name of a DateTime format to use.
-    # 
+    #
     # ```ruby
     # # Random Stringified time between two times, formatted to the specified I18n format
     # # (Examples are from a Rails console with rails-i18n 5.1.1 defaults loaded)
@@ -2546,7 +2546,7 @@ module Faker
     # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :default) #=> "Tue, 16 Oct 2018 10:48:27 AM -05:00"
     # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :short) #=> "15 Oct 10:48 AM"
     # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :long) #=> "October 15, 2018 10:48 AM"
-    # 
+    #
     # I18n.locale = 'ja'
     # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :default) #=> "2018/10/15 10:48:27"
     # Faker::Time.between(from: ::DateTime.now - 1, to: ::DateTime.now, format: :short) #=> "18/10/15 10:48"
@@ -2565,15 +2565,15 @@ module Faker
     def self.between(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), legacy_format = T.unsafe(nil), from:, to:, format: nil); end
 
     # Produce a random time between two dates.
-    # 
+    #
     # _@param_ `from` — The start of the usable time range.
-    # 
+    #
     # _@param_ `to` — The end of the usable time range.
-    # 
+    #
     # _@param_ `period` — The time of day, if any. See {TIME_RANGES}.
-    # 
+    #
     # _@param_ `format` — The name of a DateTime format to use.
-    # 
+    #
     # ```ruby
     # Faker::Time.between_dates(from: ::Date.today - 1, to: ::Date.today, period: :all)
     #   #=> "2014-09-19 07:03:30 -0700"
@@ -2607,13 +2607,13 @@ module Faker
     def self.between_dates(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), legacy_period = T.unsafe(nil), legacy_format = T.unsafe(nil), from:, to:, period: :all, format: nil); end
 
     # Produce a random time in the future (up to N days).
-    # 
+    #
     # _@param_ `days` — The maximum number of days to go into the future.
-    # 
+    #
     # _@param_ `period` — The time of day, if any. See {TIME_RANGES}.
-    # 
+    #
     # _@param_ `format` — The name of a DateTime format to use.
-    # 
+    #
     # ```ruby
     # Faker::Time.forward(days: 23, period: :morning)
     #   # => "2014-09-26 06:54:47 -0700"
@@ -2633,13 +2633,13 @@ module Faker
     def self.forward(legacy_days = T.unsafe(nil), legacy_period = T.unsafe(nil), legacy_format = T.unsafe(nil), days: 365, period: :all, format: nil); end
 
     # Produce a random time in the past (up to N days).
-    # 
+    #
     # _@param_ `days` — The maximum number of days to go into the past.
-    # 
+    #
     # _@param_ `period` — The time of day, if any. See {TIME_RANGES}.
-    # 
+    #
     # _@param_ `format` — The name of a DateTime format to use.
-    # 
+    #
     # ```ruby
     # Faker::Time.backward(days: 14, period: :evening)
     #   #=> "2014-09-17 19:56:33 -0700"
@@ -2679,7 +2679,7 @@ module Faker
 
   class Verb < Faker::Base
     # Produces the base form of a random verb.
-    # 
+    #
     # ```ruby
     # Faker::Verb.base #=> "hurt"
     # ```
@@ -2687,7 +2687,7 @@ module Faker
     def self.base; end
 
     # Produces a random verb in past tense.
-    # 
+    #
     # ```ruby
     # Faker::Verb.past #=> "completed"
     # ```
@@ -2695,7 +2695,7 @@ module Faker
     def self.past; end
 
     # Produces a random verb in past participle.
-    # 
+    #
     # ```ruby
     # Faker::Verb.past_participle #=> "digested"
     # ```
@@ -2703,7 +2703,7 @@ module Faker
     def self.past_participle; end
 
     # Produces a random verb in simple present.
-    # 
+    #
     # ```ruby
     # Faker::Verb.simple_present #=> "climbs"
     # ```
@@ -2711,7 +2711,7 @@ module Faker
     def self.simple_present; end
 
     # Produces a random verb in the .ing form.
-    # 
+    #
     # ```ruby
     # Faker::Verb.ing_form #=> "causing"
     # ```
@@ -2721,7 +2721,7 @@ module Faker
 
   class Movie < Faker::Base
     # Produces a title from a movie.
-    # 
+    #
     # ```ruby
     # Faker::Movie.title #=> "The Lord of the Rings: The Two Towers"
     # ```
@@ -2729,7 +2729,7 @@ module Faker
     def self.title; end
 
     # Produces a quote from a movie.
-    # 
+    #
     # ```ruby
     # Faker::Movie.quote #=> "Bumble bee tuna"
     # ```
@@ -2739,7 +2739,7 @@ module Faker
 
   class Quote < Faker::Base
     # Produces a famous last words quote.
-    # 
+    #
     # ```ruby
     # Faker::Quote.famous_last_words #=> "My vocabulary did this to me. Your love will let you go on..."
     # ```
@@ -2747,7 +2747,7 @@ module Faker
     def self.famous_last_words; end
 
     # Produces a quote from Matz.
-    # 
+    #
     # ```ruby
     # Faker::Quote.matz #=> "You want to enjoy life, don't you? If you get your job done quickly and your job is fun, that's good isn't it? That's the purpose of life, partly. Your life is better."
     # ```
@@ -2755,7 +2755,7 @@ module Faker
     def self.matz; end
 
     # Produces a quote about the most interesting man in the world.
-    # 
+    #
     # ```ruby
     # Faker::Quote.most_interesting_man_in_the_world #=> "He can speak Russian... in French"
     # ```
@@ -2763,7 +2763,7 @@ module Faker
     def self.most_interesting_man_in_the_world; end
 
     # Produces a Robin quote.
-    # 
+    #
     # ```ruby
     # Faker::Quote.robin #=> "Holy Razors Edge"
     # ```
@@ -2771,7 +2771,7 @@ module Faker
     def self.robin; end
 
     # Produces a singular siegler quote.
-    # 
+    #
     # ```ruby
     # Faker::Quote.singular_siegler #=> "Texas!"
     # ```
@@ -2779,7 +2779,7 @@ module Faker
     def self.singular_siegler; end
 
     # Produces a quote from Yoda.
-    # 
+    #
     # ```ruby
     # Faker::Quote.yoda #=> "Use your feelings, Obi-Wan, and find him you will."
     # ```
@@ -2789,7 +2789,7 @@ module Faker
 
   class Blood < Faker::Base
     # Produces a random blood type.
-    # 
+    #
     # ```ruby
     # Faker::Blood.type #=> "AB"
     # ```
@@ -2797,7 +2797,7 @@ module Faker
     def self.type; end
 
     # Produces a random blood RH-Factor.
-    # 
+    #
     # ```ruby
     # Faker::Blood.rh_factor #=> "-"
     # ```
@@ -2805,7 +2805,7 @@ module Faker
     def self.rh_factor; end
 
     # Produces a random blood group name.
-    # 
+    #
     # ```ruby
     # Faker::Blood.group #=> "AB-"
     # ```
@@ -2815,7 +2815,7 @@ module Faker
 
   class Color < Faker::Base
     # Produces a hex color code.
-    # 
+    #
     # ```ruby
     # Faker::Color.hex_color #=> "#31a785"
     # ```
@@ -2823,7 +2823,7 @@ module Faker
     def self.hex_color; end
 
     # Produces the name of a color.
-    # 
+    #
     # ```ruby
     # Faker::Color.color_name #=> "yellow"
     # ```
@@ -2834,7 +2834,7 @@ module Faker
     def self.single_rgb_color; end
 
     # Produces an array of integers representing an RGB color.
-    # 
+    #
     # ```ruby
     # Faker::Color.rgb_color #=> [54, 233, 67]
     # ```
@@ -2843,7 +2843,7 @@ module Faker
 
     # Produces an array of floats representing an HSL color.
     # The array is in the form of `[hue, saturation, lightness]`.
-    # 
+    #
     # ```ruby
     # Faker::Color.hsl_color #=> [69.87, 0.66, 0.3]
     # ```
@@ -2852,7 +2852,7 @@ module Faker
 
     # Produces an array of floats representing an HSLA color.
     # The array is in the form of `[hue, saturation, lightness, alpha]`.
-    # 
+    #
     # ```ruby
     # Faker::Color.hsla_color #=> [154.77, 0.36, 0.9, 0.2]
     # ```
@@ -2862,7 +2862,7 @@ module Faker
 
   class House < Faker::Base
     # Produces the name of a piece of furniture.
-    # 
+    #
     # ```ruby
     # Faker::House.furniture #=> "chair"
     # ```
@@ -2870,7 +2870,7 @@ module Faker
     def self.furniture; end
 
     # Produces the name of a room in a house.
-    # 
+    #
     # ```ruby
     # Faker::House.room #=> "kitchen"
     # ```
@@ -2897,13 +2897,13 @@ module Faker
     def self.character; end
 
     # Produces a random string of alphanumeric characters
-    # 
+    #
     # _@param_ `number` — The number of characters to generate
-    # 
+    #
     # _@param_ `min_alpha` — The minimum number of alphabetic to add to the string
-    # 
+    #
     # _@param_ `min_numeric` — The minimum number of numbers to add to the string
-    # 
+    #
     # ```ruby
     # Faker::Lorem.characters #=> "uw1ep04lhs0c4d931n1jmrspprf5w..."
     # Faker::Lorem.characters(number: 10) #=> "ang9cbhoa8"
@@ -3014,7 +3014,7 @@ module Faker
 
   class Space < Faker::Base
     # Produces the name of a planet.
-    # 
+    #
     # ```ruby
     # Faker::Space.planet #=> "Venus"
     # ```
@@ -3022,7 +3022,7 @@ module Faker
     def self.planet; end
 
     # Produces the name of a moon.
-    # 
+    #
     # ```ruby
     # Faker::Space.moon #=> "Europa"
     # ```
@@ -3030,7 +3030,7 @@ module Faker
     def self.moon; end
 
     # Produces the name of a galaxy.
-    # 
+    #
     # ```ruby
     # Faker::Space.galaxy #=> "Andromeda"
     # ```
@@ -3038,7 +3038,7 @@ module Faker
     def self.galaxy; end
 
     # Produces the name of a nebula.
-    # 
+    #
     # ```ruby
     # Faker::Space.nebula #=> "Triffid Nebula"
     # ```
@@ -3046,7 +3046,7 @@ module Faker
     def self.nebula; end
 
     # Produces the name of a star cluster.
-    # 
+    #
     # ```ruby
     # Faker::Space.star_cluster #=> "Messier 70"
     # ```
@@ -3054,7 +3054,7 @@ module Faker
     def self.star_cluster; end
 
     # Produces the name of a constellation.
-    # 
+    #
     # ```ruby
     # Faker::Space.constellation #=> "Orion"
     # ```
@@ -3062,7 +3062,7 @@ module Faker
     def self.constellation; end
 
     # Produces the name of a star.
-    # 
+    #
     # ```ruby
     # Faker::Space.star #=> "Proxima Centauri"
     # ```
@@ -3070,7 +3070,7 @@ module Faker
     def self.star; end
 
     # Produces the name of a space agency.
-    # 
+    #
     # ```ruby
     # Faker::Space.agency #=> "Japan Aerospace Exploration Agency"
     # ```
@@ -3078,7 +3078,7 @@ module Faker
     def self.agency; end
 
     # Produces a space agency abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Space.agency_abv #=> "NASA"
     # ```
@@ -3086,7 +3086,7 @@ module Faker
     def self.agency_abv; end
 
     # Produces the name of a NASA spacecraft.
-    # 
+    #
     # ```ruby
     # Faker::Space.nasa_space_craft #=> "Endeavour"
     # ```
@@ -3094,7 +3094,7 @@ module Faker
     def self.nasa_space_craft; end
 
     # Produces the name of a space company.
-    # 
+    #
     # ```ruby
     # Faker::Space.company #=> "SpaceX"
     # ```
@@ -3102,7 +3102,7 @@ module Faker
     def self.company; end
 
     # Produces a distance measurement.
-    # 
+    #
     # ```ruby
     # Faker::Space.distance_measurement #=> "15 parsecs"
     # ```
@@ -3110,7 +3110,7 @@ module Faker
     def self.distance_measurement; end
 
     # Produces the name of a meteorite.
-    # 
+    #
     # ```ruby
     # Faker::Space.meteorite #=> "Ensisheim"
     # ```
@@ -3118,7 +3118,7 @@ module Faker
     def self.meteorite; end
 
     # Produces the name of a launch vehicle.
-    # 
+    #
     # ```ruby
     # Faker::Space.launch_vehicle #=> "Saturn IV"
     # ```
@@ -3128,7 +3128,7 @@ module Faker
 
   class Types < Faker::Base
     # Produces a random String created from word (Faker::Lorem.word)
-    # 
+    #
     # ```ruby
     # Faker::Types.rb_string #=> "foobar"
     # ```
@@ -3136,7 +3136,7 @@ module Faker
     def self.rb_string(legacy_words = T.unsafe(nil), words: 1); end
 
     # Produces a random character from the a-z, 0-9 ranges.
-    # 
+    #
     # ```ruby
     # Faker::Types.character #=> "n"
     # ```
@@ -3144,7 +3144,7 @@ module Faker
     def self.character; end
 
     # Produces a random integer.
-    # 
+    #
     # ```ruby
     # Faker::Types.rb_integer #=> 1
     # ```
@@ -3159,9 +3159,9 @@ module Faker
     def self.rb_integer(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), from: 0, to: 100); end
 
     # Produces a random hash with random keys and values.
-    # 
+    #
     # _@param_ `number` — Specifies the number of key-value pairs.
-    # 
+    #
     # ```ruby
     # Faker::Types.rb_hash #=> {name: "bob"}
     # Faker::Types.rb_hash(number: 1) #=> {name: "bob"}
@@ -3178,9 +3178,9 @@ module Faker
     def self.rb_hash(legacy_number = T.unsafe(nil), legacy_type = T.unsafe(nil), number: 1, type: random_type); end
 
     # Produces a random complex hash with random keys and values where the values may include other hashes and arrays.
-    # 
+    #
     # _@param_ `number` — Specifies the number of key-value pairs.
-    # 
+    #
     # ```ruby
     # Faker::Types.complex_rb_hash #=> {user: {first: "bob", last: "marley"}}
     # Faker::Types.complex_rb_hash(number: 1) #=> {user: {first: "bob", last: "marley"}}
@@ -3190,9 +3190,9 @@ module Faker
     def self.complex_rb_hash(legacy_number = T.unsafe(nil), number: 1); end
 
     # Produces a random array.
-    # 
+    #
     # _@param_ `len` — Specifies the number of elements in the array.
-    # 
+    #
     # ```ruby
     # Faker::Types.rb_array #=> ["a"]
     # Faker::Types.rb_array(len: 4) #=> ["a", 1, 2, "bob"]
@@ -3201,7 +3201,7 @@ module Faker
     def self.rb_array(legacy_len = T.unsafe(nil), len: 1); end
 
     # Produces a random type that's either a String or an Integer.
-    # 
+    #
     # ```ruby
     # Faker::Types.random_type #=> 1 or "a" or "bob"
     # ```
@@ -3209,7 +3209,7 @@ module Faker
     def self.random_type; end
 
     # Produces a random complex type that's either a String, an Integer, an array or a hash.
-    # 
+    #
     # ```ruby
     # Faker::Types.random_complex_type #=> 1 or "a" or "bob" or {foo: "bar"}
     # ```
@@ -3223,7 +3223,7 @@ module Faker
   class Movies
     class Hobbit < Faker::Base
       # Produces the name of a character from The Hobbit.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Hobbit.character #=> "Gandalf the Grey"
       # ```
@@ -3231,7 +3231,7 @@ module Faker
       def self.character; end
 
       # Produces the name of one of the 13 dwarves from the Company, or Gandalf or Bilbo.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Hobbit.thorins_company #=> "Thorin Oakenshield"
       # ```
@@ -3239,7 +3239,7 @@ module Faker
       def self.thorins_company; end
 
       # Produces a quote from The Hobbit.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Hobbit.quote
       #   #=> "Never laugh at live dragons, Bilbo you fool!"
@@ -3248,7 +3248,7 @@ module Faker
       def self.quote; end
 
       # Produces the name of a location from The Hobbit.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Hobbit.location #=> "The Shire"
       # ```
@@ -3258,7 +3258,7 @@ module Faker
 
     class Departed < Faker::Base
       # Produces an actor from The Departed.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Departed.actor #=> "Matt Damon"
       # ```
@@ -3266,7 +3266,7 @@ module Faker
       def self.actor; end
 
       # Produces a character from The Departed.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Departed.character #=> "Frank Costello"
       # ```
@@ -3274,7 +3274,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from The Departed.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Departed.quote
       #   #=> "I'm the guy who does his job. You must be the other guy"
@@ -3285,7 +3285,7 @@ module Faker
 
     class Lebowski < Faker::Base
       # Produces an actor from The Big Lebowski.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Lebowski.actor #=> "John Goodman"
       # ```
@@ -3293,7 +3293,7 @@ module Faker
       def self.actor; end
 
       # Produces a character from The Big Lebowski.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Lebowski.character #=> "Jackie Treehorn"
       # ```
@@ -3301,7 +3301,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from The Big Lebowski.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Lebowski.quote #=> "Forget it, Donny, you're out of your element!"
       # ```
@@ -3311,7 +3311,7 @@ module Faker
 
     class StarWars < Faker::Base
       # Produces a call squadron from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.call_squadron #=> "Green"
       # ```
@@ -3319,7 +3319,7 @@ module Faker
       def self.call_squadron; end
 
       # Produces a call sign from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.call_sign #=> "Grey 5"
       # ```
@@ -3327,7 +3327,7 @@ module Faker
       def self.call_sign; end
 
       # Produces a call number from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.call_number #=> "Leader"
       # ```
@@ -3335,7 +3335,7 @@ module Faker
       def self.call_number; end
 
       # Produces a character from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.character #=> "Anakin Skywalker"
       # ```
@@ -3343,7 +3343,7 @@ module Faker
       def self.character; end
 
       # Produces a droid from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.droid #=> "C-3PO"
       # ```
@@ -3351,7 +3351,7 @@ module Faker
       def self.droid; end
 
       # Produces a planet from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.planet #=> "Tatooine"
       # ```
@@ -3359,7 +3359,7 @@ module Faker
       def self.planet; end
 
       # Produces a species from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.specie #=> "Gungan"
       # ```
@@ -3367,7 +3367,7 @@ module Faker
       def self.specie; end
 
       # Produces a vehicle from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.vehicle #=> "Sandcrawler"
       # ```
@@ -3375,7 +3375,7 @@ module Faker
       def self.vehicle; end
 
       # Produces a wookiee sentence from Star Wars.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.wookiee_sentence #=> "Yrroonn ru ooma roo ahuma ur roooarrgh hnn-rowr."
       # ```
@@ -3383,13 +3383,13 @@ module Faker
       def self.wookiee_sentence; end
 
       # Produces a quote from Star Wars.
-      # 
+      #
       # _@param_ `character` — The name of a character to derive a quote from.
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.quote #=> "Aren't you a little short for a Stormtrooper?"
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Movies::StarWars.quote(character: "leia_organa")
       #   #=> "Aren't you a little short for a Stormtrooper?"
@@ -3424,7 +3424,7 @@ module Faker
 
     class Ghostbusters < Faker::Base
       # Produces an actor from Ghostbusters.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Ghostbusters.actor #=> "Bill Murray"
       # ```
@@ -3432,7 +3432,7 @@ module Faker
       def self.actor; end
 
       # Produces a character from Ghostbusters.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Ghostbusters.character #=> "Dr. Egon Spengler"
       # ```
@@ -3440,7 +3440,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from Ghostbusters.
-      # 
+      #
       # ```ruby
       # Faker::Movies::Ghostbusters.quote
       #   #=> "I tried to think of the most harmless thing. Something I loved from my childhood. Something that could never ever possibly destroy us. Mr. Stay Puft!"
@@ -3451,7 +3451,7 @@ module Faker
 
     class HarryPotter < Faker::Base
       # Produces a character from Harry Potter.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HarryPotter.character #=> "Harry Potter"
       # ```
@@ -3459,7 +3459,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Harry Potter.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HarryPotter.location #=> "Hogwarts"
       # ```
@@ -3467,7 +3467,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Harry Potter.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HarryPotter.quote #=> "I solemnly swear that I am up to good."
       # ```
@@ -3475,7 +3475,7 @@ module Faker
       def self.quote; end
 
       # Produces a book from Harry Potter.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HarryPotter.book #=> "Harry Potter and the Chamber of Secrets"
       # ```
@@ -3483,7 +3483,7 @@ module Faker
       def self.book; end
 
       # Produces a house from Harry Potter.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HarryPotter.house #=> "Gryffindor"
       # ```
@@ -3491,7 +3491,7 @@ module Faker
       def self.house; end
 
       # Produces a spell from Harry Potter.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HarryPotter.spell #=> "Reparo"
       # ```
@@ -3501,7 +3501,7 @@ module Faker
 
     class PrincessBride < Faker::Base
       # Produces a character from The Princess Bride.
-      # 
+      #
       # ```ruby
       # Faker::Movies::PrincessBride.character #=> "Dread Pirate Roberts"
       # ```
@@ -3509,7 +3509,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from The Princess Bride.
-      # 
+      #
       # ```ruby
       # Faker::Movies::PrincessBride.quote
       #   #=> "Hello. My name is Inigo Montoya. You killed my father. Prepare to die!"
@@ -3520,7 +3520,7 @@ module Faker
 
     class VForVendetta < Faker::Base
       # Produces a character from V For Vendetta.
-      # 
+      #
       # ```ruby
       # Faker::Movies::VForVendetta.character #=> "V"
       # ```
@@ -3528,7 +3528,7 @@ module Faker
       def self.character; end
 
       # Produces a speech from V For Vendetta.
-      # 
+      #
       # ```ruby
       # Faker::Movies::VForVendetta.speech
       #   #=> "Remember, remember, the Fifth of November, the Gunpowder Treason and Plot. I know of no reason why the Gunpowder Treason should ever be forgot..."
@@ -3537,7 +3537,7 @@ module Faker
       def self.speech; end
 
       # Produces a quote from V For Vendetta.
-      # 
+      #
       # ```ruby
       # Faker::Movies::VForVendetta.quote
       #   #=> "People should not be afraid of their governments. Governments should be afraid of their people."
@@ -3548,7 +3548,7 @@ module Faker
 
     class LordOfTheRings < Faker::Base
       # Produces a character from Lord of the Rings.
-      # 
+      #
       # ```ruby
       # Faker::Movies::LordOfTheRings.character #=> "Legolas"
       # ```
@@ -3556,7 +3556,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Lord of the Rings.
-      # 
+      #
       # ```ruby
       # Faker::Movies::LordOfTheRings.location #=> "Helm's Deep"
       # ```
@@ -3564,7 +3564,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Lord of the Rings.
-      # 
+      #
       # ```ruby
       # Faker::Movies::LordOfTheRings.quote
       #   #=> "I wish the Ring had never come to me. I wish none of this had happened."
@@ -3575,7 +3575,7 @@ module Faker
 
     class BackToTheFuture < Faker::Base
       # Produces a character from Back to the Future.
-      # 
+      #
       # ```ruby
       # Faker::Movies::BackToTheFuture.character #=> "Marty McFly"
       # ```
@@ -3583,7 +3583,7 @@ module Faker
       def self.character; end
 
       # Produces a date from Back to the Future.
-      # 
+      #
       # ```ruby
       # Faker::Movies::BackToTheFuture.date #=> "November 5, 1955"
       # ```
@@ -3591,7 +3591,7 @@ module Faker
       def self.date; end
 
       # Produces a quote from Back to the Future.
-      # 
+      #
       # ```ruby
       # Faker::Movies::BackToTheFuture.quote
       #   #=> "Roads? Where we're going, we don't need roads."
@@ -3602,7 +3602,7 @@ module Faker
 
     class HitchhikersGuideToTheGalaxy < Faker::Base
       # Produces a character from The Hitchhiker's Guide to the Galaxy.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HitchhikersGuideToTheGalaxy.character #=> "Marvin"
       # ```
@@ -3610,7 +3610,7 @@ module Faker
       def self.character; end
 
       # Produces a location from The Hitchhiker's Guide to the Galaxy.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HitchhikersGuideToTheGalaxy.location
       #   #=> "Arthur Dent's house"
@@ -3619,7 +3619,7 @@ module Faker
       def self.location; end
 
       # Produces a Marvin quote from The Hitchhiker's Guide to the Galaxy.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote
       #   #=> "Life? Don't talk to me about life."
@@ -3628,7 +3628,7 @@ module Faker
       def self.marvin_quote; end
 
       # Produces a planet from The Hitchhiker's Guide to the Galaxy.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HitchhikersGuideToTheGalaxy.planet
       #   #=> "Magrathea"
@@ -3637,7 +3637,7 @@ module Faker
       def self.planet; end
 
       # Produces a quote from The Hitchhiker's Guide to the Galaxy.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HitchhikersGuideToTheGalaxy.quote
       #   #=> "In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move."
@@ -3646,7 +3646,7 @@ module Faker
       def self.quote; end
 
       # Produces a species from The Hitchhiker's Guide to the Galaxy.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HitchhikersGuideToTheGalaxy.specie
       #   #=> "Perfectly Normal Beast"
@@ -3655,7 +3655,7 @@ module Faker
       def self.specie; end
 
       # Produces a starship from The Hitchhiker's Guide to the Galaxy.
-      # 
+      #
       # ```ruby
       # Faker::Movies::HitchhikersGuideToTheGalaxy.starship
       #   #=> "Vogon Constructor Fleet"
@@ -3667,7 +3667,7 @@ module Faker
 
   class Artist < Faker::Base
     # Produces the name of an artist.
-    # 
+    #
     # ```ruby
     # Faker::Artist.name #=> "Michelangelo"
     # ```
@@ -3677,44 +3677,44 @@ module Faker
 
   class Avatar < Faker::Base
     # Produces a URL for an avatar from robohash.org
-    # 
+    #
     # _@param_ `slug`
-    # 
+    #
     # _@param_ `size` — image size in pixels, in the format of 'AxB'
-    # 
+    #
     # _@param_ `format` — The image file format
-    # 
+    #
     # _@param_ `set` — The avatar set to use
-    # 
+    #
     # _@param_ `bgset` — The background set to use
-    # 
+    #
     # _@return_ — A robohash.org URL
-    # 
+    #
     # ```ruby
     # Faker::Avatar.image
     #   #=> "https://robohash.org/sitsequiquia.png?size=300x300&set=set1"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Avatar.image(slug: "my-own-slug")
     #   #=> "https://robohash.org/my-own-slug.png?size=300x300&set=set1"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Avatar.image(slug: "my-own-slug", size: "50x50")
     #   #=> "https://robohash.org/my-own-slug.png?size=50x50&set=set1"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg")
     #   #=> "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "bmp")
     #   #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "bmp", set: "set1", bgset: "bg1")
     #   #=> "https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1"
@@ -3738,7 +3738,7 @@ module Faker
 
   class Coffee < Faker::Base
     # Produces a random blend name.
-    # 
+    #
     # ```ruby
     # Faker::Coffee.blend_name #=> "Major Java"
     # ```
@@ -3746,7 +3746,7 @@ module Faker
     def self.blend_name; end
 
     # Produces a random coffee origin place.
-    # 
+    #
     # ```ruby
     # Faker::Coffee.origin #=> "Oaxaca, Mexico"
     # ```
@@ -3754,7 +3754,7 @@ module Faker
     def self.origin; end
 
     # Produces a random coffee variety.
-    # 
+    #
     # ```ruby
     # Faker::Coffee.variety #=> "Red Bourbon"
     # ```
@@ -3762,7 +3762,7 @@ module Faker
     def self.variety; end
 
     # Produces a string containing a random description of a coffee's taste.
-    # 
+    #
     # ```ruby
     # Faker::Coffee.notes #=> "dull, tea-like, cantaloupe, soy sauce, marshmallow"
     # ```
@@ -3770,7 +3770,7 @@ module Faker
     def self.notes; end
 
     # Produces a random coffee taste intensity.
-    # 
+    #
     # ```ruby
     # Faker::Coffee.intensifier #=> "mild"
     # ```
@@ -3783,7 +3783,7 @@ module Faker
 
   class Crypto < Faker::Base
     # Produces an MD5 hash.
-    # 
+    #
     # ```ruby
     # Faker::Crypto.md5 #=> "6b5ed240042e8a65c55ddb826c3408e6"
     # ```
@@ -3791,7 +3791,7 @@ module Faker
     def self.md5; end
 
     # Produces a SHA1 hash.
-    # 
+    #
     # ```ruby
     # Faker::Crypto.sha1 #=> "4e99e31c51eef8b2d290e709f757f92e558a503f"
     # ```
@@ -3799,7 +3799,7 @@ module Faker
     def self.sha1; end
 
     # Produces a SHA256 hash.
-    # 
+    #
     # ```ruby
     # Faker::Crypto.sha256 #=> "51e4dbb424cd9db1ec5fb989514f2a35652ececef33f21c8dd1fd61bb8e3929d"
     # ```
@@ -3809,7 +3809,7 @@ module Faker
 
   class Device < Faker::Base
     # Produces a build number between 1 and 500.
-    # 
+    #
     # ```ruby
     # Faker::Device.build_number #=> 5
     # ```
@@ -3817,7 +3817,7 @@ module Faker
     def self.build_number; end
 
     # Produces the name of a manufacturer for a device.
-    # 
+    #
     # ```ruby
     # Faker::Device.manufacturer #=> "Apple"
     # ```
@@ -3825,7 +3825,7 @@ module Faker
     def self.manufacturer; end
 
     # Produces a model name for a device.
-    # 
+    #
     # ```ruby
     # Faker::Device.model_name #=> "iPhone 4"
     # ```
@@ -3833,7 +3833,7 @@ module Faker
     def self.model_name; end
 
     # Produces the name of a platform for a device.
-    # 
+    #
     # ```ruby
     # Faker::Device.platform #=> "webOS"
     # ```
@@ -3841,7 +3841,7 @@ module Faker
     def self.platform; end
 
     # Produces a serial code for a device.
-    # 
+    #
     # ```ruby
     # Faker::Device.serial #=> "ejfjnRNInxh0363JC2WM"
     # ```
@@ -3849,7 +3849,7 @@ module Faker
     def self.serial; end
 
     # Produces a version number between 1 and 1000.
-    # 
+    #
     # ```ruby
     # Faker::Device.version #=> 42
     # ```
@@ -3859,7 +3859,7 @@ module Faker
 
   class Esport < Faker::Base
     # Produces the name of a professional eSports player.
-    # 
+    #
     # ```ruby
     # Faker::Esport.player #=> "Crimsix"
     # ```
@@ -3867,7 +3867,7 @@ module Faker
     def self.player; end
 
     # Produces the name of an eSports team.
-    # 
+    #
     # ```ruby
     # Faker::Esport.team #=> "CLG"
     # ```
@@ -3875,7 +3875,7 @@ module Faker
     def self.team; end
 
     # Produces the name of an eSports league.
-    # 
+    #
     # ```ruby
     # Faker::Esport.league #=> "IEM"
     # ```
@@ -3883,7 +3883,7 @@ module Faker
     def self.league; end
 
     # Produces the name of an eSports event.
-    # 
+    #
     # ```ruby
     # Faker::Esport.event #=> "ESL Cologne"
     # ```
@@ -3891,7 +3891,7 @@ module Faker
     def self.event; end
 
     # Produces the name of a game played as an eSport.
-    # 
+    #
     # ```ruby
     # Faker::Esport.game #=> "Dota 2"
     # ```
@@ -3901,7 +3901,7 @@ module Faker
 
   class Gender < Faker::Base
     # Produces the name of a gender identity.
-    # 
+    #
     # ```ruby
     # Faker::Gender.type #=> "Non-binary"
     # ```
@@ -3909,7 +3909,7 @@ module Faker
     def self.type; end
 
     # Produces either 'Male' or 'Female'.
-    # 
+    #
     # ```ruby
     # Faker::Gender.binary_type #=> "Female"
     # ```
@@ -3917,7 +3917,7 @@ module Faker
     def self.binary_type; end
 
     # Produces either 'f' or 'm'.
-    # 
+    #
     # ```ruby
     # Faker::Gender.short_binary_type #=> "f"
     # ```
@@ -3930,7 +3930,7 @@ module Faker
   # Worry not! Hollywood-grade technical talk is ready to fill out any form where you need to look smart.
   class Hacker < Faker::Base
     # Produces something smart.
-    # 
+    #
     # ```ruby
     # Faker::Hacker.say_something_smart
     #   #=> "Try to compress the SQL interface, maybe it will program the back-end hard drive!"
@@ -3939,7 +3939,7 @@ module Faker
     def self.say_something_smart; end
 
     # Short technical abbreviations.
-    # 
+    #
     # ```ruby
     # Faker::Hacker.abbreviation #=> "RAM"
     # ```
@@ -3947,7 +3947,7 @@ module Faker
     def self.abbreviation; end
 
     # Hacker-centric adjectives.
-    # 
+    #
     # ```ruby
     # Faker::Hacker.adjective #=> "open-source"
     # ```
@@ -3955,7 +3955,7 @@ module Faker
     def self.adjective; end
 
     # Only the best hacker-related nouns.
-    # 
+    #
     # ```ruby
     # Faker::Hacker.noun #=> "bandwidth"
     # ```
@@ -3963,7 +3963,7 @@ module Faker
     def self.noun; end
 
     # Actions that hackers take.
-    # 
+    #
     # ```ruby
     # Faker::Hacker.verb #=> "bypass"
     # ```
@@ -3971,7 +3971,7 @@ module Faker
     def self.verb; end
 
     # Produces a verb that ends with '-ing'.
-    # 
+    #
     # ```ruby
     # Faker::Hacker.ingverb #=> "synthesizing"
     # ```
@@ -3984,7 +3984,7 @@ module Faker
 
   class Nation < Faker::Base
     # Produces a random nationality.
-    # 
+    #
     # ```ruby
     # Faker::Nation.nationality #=> "Nepalese"
     # ```
@@ -3992,7 +3992,7 @@ module Faker
     def self.nationality; end
 
     # Produces a random national flag emoji.
-    # 
+    #
     # ```ruby
     # Faker::Nation.flag #=> "🇫🇮"
     # ```
@@ -4000,7 +4000,7 @@ module Faker
     def self.flag; end
 
     # Produces a random national language.
-    # 
+    #
     # ```ruby
     # Faker::Nation.language #=> "Nepali"
     # ```
@@ -4008,7 +4008,7 @@ module Faker
     def self.language; end
 
     # Produces a random capital city.
-    # 
+    #
     # ```ruby
     # Faker::Nation.capital_city #=> "Kathmandu"
     # ```
@@ -4016,7 +4016,7 @@ module Faker
     def self.capital_city; end
 
     # Produces a random national sport.
-    # 
+    #
     # ```ruby
     # Faker::Nation.national_sport #=> "dandi biyo"
     # ```
@@ -4026,9 +4026,9 @@ module Faker
 
   class Number < Faker::Base
     # Produce a random number.
-    # 
+    #
     # _@param_ `digits` — Number of digits that the generated number should have.
-    # 
+    #
     # ```ruby
     # Faker::Number.number(digits: 10) #=> 1968353479
     # ```
@@ -4036,9 +4036,9 @@ module Faker
     def self.number(legacy_digits = T.unsafe(nil), digits: 10); end
 
     # Produce a random number with a leading zero.
-    # 
+    #
     # _@param_ `digits` — Number of digits that the generated number should have.
-    # 
+    #
     # ```ruby
     # Faker::Number.leading_zero_number(digits: 10) #=> "0669336915"
     # ```
@@ -4046,9 +4046,9 @@ module Faker
     def self.leading_zero_number(legacy_digits = T.unsafe(nil), digits: 10); end
 
     # Produce a number with a number of digits, preserves leading zeroes.
-    # 
+    #
     # _@param_ `digits` — Number of digits that the generated number should have.
-    # 
+    #
     # ```ruby
     # Faker::Number.decimal_part(digits: 2) #=> "09"
     # ```
@@ -4056,11 +4056,11 @@ module Faker
     def self.decimal_part(legacy_digits = T.unsafe(nil), digits: 10); end
 
     # Produces a float.
-    # 
+    #
     # _@param_ `l_digits` — Number of digits that the generated decimal should have to the left of the decimal point.
-    # 
+    #
     # _@param_ `r_digits` — Number of digits that the generated decimal should have to the right of the decimal point.
-    # 
+    #
     # ```ruby
     # Faker::Number.decimal(l_digits: 2) #=> 11.88
     # Faker::Number.decimal(l_digits: 3, r_digits: 3) #=> 181.843
@@ -4076,7 +4076,7 @@ module Faker
     def self.decimal(legacy_l_digits = T.unsafe(nil), legacy_r_digits = T.unsafe(nil), l_digits: 5, r_digits: 2); end
 
     # Produces a non-zero single-digit integer.
-    # 
+    #
     # ```ruby
     # Faker::Number.non_zero_digit #=> 8
     # ```
@@ -4084,7 +4084,7 @@ module Faker
     def self.non_zero_digit; end
 
     # Produces a single-digit integer.
-    # 
+    #
     # ```ruby
     # Faker::Number.digit #=> 1
     # ```
@@ -4092,9 +4092,9 @@ module Faker
     def self.digit; end
 
     # Produces a number in hexadecimal format.
-    # 
+    #
     # _@param_ `digits` — Number of digits in the he
-    # 
+    #
     # ```ruby
     # Faker::Number.hexadecimal(digits: 3) #=> "e74"
     # ```
@@ -4102,11 +4102,11 @@ module Faker
     def self.hexadecimal(legacy_digits = T.unsafe(nil), digits: 6); end
 
     # Produces a float given a mean and standard deviation.
-    # 
+    #
     # _@param_ `mean`
-    # 
+    #
     # _@param_ `standard_deviation`
-    # 
+    #
     # ```ruby
     # Faker::Number.normal(mean: 50, standard_deviation: 3.5) #=> 47.14669604069156
     # ```
@@ -4121,11 +4121,11 @@ module Faker
     def self.normal(legacy_mean = T.unsafe(nil), legacy_standard_deviation = T.unsafe(nil), mean: 1, standard_deviation: 1); end
 
     # Produces a number between two provided values. Boundaries are inclusive.
-    # 
+    #
     # _@param_ `from` — The lowest number to include.
-    # 
+    #
     # _@param_ `to` — The highest number to include.
-    # 
+    #
     # ```ruby
     # Faker::Number.between(from: 1, to: 10) #=> 7
     # ```
@@ -4140,9 +4140,9 @@ module Faker
     def self.between(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), from: 1.00, to: 5000.00); end
 
     # Produces a number within two provided values. Boundaries are inclusive or exclusive depending on the range passed.
-    # 
+    #
     # _@param_ `range` — The range from which to generate a number.
-    # 
+    #
     # ```ruby
     # Faker::Number.within(range: 1..10) #=> 7
     # ```
@@ -4150,11 +4150,11 @@ module Faker
     def self.within(legacy_range = T.unsafe(nil), range: 1.00..5000.00); end
 
     # Produces a positive float.
-    # 
+    #
     # _@param_ `from` — The lower boundary.
-    # 
+    #
     # _@param_ `to` — The higher boundary.
-    # 
+    #
     # ```ruby
     # Faker::Number.positive #=> 235.59238499107653
     # ```
@@ -4169,11 +4169,11 @@ module Faker
     def self.positive(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), from: 1.00, to: 5000.00); end
 
     # Produces a negative float.
-    # 
+    #
     # _@param_ `from` — The lower boundary.
-    # 
+    #
     # _@param_ `to` — The higher boundary.
-    # 
+    #
     # ```ruby
     # Faker::Number.negative #=> -4480.042585669558
     # ```
@@ -4202,13 +4202,13 @@ module Faker
 
   class Source < Faker::Base
     # Produces source code for Hello World in a given language.
-    # 
+    #
     # _@param_ `lang` — The programming language to use
-    # 
+    #
     # ```ruby
     # Faker::Source.hello_world #=> "puts 'Hello World!'"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Source.hello_world(lang: :javascript)
     #   #=> "alert('Hello World!');"
@@ -4217,15 +4217,15 @@ module Faker
     def self.hello_world(legacy_lang = T.unsafe(nil), lang: :ruby); end
 
     # Produces source code for printing a string in a given language.
-    # 
+    #
     # _@param_ `str` — The string to print
-    # 
+    #
     # _@param_ `lang` — The programming language to use
-    # 
+    #
     # ```ruby
     # Faker::Source.print #=> "puts 'faker_string_to_print'"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Source.print(str: 'foo bar', lang: :javascript)
     #   #=> "console.log('foo bar');"
@@ -4241,13 +4241,13 @@ module Faker
     def self.print(legacy_str = T.unsafe(nil), legacy_lang = T.unsafe(nil), str: 'some string', lang: :ruby); end
 
     # Produces source code for printing 1 through 10 in a given language.
-    # 
+    #
     # _@param_ `lang` — The programming language to use
-    # 
+    #
     # ```ruby
     # Faker::Source.print_1_to_10 #=> "(1..10).each { |i| puts i }"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Source.print_1_to_10(lang: :javascript)
     # # => "for (let i=0; i<10; i++) {
@@ -4260,9 +4260,9 @@ module Faker
 
   class Stripe < Faker::Base
     # Produces a random valid card number.
-    # 
+    #
     # _@param_ `card_type` — Specific valid card type.
-    # 
+    #
     # ```ruby
     # Faker::Stripe.valid_card #=> "4242424242424242"
     # Faker::Stripe.valid_card(card_type: "visa_debit") #=> "4000056655665556"
@@ -4271,9 +4271,9 @@ module Faker
     def self.valid_card(legacy_card_type = T.unsafe(nil), card_type: nil); end
 
     # Produces a random valid Stripe token.
-    # 
+    #
     # _@param_ `card_type` — Specific valid card type.
-    # 
+    #
     # ```ruby
     # Faker::Stripe.valid_token #=> "tok_visa"
     # Faker::Stripe.valid_token(card_type: "mc_debit") #=> "tok_mastercard_debit"
@@ -4282,7 +4282,7 @@ module Faker
     def self.valid_token(legacy_card_type = T.unsafe(nil), card_type: nil); end
 
     # Produces a random invalid card number.
-    # 
+    #
     # ```ruby
     # Faker::Stripe.invalid_card #=> "4000000000000002"
     # Faker::Stripe.invalid_card(card_error: "addressZipFail") #=> "4000000000000010"
@@ -4291,7 +4291,7 @@ module Faker
     def self.invalid_card(legacy_card_error = T.unsafe(nil), card_error: nil); end
 
     # Produces a random month in two digits format.
-    # 
+    #
     # ```ruby
     # Faker::Stripe.month #=> "10"
     # ```
@@ -4299,7 +4299,7 @@ module Faker
     def self.month; end
 
     # Produces a random year that is always in the future.
-    # 
+    #
     # ```ruby
     # Faker::Stripe.year #=> "2018" # This will always be a year in the future
     # ```
@@ -4307,9 +4307,9 @@ module Faker
     def self.year; end
 
     # Produces a random ccv number.
-    # 
+    #
     # _@param_ `card_type` — Specific valid card type.
-    # 
+    #
     # ```ruby
     # Faker::Stripe.ccv #=> "123"
     # Faker::Stripe.ccv(card_type: "amex") #=> "1234"
@@ -4321,7 +4321,7 @@ module Faker
   class TvShows
     class Buffy < Faker::Base
       # Produces a character from Buffy the Vampire Slayer.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Buffy.character #=> "Buffy Summers"
       # ```
@@ -4329,7 +4329,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from Buffy the Vampire Slayer.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Buffy.quote #=> "If the apocalypse comes, beep me."
       # ```
@@ -4337,7 +4337,7 @@ module Faker
       def self.quote; end
 
       # Produces a celebrity from Buffy the Vampire Slayer.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Buffy.celebrity #=> "John Ritter"
       # ```
@@ -4345,7 +4345,7 @@ module Faker
       def self.celebrity; end
 
       # Produces a big bad from Buffy the Vampire Slayer.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Buffy.big_bad #=> "Glory"
       # ```
@@ -4353,7 +4353,7 @@ module Faker
       def self.big_bad; end
 
       # Produces an episode from Buffy the Vampire Slayer.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Buffy.episode #=> "Once More, with Feeling"
       # ```
@@ -4363,7 +4363,7 @@ module Faker
 
     class Suits < Faker::Base
       # Produces a character from Suits.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Suits.character #=> "Harvey Specter"
       # ```
@@ -4371,7 +4371,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from Suits.
-      # 
+      #
       # Faker::TvShows::Suits.quote #=> "Don't play the odds, play the man."
       sig { returns(::String) }
       def self.quote; end
@@ -4379,7 +4379,7 @@ module Faker
 
     class DrWho < Faker::Base
       # Produces a character from Doctor Who.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DrWho.character #=> "Captain Jack Harkness"
       # ```
@@ -4387,7 +4387,7 @@ module Faker
       def self.character; end
 
       # Produces an iteration of The Doctor from Doctor Who.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DrWho.the_doctor #=> "Ninth Doctor"
       # ```
@@ -4395,7 +4395,7 @@ module Faker
       def self.the_doctor; end
 
       # Produces an actor from Doctor Who.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DrWho.actor #=> "Matt Smith"
       # ```
@@ -4403,7 +4403,7 @@ module Faker
       def self.actor; end
 
       # Produces a catch phrase from Doctor Who.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DrWho.catch_phrase #=> "Fantastic!"
       # ```
@@ -4411,7 +4411,7 @@ module Faker
       def self.catch_phrase; end
 
       # Produces a quote from Doctor Who.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DrWho.quote #=> "Lots of planets have a north!"
       # ```
@@ -4419,7 +4419,7 @@ module Faker
       def self.quote; end
 
       # Produces a villain from Doctor Who.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DrWho.villain #=> "The Master"
       # ```
@@ -4427,7 +4427,7 @@ module Faker
       def self.villain; end
 
       # Produces a species from Doctor Who.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DrWho.specie #=> "Dalek"
       # ```
@@ -4437,7 +4437,7 @@ module Faker
 
     class Friends < Faker::Base
       # Produces a character from Friends.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Friends.character #=> "Rachel Green"
       # ```
@@ -4445,7 +4445,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Friends.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Friends.location #=> "Central Perk"
       # ```
@@ -4453,7 +4453,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Friends.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Friends.quote #=> "We were on a break!"
       # ```
@@ -4463,7 +4463,7 @@ module Faker
 
     class RuPaul < Faker::Base
       # Produces a quote from RuPaul's Drag Race.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::RuPaul.quote #=> "That's Funny, Tell Another One."
       # ```
@@ -4471,7 +4471,7 @@ module Faker
       def self.quote; end
 
       # Produces a queen from RuPaul's Drag Race.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::RuPaul.queen #=> "Latrice Royale"
       # ```
@@ -4481,7 +4481,7 @@ module Faker
 
     class Futurama < Faker::Base
       # Produces a character from Futurama.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Futurama.character #=> "Amy Wong"
       # ```
@@ -4489,7 +4489,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Futurama.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Futurama.location #=> "Wormulon"
       # ```
@@ -4497,7 +4497,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Futurama.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Futurama.quote
       #   #=> "Ugh, it's like a party in my mouth & everyone's throwing up."
@@ -4506,7 +4506,7 @@ module Faker
       def self.quote; end
 
       # Produces a catchphrase from Hermes Conrad.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Futurama.hermes_catchphrase
       #   #=> "Great foo of bar!"
@@ -4517,7 +4517,7 @@ module Faker
 
     class NewGirl < Faker::Base
       # Produces a character from New Girl.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::NewGirl.character #=> "Jessica Day"
       # ```
@@ -4525,7 +4525,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from New Girl.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::NewGirl.quote
       #   #=> "Are you cooking a frittata in a sauce pan? What is this - prison?"
@@ -4536,7 +4536,7 @@ module Faker
 
     class Seinfeld < Faker::Base
       # Produces a business from Seinfeld.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Seinfeld.business #=> "Kruger Industrial Smoothing"
       # ```
@@ -4544,7 +4544,7 @@ module Faker
       def self.business; end
 
       # Produces a character from Seinfeld.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Seinfeld.character #=> "George Costanza"
       # ```
@@ -4552,7 +4552,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from Seinfeld.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Seinfeld.quote
       #   #=> "I'm not a lesbian. I hate men, but I'm not a lesbian."
@@ -4563,7 +4563,7 @@ module Faker
 
     class Simpsons < Faker::Base
       # Produces a character from The Simpsons.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Simpsons.character #=> "Charles Montgomery Burns"
       # ```
@@ -4571,7 +4571,7 @@ module Faker
       def self.character; end
 
       # Produces a location from The Simpsons.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Simpsons.location #=> "Moe's Tavern"
       # ```
@@ -4579,7 +4579,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from The Simpsons.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Simpsons.quote
       #   #=> "It takes two to lie: one to lie and one to listen."
@@ -4588,7 +4588,7 @@ module Faker
       def self.quote; end
 
       # Produces an episode title from The Simpsons.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Simpsons.episode_title
       #   #=> "Two Cars in Every Garage and Three Eyes on Every Fish"
@@ -4599,7 +4599,7 @@ module Faker
 
     class Stargate < Faker::Base
       # Produces a character from Stargate.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Stargate.character #=> "Jack O'Neill"
       # ```
@@ -4607,7 +4607,7 @@ module Faker
       def self.character; end
 
       # Produces a planet from Stargate.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Stargate.planet #=> "Abydos"
       # ```
@@ -4615,7 +4615,7 @@ module Faker
       def self.planet; end
 
       # Produces a quote from Stargate.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Stargate.quote
       #   #=> "General, request permission to beat the crap out of this man."
@@ -4626,7 +4626,7 @@ module Faker
 
     class Community < Faker::Base
       # Produces a character from Community.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Community.characters #=> "Jeff Winger"
       # ```
@@ -4634,7 +4634,7 @@ module Faker
       def self.characters; end
 
       # Produces a quote from Community.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::Community.quotes
       #   #=> "I fear a political career could shine a negative light on my drug dealing."
@@ -4645,7 +4645,7 @@ module Faker
 
     class StarTrek < Faker::Base
       # Produces a character from Star Trek.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::StarTrek.character #=> "Spock"
       # ```
@@ -4653,7 +4653,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Star Trek.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::StarTrek.location #=> "Cardassia"
       # ```
@@ -4661,7 +4661,7 @@ module Faker
       def self.location; end
 
       # Produces a species from Star Trek.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::StarTrek.specie #=> "Ferengi"
       # ```
@@ -4669,7 +4669,7 @@ module Faker
       def self.specie; end
 
       # Produces a villain from Star Trek.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::StarTrek.villain #=> "Khan Noonien Singh"
       # ```
@@ -4679,7 +4679,7 @@ module Faker
 
     class FamilyGuy < Faker::Base
       # Produces a character from Family Guy.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::FamilyGuy.character #=> "Peter Griffin"
       # ```
@@ -4687,7 +4687,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Family Guy.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::FamilyGuy.location #=> "James Woods High"
       # ```
@@ -4695,7 +4695,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Family Guy.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::FamilyGuy.quote
       #   #=> "It's Peanut Butter Jelly Time."
@@ -4706,7 +4706,7 @@ module Faker
 
     class HeyArnold < Faker::Base
       # Produces a character from Hey Arnold!
-      # 
+      #
       # ```ruby
       # Faker::TvShows::HeyArnold.character #=> "Arnold"
       # ```
@@ -4714,7 +4714,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Hey Arnold!
-      # 
+      #
       # ```ruby
       # Faker::TvShows::HeyArnold.location #=> "Big Bob's Beeper Emporium"
       # ```
@@ -4722,7 +4722,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Hey Arnold!
-      # 
+      #
       # ```ruby
       # Faker::TvShows::HeyArnold.quote #=> "Stoop Kid's afraid to leave his stoop!"
       # ```
@@ -4732,7 +4732,7 @@ module Faker
 
     class SouthPark < Faker::Base
       # Produces a character from South Park.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SouthPark.character #=> "Mr. Garrison"
       # ```
@@ -4740,7 +4740,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from South Park.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SouthPark.quote
       #   #=> "I'm just getting a little cancer Stan."
@@ -4751,7 +4751,7 @@ module Faker
 
     class TwinPeaks < Faker::Base
       # Produces a character from Twin Peaks.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TwinPeaks.character #=> "Dale Cooper"
       # ```
@@ -4759,7 +4759,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Twin Peaks.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TwinPeaks.location #=> "Black Lodge"
       # ```
@@ -4767,7 +4767,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Twin Peaks.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TwinPeaks.quote
       #   #=> "The owls are not what they seem."
@@ -4778,7 +4778,7 @@ module Faker
 
     class TheExpanse < Faker::Base
       # Produces a character from The Expanse.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheExpanse.character #=> "Jim Holden"
       # ```
@@ -4786,7 +4786,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from The Expanse.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheExpanse.quote #=> "I am that guy."
       # ```
@@ -4794,7 +4794,7 @@ module Faker
       def self.quote; end
 
       # Produces a location from The Expanse.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheExpanse.location #=> "Ganymede"
       # ```
@@ -4802,7 +4802,7 @@ module Faker
       def self.location; end
 
       # Produces a ship from The Expanse.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheExpanse.ship #=> "Nauvoo"
       # ```
@@ -4812,7 +4812,7 @@ module Faker
 
     class BreakingBad < Faker::Base
       # Produces the name of a character from Breaking Bad.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::BreakingBad.character #=> "Walter White"
       # ```
@@ -4820,7 +4820,7 @@ module Faker
       def self.character; end
 
       # Produces the name of an episode from Breaking Bad.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::BreakingBad.episode #=> "Fly"
       # ```
@@ -4830,7 +4830,7 @@ module Faker
 
     class TheITCrowd < Faker::Base
       # Produces an actor from The IT Crowd.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheITCrowd.actor #=> "Chris O'Dowd"
       # ```
@@ -4838,7 +4838,7 @@ module Faker
       def self.actor; end
 
       # Produces a character from The IT Crowd.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheITCrowd.character #=> "Roy Trenneman"
       # ```
@@ -4846,7 +4846,7 @@ module Faker
       def self.character; end
 
       # Produces an email from The IT Crowd.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheITCrowd.email #=> "roy.trenneman@reynholm.test"
       # ```
@@ -4854,7 +4854,7 @@ module Faker
       def self.email; end
 
       # Produces a quote from The IT Crowd.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheITCrowd.quote
       #   #=> "Hello, IT. Have you tried turning it off and on again?"
@@ -4865,7 +4865,7 @@ module Faker
 
     class VentureBros < Faker::Base
       # Produces a character from The Venture Bros.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::VentureBros.character #=> "Scaramantula"
       # ```
@@ -4873,7 +4873,7 @@ module Faker
       def self.character; end
 
       # Produces an organization from The Venture Bros.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::VentureBros.organization
       #   #=> "Guild of Calamitous Intent"
@@ -4882,7 +4882,7 @@ module Faker
       def self.organization; end
 
       # Produces a vehicle from The Venture Bros.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::VentureBros.vehicle #=> "Monarchmobile"
       # ```
@@ -4890,7 +4890,7 @@ module Faker
       def self.vehicle; end
 
       # Produces a quote from The Venture Bros.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::VentureBros.quote
       #   #=> "Revenge, like gazpacho soup, is best served cold, precise, and merciless."
@@ -4901,7 +4901,7 @@ module Faker
 
     class MichaelScott < Faker::Base
       # Produces a quote from Michael Scott.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::MichaelScott.quote
       #   #=> "I am Beyoncé, always."
@@ -4912,7 +4912,7 @@ module Faker
 
     class ParksAndRec < Faker::Base
       # Produces a character from Parks and Recreation.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::ParksAndRec.character #=> "Leslie Knope"
       # ```
@@ -4920,7 +4920,7 @@ module Faker
       def self.character; end
 
       # Produces a city from Parks and Recreation.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::ParksAndRec.city #=> "Pawnee"
       # ```
@@ -4930,7 +4930,7 @@ module Faker
 
     class RickAndMorty < Faker::Base
       # Produces a character from Rick and Morty.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::RickAndMorty.character #=> "Rick Sanchez"
       # ```
@@ -4938,7 +4938,7 @@ module Faker
       def self.character; end
 
       # Produces a location from Rick and Morty.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::RickAndMorty.location #=> "Dimension C-132"
       # ```
@@ -4946,7 +4946,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from Rick and Morty.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::RickAndMorty.quote
       #   #=> "Ohh yea, you gotta get schwifty."
@@ -4957,7 +4957,7 @@ module Faker
 
     class SiliconValley < Faker::Base
       # Produces a character from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.character #=> "Jian Yang"
       # ```
@@ -4965,7 +4965,7 @@ module Faker
       def self.character; end
 
       # Produces a company from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.company #=> "Bachmanity"
       # ```
@@ -4973,7 +4973,7 @@ module Faker
       def self.company; end
 
       # Produces a quote from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.quote
       #   #=> "I don't want to live in a world where someone else is making the world a better place better than we are."
@@ -4982,7 +4982,7 @@ module Faker
       def self.quote; end
 
       # Produces an app from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.app #=> "Nip Alert"
       # ```
@@ -4990,7 +4990,7 @@ module Faker
       def self.app; end
 
       # Produces an invention from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.invention
       #   #=> "Tres Comas Tequila"
@@ -4999,7 +4999,7 @@ module Faker
       def self.invention; end
 
       # Produces a motto from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.motto
       #   #=> "Our products are products, producing unrivaled results"
@@ -5008,7 +5008,7 @@ module Faker
       def self.motto; end
 
       # Produces a URL from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.url #=> "http://www.piedpiper.com"
       # ```
@@ -5016,7 +5016,7 @@ module Faker
       def self.url; end
 
       # Produces an email address from Silicon Valley.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::SiliconValley.email #=> "richard@piedpiper.test"
       # ```
@@ -5026,7 +5026,7 @@ module Faker
 
     class BigBangTheory < Faker::Base
       # Produces a character from Big Bang Theory
-      # 
+      #
       # ```ruby
       # Faker::TvShows::BigBangTheory.character #=> "Sheldon Cooper"
       # ```
@@ -5034,7 +5034,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from Bing Bang Theory
-      # 
+      #
       # Faker::TvShows::BigBangTheory.quote #=> "I'm not crazy. My mother had me tested."
       sig { returns(::String) }
       def self.quote; end
@@ -5042,7 +5042,7 @@ module Faker
 
     class BojackHorseman < Faker::Base
       # Produces a character from BoJack Horseman.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::BojackHorseman.character #=> "BoJack Horseman"
       # ```
@@ -5050,7 +5050,7 @@ module Faker
       def self.character; end
 
       # Produces a tongue twister from BoJack Horseman.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::BojackHorseman.tongue_twister #=> "Did you steal a meal from Neal McBeal the Navy Seal?"
       # ```
@@ -5058,7 +5058,7 @@ module Faker
       def self.tongue_twister; end
 
       # Produces a quote from BoJack Horseman.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::BojackHorseman.quote
       #   #=> "Not understanding that you're a horrible person doesn't make you less of a horrible person."
@@ -5069,7 +5069,7 @@ module Faker
 
     class DumbAndDumber < Faker::Base
       # Produces an actor from Dumb and Dumber.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DumbAndDumber.actor #=> "Jim Carrey"
       # ```
@@ -5077,7 +5077,7 @@ module Faker
       def self.actor; end
 
       # Produces a character from Dumb and Dumber.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DumbAndDumber.character #=> "Harry Dunne"
       # ```
@@ -5085,7 +5085,7 @@ module Faker
       def self.character; end
 
       # Produces a quote from Dumb and Dumber.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::DumbAndDumber.quote
       #   #=> "Why you going to the airport? Flying somewhere?"
@@ -5096,7 +5096,7 @@ module Faker
 
     class GameOfThrones < Faker::Base
       # Produces a character from Game of Thrones.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::GameOfThrones.character #=> "Tyrion Lannister"
       # ```
@@ -5104,7 +5104,7 @@ module Faker
       def self.character; end
 
       # Produces a house from Game of Thrones.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::GameOfThrones.house #=> "Stark"
       # ```
@@ -5112,7 +5112,7 @@ module Faker
       def self.house; end
 
       # Produces a city from Game of Thrones.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::GameOfThrones.city #=> "Lannisport"
       # ```
@@ -5120,7 +5120,7 @@ module Faker
       def self.city; end
 
       # Produces a quote from Game of Thrones.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::GameOfThrones.quote
       #   #=> "Never forget who you are. The rest of the world won't. Wear it like an armor and it can never be used against you."
@@ -5129,7 +5129,7 @@ module Faker
       def self.quote; end
 
       # Produces a dragon from Game of Thrones.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::GameOfThrones.dragon #=> "Drogon"
       # ```
@@ -5139,7 +5139,7 @@ module Faker
 
     class StrangerThings < Faker::Base
       # Produces a character from Stranger Things.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::StrangerThings.character #=> "six"
       # ```
@@ -5147,7 +5147,7 @@ module Faker
       def self.quote; end
 
       # Produces a quote from Stranger Things.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::StrangerThings.quote
       #   #=> "Friends don't lie."
@@ -5158,7 +5158,7 @@ module Faker
 
     class TheThickOfIt < Faker::Base
       # Produces a character from The Thick of It.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheThickOfIt.character #=> "Nicola Murray"
       # ```
@@ -5166,7 +5166,7 @@ module Faker
       def self.character; end
 
       # Produces a department from The Thick of It.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheThickOfIt.department #=> "Shadow Cabinet"
       # ```
@@ -5174,7 +5174,7 @@ module Faker
       def self.department; end
 
       # Produces a position from The Thick of It.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheThickOfIt.position
       #   #=> "Director of Communications"
@@ -5185,7 +5185,7 @@ module Faker
 
     class HowIMetYourMother < Faker::Base
       # Produces a character from How I Met Your Mother.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::HowIMetYourMother.character #=> "Barney Stinson"
       # ```
@@ -5193,7 +5193,7 @@ module Faker
       def self.character; end
 
       # Produces a catch phrase from How I Met Your Mother.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::HowIMetYourMother.catch_phrase #=> "Legendary"
       # ```
@@ -5201,7 +5201,7 @@ module Faker
       def self.catch_phrase; end
 
       # Produces a high five from How I Met Your Mother.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::HowIMetYourMother.high_five #=> "Relapse Five"
       # ```
@@ -5209,7 +5209,7 @@ module Faker
       def self.high_five; end
 
       # Produces a quote from How I Met Your Mother.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::HowIMetYourMother.quote
       #   #=> "Whenever I'm sad, I stop being sad and be awesome instead."
@@ -5220,7 +5220,7 @@ module Faker
 
     class AquaTeenHungerForce < Faker::Base
       # Produces a character from Aqua Teen Hunger Force.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::AquaTeenHungerForce.character #=> "Master Shake"
       # ```
@@ -5228,7 +5228,7 @@ module Faker
       def self.character; end
 
       # Produces a perl of great ATHF wisdom
-      # 
+      #
       # ```ruby
       # Faker::TvShows::AquaTeenHungerForce.quote #=> "Friendship ain't about trust. Friendship's about nunchucks."
       # ```
@@ -5238,7 +5238,7 @@ module Faker
 
     class TheFreshPrinceOfBelAir < Faker::Base
       # Produces a character from The Fresh Prince of Bel-Air.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheFreshPrinceOfBelAir.character #=> "Will Smith"
       # ```
@@ -5246,7 +5246,7 @@ module Faker
       def self.character; end
 
       # Produces a celebrity from The Fresh Prince of Bel-Air.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheFreshPrinceOfBelAir.celebrity #=> "Quincy Jones"
       # ```
@@ -5254,7 +5254,7 @@ module Faker
       def self.celebrity; end
 
       # Produces a quote from The Fresh Prince of Bel-Air.
-      # 
+      #
       # ```ruby
       # Faker::TvShows::TheFreshPrinceOfBelAir.quote
       #   #=> "Girl, you look so good, I would marry your brother just to get in your family."
@@ -5266,9 +5266,9 @@ module Faker
 
   class Address < Faker::Base
     # Produces the name of a city.
-    # 
+    #
     # _@param_ `options`
-    # 
+    #
     # ```ruby
     # Faker::Address.city #=> "Imogeneborough"
     # Faker::Address.city(options: { with_state: true })
@@ -5278,7 +5278,7 @@ module Faker
     def self.city(legacy_options = T.unsafe(nil), options: {}); end
 
     # Produces a street name.
-    # 
+    #
     # ```ruby
     # Faker::Address.street_name #=> "Larkin Fork"
     # ```
@@ -5286,9 +5286,9 @@ module Faker
     def self.street_name; end
 
     # Produces a street address.
-    # 
+    #
     # _@param_ `include_secondary` — Whether or not to include the secondary address.
-    # 
+    #
     # ```ruby
     # Faker::Address.street_address #=> "282 Kevin Brook"
     # ```
@@ -5296,7 +5296,7 @@ module Faker
     def self.street_address(legacy_include_secondary = T.unsafe(nil), include_secondary: false); end
 
     # Produces a secondary address.
-    # 
+    #
     # ```ruby
     # Faker::Address.secondary_address #=> "Apt. 672"
     # ```
@@ -5304,7 +5304,7 @@ module Faker
     def self.secondary_address; end
 
     # Produces a building number.
-    # 
+    #
     # ```ruby
     # Faker::Address.building_number #=> "7304"
     # ```
@@ -5312,7 +5312,7 @@ module Faker
     def self.building_number; end
 
     # Produces the name of a community.
-    # 
+    #
     # ```ruby
     # Faker::Address.community #=> "University Crossing"
     # ```
@@ -5320,7 +5320,7 @@ module Faker
     def self.community; end
 
     # Produces a mail box number.
-    # 
+    #
     # ```ruby
     # Faker::Address.mail_box #=> "PO Box 123"
     # ```
@@ -5328,9 +5328,9 @@ module Faker
     def self.mail_box; end
 
     # Produces a Zip Code.
-    # 
+    #
     # _@param_ `state_abbreviation` — an abbreviation for a state where the zip code should be located.
-    # 
+    #
     # ```ruby
     # Faker::Address.zip_code #=> "58517"
     # Faker::Address.zip_code #=> "23285-4905"
@@ -5340,7 +5340,7 @@ module Faker
     def self.zip_code(legacy_state_abbreviation = T.unsafe(nil), state_abbreviation: ''); end
 
     # Produces the name of a time zone.
-    # 
+    #
     # ```ruby
     # Faker::Address.time_zone #=> "Asia/Yakutsk"
     # ```
@@ -5348,7 +5348,7 @@ module Faker
     def self.time_zone; end
 
     # Produces a street suffix.
-    # 
+    #
     # ```ruby
     # Faker::Address.street_suffix #=> "Street"
     # ```
@@ -5356,7 +5356,7 @@ module Faker
     def self.street_suffix; end
 
     # Produces a city suffix.
-    # 
+    #
     # ```ruby
     # Faker::Address.city_suffix #=> "fort"
     # ```
@@ -5364,7 +5364,7 @@ module Faker
     def self.city_suffix; end
 
     # Produces a city prefix.
-    # 
+    #
     # ```ruby
     # Faker::Address.city_prefix #=> "Lake"
     # ```
@@ -5372,7 +5372,7 @@ module Faker
     def self.city_prefix; end
 
     # Produces a state abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Address.state_abbr #=> "AP"
     # ```
@@ -5380,7 +5380,7 @@ module Faker
     def self.state_abbr; end
 
     # Produces the name of a state.
-    # 
+    #
     # ```ruby
     # Faker::Address.state #=> "California"
     # ```
@@ -5388,7 +5388,7 @@ module Faker
     def self.state; end
 
     # Produces the name of a country.
-    # 
+    #
     # ```ruby
     # Faker::Address.country #=> "French Guiana"
     # ```
@@ -5398,9 +5398,9 @@ module Faker
     # Produces a country by ISO country code. See the
     # [List of ISO 3166 country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
     # on Wikipedia for a full list.
-    # 
+    #
     # _@param_ `code` — An ISO country code.
-    # 
+    #
     # ```ruby
     # Faker::Address.country_by_code(code: 'NL') #=> "Netherlands"
     # ```
@@ -5408,9 +5408,9 @@ module Faker
     def self.country_by_code(legacy_code = T.unsafe(nil), code: 'US'); end
 
     # Produces an ISO 3166 country code when given a country name.
-    # 
+    #
     # _@param_ `name` — Country name in snake_case format.
-    # 
+    #
     # ```ruby
     # Faker::Address.country_name_to_code(name: 'united_states') #=> "US"
     # ```
@@ -5418,7 +5418,7 @@ module Faker
     def self.country_name_to_code(legacy_name = T.unsafe(nil), name: 'united_states'); end
 
     # Produces an ISO 3166 country code.
-    # 
+    #
     # ```ruby
     # Faker::Address.country_code #=> "IT"
     # ```
@@ -5426,7 +5426,7 @@ module Faker
     def self.country_code; end
 
     # Produces a long (alpha-3) ISO 3166 country code.
-    # 
+    #
     # ```ruby
     # Faker::Address.country_code_long #=> "ITA"
     # ```
@@ -5434,7 +5434,7 @@ module Faker
     def self.country_code_long; end
 
     # Produces a latitude.
-    # 
+    #
     # ```ruby
     # Faker::Address.latitude #=> -58.17256227443719
     # ```
@@ -5442,7 +5442,7 @@ module Faker
     def self.latitude; end
 
     # Produces a longitude.
-    # 
+    #
     # ```ruby
     # Faker::Address.longitude #=> -156.65548382095133
     # ```
@@ -5450,7 +5450,7 @@ module Faker
     def self.longitude; end
 
     # Produces a full address.
-    # 
+    #
     # ```ruby
     # Faker::Address.full_address
     #   #=> "282 Kevin Brook, Imogeneborough, CA 58517"
@@ -5459,16 +5459,16 @@ module Faker
     def self.full_address; end
 
     # Produces Address hash of required fields
-    # 
+    #
     #  Faker::Address.full_address_as_hash(:full_address)
     #     #=> {:full_address=>"87635 Rice Street, Lake Brentonton, OR 61896-5968"}
-    # 
+    #
     #  Faker::Address.full_address_as_hash(:city, :time_zone)
     #     #=> {:city=>"East Faustina", :time_zone=>"America/Mexico_City"}
-    # 
+    #
     #  Faker::Address.full_address_as_hash(:street_address, street_address: {include_secondary: true})
     #     #=> {:street_address=>"29423 Kenneth Causeway Suite 563"}
-    # 
+    #
     # ```ruby
     # Faker::Address.full_address_as_hash(:longitude,
     #                                     :latitude,
@@ -5482,7 +5482,7 @@ module Faker
 
   class Ancient < Faker::Base
     # Produces a god from ancient mythology.
-    # 
+    #
     # ```ruby
     # Faker::Ancient.god #=> "Zeus"
     # ```
@@ -5490,7 +5490,7 @@ module Faker
     def self.god; end
 
     # Produces a primordial from ancient mythology.
-    # 
+    #
     # ```ruby
     # Faker::Ancient.primordial #=> "Gaia"
     # ```
@@ -5498,7 +5498,7 @@ module Faker
     def self.primordial; end
 
     # Produces a titan from ancient mythology.
-    # 
+    #
     # ```ruby
     # Faker::Ancient.titan #=> "Atlas"
     # ```
@@ -5506,7 +5506,7 @@ module Faker
     def self.titan; end
 
     # Produces a hero from ancient mythology.
-    # 
+    #
     # ```ruby
     # Faker::Ancient.hero #=> "Achilles"
     # ```
@@ -5516,13 +5516,13 @@ module Faker
 
   class Boolean < Faker::Base
     # Produces a boolean
-    # 
+    #
     # _@param_ `true_ratio` — The likelihood (as a float, out of 1.0) for the method to return `true`.
-    # 
+    #
     # ```ruby
     # Faker::Boolean.boolean #=> true
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Boolean.boolean(true_ratio: 0.2) #=> false
     # ```
@@ -5532,7 +5532,7 @@ module Faker
 
   class Company < Faker::Base
     # Produces a company name.
-    # 
+    #
     # ```ruby
     # Faker::Company.name #=> "Roberts Inc"
     # ```
@@ -5540,7 +5540,7 @@ module Faker
     def self.name; end
 
     # Produces a company suffix.
-    # 
+    #
     # ```ruby
     # Faker::Company.suffix #=> "LLC"
     # ```
@@ -5548,7 +5548,7 @@ module Faker
     def self.suffix; end
 
     # Produces a company industry.
-    # 
+    #
     # ```ruby
     # Faker::Company.industry #=> "Food & Beverages"
     # ```
@@ -5556,7 +5556,7 @@ module Faker
     def self.industry; end
 
     # Produces a company catch phrase.
-    # 
+    #
     # ```ruby
     # Faker::Company.catch_phrase #=> "Grass-roots grid-enabled portal"
     # ```
@@ -5564,7 +5564,7 @@ module Faker
     def self.catch_phrase; end
 
     # Produces a company buzzword.
-    # 
+    #
     # ```ruby
     # Faker::Company.buzzword #=> "flexibility"
     # ```
@@ -5572,9 +5572,9 @@ module Faker
     def self.buzzword; end
 
     # Produces some company BS.
-    # 
+    #
     # When a straight answer won't do, BS to the rescue!
-    # 
+    #
     # ```ruby
     # Faker::Company.bs #=> "empower customized functionalities"
     # ```
@@ -5582,7 +5582,7 @@ module Faker
     def self.bs; end
 
     # Produces a company EIN (Employer Identification Number).
-    # 
+    #
     # ```ruby
     # Faker::Company.ein #=> "07-4009024"
     # ```
@@ -5590,7 +5590,7 @@ module Faker
     def self.ein; end
 
     # Produces a company duns number.
-    # 
+    #
     # ```ruby
     # Faker::Company.duns_number #=> "70-655-5105"
     # ```
@@ -5598,9 +5598,9 @@ module Faker
     def self.duns_number; end
 
     # Produces a company logo.
-    # 
+    #
     # Get a random company logo url in PNG format.
-    # 
+    #
     # ```ruby
     # Faker::Company.logo #=> "https://pigment.github.io/fake-logos/logos/medium/color/12.png"
     # ```
@@ -5608,7 +5608,7 @@ module Faker
     def self.logo; end
 
     # Produces a company type.
-    # 
+    #
     # ```ruby
     # Faker::Company.type #=> "Partnership"
     # ```
@@ -5616,7 +5616,7 @@ module Faker
     def self.type; end
 
     # Produces a company profession.
-    # 
+    #
     # ```ruby
     # Faker::Company.profession #=> "factory worker"
     # ```
@@ -5624,9 +5624,9 @@ module Faker
     def self.profession; end
 
     # Produces a company spanish organisation number.
-    # 
+    #
     # Get a random Spanish organization number. See more here https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
-    # 
+    #
     # ```ruby
     # Faker::Company.spanish_organisation_number #=> "D6819358"
     # ```
@@ -5634,9 +5634,9 @@ module Faker
     def self.spanish_organisation_number; end
 
     # Produces a company swedish organisation number.
-    # 
+    #
     # Get a random Swedish organization number. See more here https://sv.wikipedia.org/wiki/Organisationsnummer
-    # 
+    #
     # ```ruby
     # Faker::Company.swedish_organisation_number #=> "3866029808"
     # ```
@@ -5644,7 +5644,7 @@ module Faker
     def self.swedish_organisation_number; end
 
     # Produces a company czech organisation number.
-    # 
+    #
     # ```ruby
     # Faker::Company.czech_organisation_number #=> "90642741"
     # ```
@@ -5652,9 +5652,9 @@ module Faker
     def self.czech_organisation_number; end
 
     # Produces a company french siren number.
-    # 
+    #
     # Get a random French SIREN number. See more here https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
-    # 
+    #
     # ```ruby
     # Faker::Company.french_siren_number #=> "163417827"
     # ```
@@ -5662,7 +5662,7 @@ module Faker
     def self.french_siren_number; end
 
     # Produces a company french siret number.
-    # 
+    #
     # ```ruby
     # Faker::Company.french_siret_number #=> "76430067900496"
     # ```
@@ -5670,9 +5670,9 @@ module Faker
     def self.french_siret_number; end
 
     # Produces a company norwegian organisation number.
-    # 
+    #
     # Get a random Norwegian organization number. Info: https://www.brreg.no/om-oss/samfunnsoppdraget-vart/registera-vare/einingsregisteret/organisasjonsnummeret/
-    # 
+    #
     # ```ruby
     # Faker::Company.norwegian_organisation_number #=> "842457173"
     # ```
@@ -5680,7 +5680,7 @@ module Faker
     def self.norwegian_organisation_number; end
 
     # Produces a company australian business number.
-    # 
+    #
     # ```ruby
     # Faker::Company.australian_business_number #=> "93579396170"
     # ```
@@ -5688,9 +5688,9 @@ module Faker
     def self.australian_business_number; end
 
     # Produces a company polish taxpayer identification_number.
-    # 
+    #
     # Get a random Polish taxpayer identification number More info https://pl.wikipedia.org/wiki/NIP
-    # 
+    #
     # ```ruby
     # Faker::Company.polish_taxpayer_identification_number #=> "2767549463"
     # ```
@@ -5698,9 +5698,9 @@ module Faker
     def self.polish_taxpayer_identification_number; end
 
     # Produces a company polish register of national economy.
-    # 
+    #
     # Get a random Polish register of national economy number. More info https://pl.wikipedia.org/wiki/REGON
-    # 
+    #
     # ```ruby
     # Faker::Company.polish_register_of_national_economy #=> "788435970"
     # ```
@@ -5708,7 +5708,7 @@ module Faker
     def self.polish_register_of_national_economy(legacy_length = T.unsafe(nil), length: 9); end
 
     # Produces a company south african pty ltd registration number.
-    # 
+    #
     # ```ruby
     # Faker::Company.south_african_pty_ltd_registration_number #=> "7043/2400717902/07"
     # ```
@@ -5716,7 +5716,7 @@ module Faker
     def self.south_african_pty_ltd_registration_number; end
 
     # Produces a company south african close corporation registration number.
-    # 
+    #
     # ```ruby
     # Faker::Company.south_african_close_corporation_registration_number #=> "CK38/5739937418/23"
     # ```
@@ -5724,7 +5724,7 @@ module Faker
     def self.south_african_close_corporation_registration_number; end
 
     # Produces a company south african listed company registration number.
-    # 
+    #
     # ```ruby
     # Faker::Company.south_african_listed_company_registration_number #=> "2512/87676/06"
     # ```
@@ -5732,7 +5732,7 @@ module Faker
     def self.south_african_listed_company_registration_number; end
 
     # Produces a company south african trust registration number.
-    # 
+    #
     # ```ruby
     # Faker::Company.south_african_trust_registration_number #=> "IT5673/937519896"
     # ```
@@ -5740,7 +5740,7 @@ module Faker
     def self.south_african_trust_registration_number; end
 
     # Produces a company brazilian company number.
-    # 
+    #
     # ```ruby
     # Faker::Company.brazilian_company_number #=> "37205322000500"
     # ```
@@ -5752,7 +5752,7 @@ module Faker
     def self.russian_tax_number(region: nil, type: :legal); end
 
     # Produces a company sic code.
-    # 
+    #
     # ```ruby
     # Faker::Company.sic_code #=> "7383"
     # ```
@@ -5776,13 +5776,13 @@ module Faker
     def self.weight_sum(array, weights); end
 
     # rubocop:disable Style/AsciiComments
-    # 
+    #
     # For more on Russian tax number algorithm here:
     # https://ru.wikipedia.org/wiki/Идентификационный_номер_налогоплательщика#Вычисление_контрольных_цифр
-    # 
+    #
     # Range of regions:
     # https://ru.wikipedia.org/wiki/Коды_субъектов_Российской_Федерации
-    # 
+    #
     # rubocop:enable Style/AsciiComments
     sig { params(region: T.untyped, type: T.untyped).returns(T.untyped) }
     def self.inn_number(region, type); end
@@ -5793,7 +5793,7 @@ module Faker
 
   class Compass < Faker::Base
     # Produces a random cardinal.
-    # 
+    #
     # ```ruby
     # Faker::Compass.cardinal #=> "north"
     # ```
@@ -5801,7 +5801,7 @@ module Faker
     def self.cardinal; end
 
     # Produces a random ordinal.
-    # 
+    #
     # ```ruby
     # Faker::Compass.ordinal #=> "northwest"
     # ```
@@ -5809,7 +5809,7 @@ module Faker
     def self.ordinal; end
 
     # Produces a random half wind.
-    # 
+    #
     # ```ruby
     # Faker::Compass.half_wind #=> "north-northwest"
     # ```
@@ -5817,7 +5817,7 @@ module Faker
     def self.half_wind; end
 
     # Produces a random quarter wind.
-    # 
+    #
     # ```ruby
     # Faker::Compass.quarter_wind #=> "north by west"
     # ```
@@ -5825,7 +5825,7 @@ module Faker
     def self.quarter_wind; end
 
     # Produces a random direction.
-    # 
+    #
     # ```ruby
     # Faker::Compass.direction #=> "southeast"
     # ```
@@ -5833,7 +5833,7 @@ module Faker
     def self.direction; end
 
     # Produces a random abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Compass.abbreviation #=> "NEbN"
     # ```
@@ -5841,7 +5841,7 @@ module Faker
     def self.abbreviation; end
 
     # Produces a random azimuth.
-    # 
+    #
     # ```ruby
     # Faker::Compass.azimuth #=> "168.75"
     # ```
@@ -5849,7 +5849,7 @@ module Faker
     def self.azimuth; end
 
     # Produces a random cardinal abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Compass.cardinal_abbreviation #=> "N"
     # ```
@@ -5857,7 +5857,7 @@ module Faker
     def self.cardinal_abbreviation; end
 
     # Produces a random ordinal abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Compass.ordinal_abbreviation #=> "SW"
     # ```
@@ -5865,7 +5865,7 @@ module Faker
     def self.ordinal_abbreviation; end
 
     # Produces a random half wind abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Compass.half_wind_abbreviation #=> "NNE"
     # ```
@@ -5873,7 +5873,7 @@ module Faker
     def self.half_wind_abbreviation; end
 
     # Produces a random quarter wind abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Compass.quarter_wind_abbreviation #=> "SWbS"
     # ```
@@ -5881,7 +5881,7 @@ module Faker
     def self.quarter_wind_abbreviation; end
 
     # Produces a random cardinal azimuth.
-    # 
+    #
     # ```ruby
     # Faker::Compass.cardinal_azimuth #=> "90"
     # ```
@@ -5889,7 +5889,7 @@ module Faker
     def self.cardinal_azimuth; end
 
     # Produces a random ordinal azimuth.
-    # 
+    #
     # ```ruby
     # Faker::Compass.ordinal_azimuth #=> "135"
     # ```
@@ -5897,7 +5897,7 @@ module Faker
     def self.ordinal_azimuth; end
 
     # Produces a random half wind azimuth.
-    # 
+    #
     # ```ruby
     # Faker::Compass.half_wind_azimuth #=> "292.5"
     # ```
@@ -5905,7 +5905,7 @@ module Faker
     def self.half_wind_azimuth; end
 
     # Produces a random quarter wind azimuth
-    # 
+    #
     # ```ruby
     # Faker::Compass.quarter_wind_azimuth #=> "56.25"
     # ```
@@ -5915,7 +5915,7 @@ module Faker
 
   class Cosmere < Faker::Base
     # Produces a random aon.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.aon #=> "Rao"
     # ```
@@ -5923,7 +5923,7 @@ module Faker
     def self.aon; end
 
     # Produces a random shard world.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.shard_world #=> "Yolen"
     # ```
@@ -5931,7 +5931,7 @@ module Faker
     def self.shard_world; end
 
     # Produces a random shard.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.shard #=> "Ambition"
     # ```
@@ -5939,7 +5939,7 @@ module Faker
     def self.shard; end
 
     # Produces a random surge.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.surge #=> "Progression"
     # ```
@@ -5947,7 +5947,7 @@ module Faker
     def self.surge; end
 
     # Produces a random knight radiant.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.knight_radiant #=> "Truthwatcher"
     # ```
@@ -5955,7 +5955,7 @@ module Faker
     def self.knight_radiant; end
 
     # Produces a random metal.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.metal #=> "Brass"
     # ```
@@ -5963,7 +5963,7 @@ module Faker
     def self.metal; end
 
     # Produces a random allomancer.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.allomancer #=> "Coinshot"
     # ```
@@ -5971,7 +5971,7 @@ module Faker
     def self.allomancer; end
 
     # Produces a random feruchemist.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.feruchemist #=> "Archivist"
     # ```
@@ -5979,7 +5979,7 @@ module Faker
     def self.feruchemist; end
 
     # Produces a random herald.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.herald #=> "Ishar"
     # ```
@@ -5987,7 +5987,7 @@ module Faker
     def self.herald; end
 
     # Produces a random spren.
-    # 
+    #
     # ```ruby
     # Faker::Cosmere.spren #=> "Flamespren"
     # ```
@@ -5997,7 +5997,7 @@ module Faker
 
   class Dessert < Faker::Base
     # Produces the name of a dessert variety.
-    # 
+    #
     # ```ruby
     # Faker::Dessert.variety #=> "Cake"
     # ```
@@ -6005,7 +6005,7 @@ module Faker
     def self.variety; end
 
     # Produces the name of a dessert topping.
-    # 
+    #
     # ```ruby
     # Faker::Dessert.topping #=> "Gummy Bears"
     # ```
@@ -6013,7 +6013,7 @@ module Faker
     def self.topping; end
 
     # Produces the name of a dessert flavor.
-    # 
+    #
     # ```ruby
     # Faker::Dessert.flavor #=> "Salted Caramel"
     # ```
@@ -6023,9 +6023,9 @@ module Faker
 
   class Finance < Faker::Base
     # Produces a random credit card number.
-    # 
+    #
     # _@param_ `types` — Specific credit card type.
-    # 
+    #
     # ```ruby
     # Faker::Finance.credit_card #=> "3018-348979-1853"
     # Faker::Finance.credit_card(:mastercard) #=> "6771-8921-2291-6236"
@@ -6035,9 +6035,9 @@ module Faker
     def self.credit_card(*types); end
 
     # Produces a random vat number.
-    # 
+    #
     # _@param_ `country` — Two capital letter country code to use for the vat number.
-    # 
+    #
     # ```ruby
     # Faker::Finance.vat_number #=> "BR38.395.329/2471-83"
     # Faker::Finance.vat_number('DE') #=> "DE593306671"
@@ -6052,7 +6052,7 @@ module Faker
 
   class Hipster < Faker::Base
     # Produces a random hipster word.
-    # 
+    #
     # ```ruby
     # Faker::Hipster.word #=> "irony"
     # ```
@@ -6060,15 +6060,15 @@ module Faker
     def self.word; end
 
     # Produces a random hipster word.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `number` — Specifies the number of words returned
-    # 
+    #
     # _@param_ `supplemental` — Specifies if the words are supplemental
-    # 
+    #
     # _@param_ `spaces_allowed` — Specifies if the words may contain spaces
-    # 
+    #
     # ```ruby
     # Faker::Hipster.words #=> ["pug", "pitchfork", "chia"]
     # Faker::Hipster.words(number: 4) #=> ["ugh", "cardigan", "poutine", "stumptown"]
@@ -6088,15 +6088,15 @@ module Faker
     def self.words(legacy_number = T.unsafe(nil), legacy_supplemental = T.unsafe(nil), legacy_spaces_allowed = T.unsafe(nil), number: 3, supplemental: false, spaces_allowed: false); end
 
     # Produces a random hipster sentence.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `word_count` — Specifies the number of words in the sentence
-    # 
+    #
     # _@param_ `supplemental` — Specifies if the words are supplemental
-    # 
+    #
     # _@param_ `random_words_to_add` — Specifies the number of random words to add
-    # 
+    #
     # ```ruby
     # Faker::Hipster.sentence #=> "Park iphone leggings put a bird on it."
     # Faker::Hipster.sentence(word_count: 3) #=> "Pour-over swag godard."
@@ -6117,11 +6117,11 @@ module Faker
     def self.sentence(legacy_word_count = T.unsafe(nil), legacy_supplemental = T.unsafe(nil), legacy_random_words_to_add = T.unsafe(nil), word_count: 4, supplemental: false, random_words_to_add: 6); end
 
     # Produces random hipster sentences.
-    # 
+    #
     # _@param_ `number` — Specifies the number of sentences returned
-    # 
+    #
     # _@param_ `supplemental` — Specifies if the words are supplemental
-    # 
+    #
     # ```ruby
     # Faker::Hipster.sentences #=> ["Godard pitchfork vinegar chillwave everyday 90's whatever.", "Pour-over artisan distillery street waistcoat.", "Salvia yr leggings franzen blue bottle."]
     # Faker::Hipster.sentences(number: 1) #=> ["Before they sold out pinterest venmo umami try-hard ugh hoodie artisan."]
@@ -6138,15 +6138,15 @@ module Faker
     def self.sentences(legacy_number = T.unsafe(nil), legacy_supplemental = T.unsafe(nil), number: 3, supplemental: false); end
 
     # Produces a random hipster paragraph.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `sentence_count` — Specifies the number of sentences in the paragraph
-    # 
+    #
     # _@param_ `supplemental` — Specifies if the words are supplemental
-    # 
+    #
     # _@param_ `random_sentences_to_add` — Specifies the number of random sentences to add
-    # 
+    #
     # ```ruby
     # Faker::Hipster.paragraph #=> "Migas fingerstache pbr&b tofu. Polaroid distillery typewriter echo tofu actually. Slow-carb fanny pack pickled direct trade scenester mlkshk plaid. Banjo venmo chambray cold-pressed typewriter. Fap skateboard intelligentsia."
     # Faker::Hipster.paragraph(sentence_count: 2) #=> "Yolo tilde farm-to-table hashtag. Lomo kitsch disrupt forage +1."
@@ -6167,11 +6167,11 @@ module Faker
     def self.paragraph(legacy_sentence_count = T.unsafe(nil), legacy_supplemental = T.unsafe(nil), legacy_random_sentences_to_add = T.unsafe(nil), sentence_count: 3, supplemental: false, random_sentences_to_add: 3); end
 
     # Produces random hipster paragraphs.
-    # 
+    #
     # _@param_ `number` — Specifies the number of paragraphs
-    # 
+    #
     # _@param_ `supplemental` — Specifies if the words are supplemental
-    # 
+    #
     # ```ruby
     # Faker::Hipster.paragraphs #=> ["Tilde microdosing blog cliche meggings. Intelligentsia five dollar toast forage yuccie. Master kitsch knausgaard. Try-hard everyday trust fund mumblecore.", "Normcore viral pickled. Listicle humblebrag swag tote bag. Taxidermy street hammock neutra butcher cred kale chips. Blog portland humblebrag trust fund irony.", "Single-origin coffee fixie cleanse tofu xoxo. Post-ironic tote bag ramps gluten-free locavore mumblecore hammock. Umami loko twee. Ugh kitsch before they sold out."]
     # Faker::Hipster.paragraphs(number: 1) #=> ["Skateboard cronut synth +1 fashion axe. Pop-up polaroid skateboard asymmetrical. Ennui fingerstache shoreditch before they sold out. Tattooed pitchfork ramps. Photo booth yr messenger bag raw denim bespoke locavore lomo synth."]
@@ -6188,11 +6188,11 @@ module Faker
     def self.paragraphs(legacy_number = T.unsafe(nil), legacy_supplemental = T.unsafe(nil), number: 3, supplemental: false); end
 
     # Produces a random hipster paragraph by characters.
-    # 
+    #
     # _@param_ `characters` — Specifies the number of characters in the paragraph
-    # 
+    #
     # _@param_ `supplemental` — Specifies if the words are supplemental
-    # 
+    #
     # ```ruby
     # Faker::Hipster.paragraph_by_chars #=> "Truffaut stumptown trust fund 8-bit messenger bag portland. Meh kombucha selvage swag biodiesel. Lomo kinfolk jean shorts asymmetrical diy. Wayfarers portland twee stumptown. Wes anderson biodiesel retro 90's pabst. Diy echo 90's mixtape semiotics. Cornho."
     # Faker::Hipster.paragraph_by_chars(characters: 256, supplemental: false) #=> "Hella kogi blog narwhal sartorial selfies mustache schlitz. Bespoke normcore kitsch cred hella fixie. Park aesthetic fixie migas twee. Cliche mustache brunch tumblr fixie godard. Drinking pop-up synth hoodie dreamcatcher typewriter. Kitsch biodiesel green."
@@ -6210,11 +6210,11 @@ module Faker
 
   class Invoice < Faker::Base
     # Produces a random amount between values with 2 decimals
-    # 
+    #
     # _@param_ `from` — Specifies lower limit.
-    # 
+    #
     # _@param_ `to` — Specifies upper limit.
-    # 
+    #
     # ```ruby
     # Faker::Finance.amount_between #=> 0
     # Faker::Finance.amount_between(0, 10) #=> 4.33
@@ -6230,9 +6230,9 @@ module Faker
     def self.amount_between(legacy_from = T.unsafe(nil), legacy_to = T.unsafe(nil), from: 0, to: 0); end
 
     # Produces a random valid reference accoring to the International bank slip reference https://en.wikipedia.org/wiki/Creditor_Reference
-    # 
+    #
     # _@param_ `ref` — Specifies reference base.
-    # 
+    #
     # ```ruby
     # Faker::Invoice.creditor_reference #=> "RF34118592570724925498"
     # ```
@@ -6240,9 +6240,9 @@ module Faker
     def self.creditor_reference(legacy_ref = T.unsafe(nil), ref: ''); end
 
     # Produces a random valid reference.
-    # 
+    #
     # _@param_ `ref` — Specifies reference base.
-    # 
+    #
     # ```ruby
     # Faker::Invoice.reference #=> "45656646957845"
     # ```
@@ -6264,7 +6264,7 @@ module Faker
     def self.kidmod10(base); end
 
     # Calculates weigthed sum
-    # 
+    #
     # For example with 12345678, [1,2]
     # Ref.num. 1 2 3 4 5 6 7 8
     # Multipl. 1 2 1 2 1 2 1 2
@@ -6279,7 +6279,7 @@ module Faker
 
   class Science < Faker::Base
     # Produces the name of a element.
-    # 
+    #
     # ```ruby
     # Faker::Science.element #=> "Carbon"
     # ```
@@ -6287,7 +6287,7 @@ module Faker
     def self.element; end
 
     # Produces the symbol of an element.
-    # 
+    #
     # ```ruby
     # Faker::Science.element_symbol #=> "Pb"
     # ```
@@ -6295,7 +6295,7 @@ module Faker
     def self.element_symbol; end
 
     # Produces the name of a scientist.
-    # 
+    #
     # ```ruby
     # Faker::Science.scientist #=> "Isaac Newton"
     # ```
@@ -6305,11 +6305,11 @@ module Faker
 
   class Twitter < Faker::Base
     # Produces a random Twitter user.
-    # 
+    #
     # _@param_ `include_status` — Include or exclude user status details
-    # 
+    #
     # _@param_ `include_email` — Include or exclude user email details
-    # 
+    #
     # ```ruby
     # Faker::Twitter.user #=>  {:id=>8821452687517076614, :name=>"Lincoln Paucek", :screen_name=>"cody"...
     # Faker::Twitter.user(include_status: false) # Just get a user object with no embed status
@@ -6326,11 +6326,11 @@ module Faker
     def self.user(legacy_include_status = T.unsafe(nil), legacy_include_email = T.unsafe(nil), include_status: true, include_email: false); end
 
     # Produces a random Twitter user.
-    # 
+    #
     # _@param_ `include_user` — Include or exclude user details
-    # 
+    #
     # _@param_ `include_photo` — Include or exclude user photo
-    # 
+    #
     # ```ruby
     # Faker::Twitter.status #=> {:id=>8821452687517076614, :text=>"Ea et laboriosam vel non."...
     # Faker::Twitter.status(include_user: false) # Just get a status object with no embed user
@@ -6347,7 +6347,7 @@ module Faker
     def self.status(legacy_include_user = T.unsafe(nil), legacy_include_photo = T.unsafe(nil), include_user: true, include_photo: false); end
 
     # Produces a random screen name.
-    # 
+    #
     # ```ruby
     # Faker::Twitter.screen_name #=> "audreanne_hackett"
     # ```
@@ -6375,7 +6375,7 @@ module Faker
 
   class Vehicle < Faker::Base
     # Produces a random vehicle VIN number.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.vin #=> "LLDWXZLG77VK2LUUF"
     # ```
@@ -6383,7 +6383,7 @@ module Faker
     def self.vin; end
 
     # Produces a random vehicle manufacturer.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.manufacture #=> "Lamborghini"
     # ```
@@ -6391,7 +6391,7 @@ module Faker
     def self.manufacture; end
 
     # Produces a random vehicle make.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.make #=> "Honda"
     # ```
@@ -6399,9 +6399,9 @@ module Faker
     def self.make; end
 
     # Produces a random vehicle model.
-    # 
+    #
     # _@param_ `make_of_model` — Specific valid vehicle make.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.model #=> "A8"
     # Faker::Vehicle.model(make_of_model: 'Toyota') #=> "Prius"
@@ -6410,7 +6410,7 @@ module Faker
     def self.model(legacy_make_of_model = T.unsafe(nil), make_of_model: ''); end
 
     # Produces a random vehicle make and model.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.make_and_model #=> "Dodge Charger"
     # ```
@@ -6418,7 +6418,7 @@ module Faker
     def self.make_and_model; end
 
     # Produces a random vehicle style.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.style #=> "ESi"
     # ```
@@ -6426,7 +6426,7 @@ module Faker
     def self.style; end
 
     # Produces a random vehicle color.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.color #=> "Red"
     # ```
@@ -6434,7 +6434,7 @@ module Faker
     def self.color; end
 
     # Produces a random vehicle transmission.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.transmission #=> "Automanual"
     # ```
@@ -6442,7 +6442,7 @@ module Faker
     def self.transmission; end
 
     # Produces a random vehicle drive type.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.drive_type #=> "4x2/2-wheel drive"
     # ```
@@ -6450,7 +6450,7 @@ module Faker
     def self.drive_type; end
 
     # Produces a random vehicle fuel type.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.fuel_type #=> "Diesel"
     # ```
@@ -6458,7 +6458,7 @@ module Faker
     def self.fuel_type; end
 
     # Produces a random car type.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.car_type #=> "Sedan"
     # ```
@@ -6466,7 +6466,7 @@ module Faker
     def self.car_type; end
 
     # Produces a random engine cylinder count.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.engine_size #=> 6
     # Faker::Vehicle.engine #=> 4
@@ -6475,7 +6475,7 @@ module Faker
     def self.engine; end
 
     # Produces a random list of car options.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.car_options #=> ["DVD System", "MP3 (Single Disc)", "Tow Package", "CD (Multi Disc)", "Cassette Player", "Bucket Seats", "Cassette Player", "Leather Interior", "AM/FM Stereo", "Third Row Seats"]
     # ```
@@ -6483,7 +6483,7 @@ module Faker
     def self.car_options; end
 
     # Produces a random list of standard specs.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.standard_specs #=> ["Full-size spare tire w/aluminum alloy wheel", "Back-up camera", "Carpeted cargo area", "Silver accent IP trim finisher -inc: silver shifter finisher", "Back-up camera", "Water-repellent windshield & front door glass", "Floor carpeting"]
     # ```
@@ -6491,7 +6491,7 @@ module Faker
     def self.standard_specs; end
 
     # Produces a random vehicle door count.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.doors #=> 1
     # Faker::Vehicle.door_count #=> 3
@@ -6500,7 +6500,7 @@ module Faker
     def self.doors; end
 
     # Produces a random car year between 1 and 15 years ago.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.year #=> 2008
     # ```
@@ -6508,11 +6508,11 @@ module Faker
     def self.year; end
 
     # Produces a random mileage/kilometrage for a vehicle.
-    # 
+    #
     # _@param_ `min` — Specific minimum limit for mileage generation.
-    # 
+    #
     # _@param_ `max` — Specific maximum limit for mileage generation.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.mileage #=> 26961
     # Faker::Vehicle.mileage(min: 50_000) #=> 81557
@@ -6527,12 +6527,12 @@ module Faker
         max: Integer
       ).returns(Integer)
     end
-    def self.mileage(legacy_min = T.unsafe(nil), legacy_max = T.unsafe(nil), min: MILEAGE_MIN, max: MILEAGE_MAX); end
+    def self.mileage(legacy_min = T.unsafe(nil), legacy_max = T.unsafe(nil), min: T.unsafe(nil), max: T.unsafe(nil)); end
 
     # Produces a random license plate number.
-    # 
+    #
     # _@param_ `state_abbreviation` — Two letter state abbreviation for license plate generation.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.license_plate #=> "DEP-2483"
     # Faker::Vehicle.license_plate(state_abbreviation: 'FL') #=> "977 UNU"
@@ -6541,7 +6541,7 @@ module Faker
     def self.license_plate(legacy_state_abreviation = T.unsafe(nil), state_abbreviation: ''); end
 
     # Produces a random license plate number for Singapore.
-    # 
+    #
     # ```ruby
     # Faker::Vehicle.singapore_license_plate #=> "SLV1854M"
     # ```
@@ -6564,7 +6564,7 @@ module Faker
   class Quotes
     class Chiquito < Faker::Base
       # Produces an Expression from Chiquito
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Chiquito.expression # => "Ereh un torpedo!"
       # ```
@@ -6572,7 +6572,7 @@ module Faker
       def self.expression; end
 
       # Produces a concept from Chiquito
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Chiquito.term # => "Fistro"
       # ```
@@ -6580,7 +6580,7 @@ module Faker
       def self.term; end
 
       # Produces a joke from Chiquito
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Chiquito.joke # => "- Papar papar llevame al circo!
       #                                    - Noorl! El que quiera verte que venga a la casa"
@@ -6589,7 +6589,7 @@ module Faker
       def self.joke; end
 
       # Produces a sentence from Chiquito
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Chiquito.sentence # => "Te llamo trigo por no llamarte Rodrigo"
       # ```
@@ -6613,7 +6613,7 @@ module Faker
       # Produces a Rajnikanth.
       # Original list of jokes:
       # http://www.rajinikanthjokes.com/
-      # 
+      #
       # ```ruby
       # Faker::Rajnikanth.joke
       #   #=> "Rajinikanth is so fast that he always comes yesterday."
@@ -6624,7 +6624,7 @@ module Faker
 
     class Shakespeare < Faker::Base
       # Produces a Shakespeare quote from Hamlet.
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Shakespeare.hamlet_quote # => "To be, or not to be: that is the question."
       # ```
@@ -6632,7 +6632,7 @@ module Faker
       def self.hamlet_quote; end
 
       # Produces a Shakespeare quote from As You Like It.
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Shakespeare.as_you_like_it_quote # => "Can one desire too much of a good thing?."
       # ```
@@ -6640,7 +6640,7 @@ module Faker
       def self.as_you_like_it_quote; end
 
       # Produces a Shakespeare quote from King Richard III.
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Shakespeare.king_richard_iii_quote # => "Now is the winter of our discontent."
       # ```
@@ -6648,7 +6648,7 @@ module Faker
       def self.king_richard_iii_quote; end
 
       # Produces a Shakespeare quote from Romeo And Juliet.
-      # 
+      #
       # ```ruby
       # Faker::Quotes::Shakespeare.romeo_and_juliet_quote # => "O Romeo, Romeo! wherefore art thou Romeo?."
       # ```
@@ -6672,7 +6672,7 @@ module Faker
   class Sports
     class Football < Faker::Base
       # Produces the name of a football team.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Football.team #=> "Manchester United"
       # ```
@@ -6680,7 +6680,7 @@ module Faker
       def self.team; end
 
       # Produces the name of a football player.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Football.player #=> "Lionel Messi"
       # ```
@@ -6688,7 +6688,7 @@ module Faker
       def self.player; end
 
       # Produces the name of a football coach.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Football.coach #=> "Jose Mourinho"
       # ```
@@ -6696,7 +6696,7 @@ module Faker
       def self.coach; end
 
       # Produces a football competition.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Football.competition #=> "FIFA World Cup"
       # ```
@@ -6704,7 +6704,7 @@ module Faker
       def self.competition; end
 
       # Produces a position in football.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Football.position #=> "Defensive Midfielder"
       # ```
@@ -6714,7 +6714,7 @@ module Faker
 
     class Basketball < Faker::Base
       # Produces the name of a basketball team.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Basketball.team #=> "Golden State Warriors"
       # ```
@@ -6722,7 +6722,7 @@ module Faker
       def self.team; end
 
       # Produces the name of a basketball player.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Basketball.player #=> "LeBron James"
       # ```
@@ -6730,7 +6730,7 @@ module Faker
       def self.player; end
 
       # Produces the name of a basketball coach.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Basketball.coach #=> "Gregg Popovich"
       # ```
@@ -6738,7 +6738,7 @@ module Faker
       def self.coach; end
 
       # Produces a position in basketball.
-      # 
+      #
       # ```ruby
       # Faker::Sports::Basketball.position #=> "Point Guard"
       # ```
@@ -6750,7 +6750,7 @@ module Faker
   class Blockchain
     class Tezos < Faker::Base
       # Produces a random Tezos account address
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Tezos.account
       #   #=> "tz1eUsgK6aj752Fbxwk5sAoEFvSDnPjZ4qvk"
@@ -6759,7 +6759,7 @@ module Faker
       def self.account; end
 
       # Produces a random Tezos contract
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Tezos.contract
       #   #=> "KT1MroqeP15nnitB4CnNfkqHYa2NErhPPLWF"
@@ -6768,7 +6768,7 @@ module Faker
       def self.contract; end
 
       # Produces a random Tezos operation
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Tezos.operation
       #   #=> "onygWYXJX3xNstFLv9PcCrhQdCkENC795xwSinmTEc1jsDN4VDa"
@@ -6777,7 +6777,7 @@ module Faker
       def self.operation; end
 
       # Produces a random Tezos block
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Tezos.block
       #   #=> "BMbhs2rkY1dvAkAyRytvPsjFQ2RiPrBhYkxvWpY65dzkdSuw58a"
@@ -6786,7 +6786,7 @@ module Faker
       def self.block; end
 
       # Produces a random Tezos signature
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Tezos.signature
       #   #=> "edsigu165B7VFf3Dpw2QABVzEtCxJY2gsNBNcE3Ti7rRxtDUjqTFRpg67EdAQmY6YWPE5tKJDMnSTJDFu65gic8uLjbW2YwGvAZ"
@@ -6795,7 +6795,7 @@ module Faker
       def self.signature; end
 
       # _@param_ `prefix`
-      # 
+      #
       # _@param_ `payload_size` — The size of the payload
       sig { params(prefix: Symbol, payload_size: Integer).returns(::String) }
       def self.encode_tz(prefix, payload_size); end
@@ -6803,7 +6803,7 @@ module Faker
 
     class Bitcoin < Faker::Base
       # Produces a Bitcoin wallet address
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Bitcoin.address
       #   #=> "147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
@@ -6812,7 +6812,7 @@ module Faker
       def self.address; end
 
       # Produces a Bitcoin testnet address
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Bitcoin.testnet_address
       #   #=> "n4YjRyYD6V6zREpk6opqESDqD3KYnMdVEB"
@@ -6821,9 +6821,9 @@ module Faker
       def self.testnet_address; end
 
       # Generates a random Bitcoin address for the given network
-      # 
+      #
       # _@param_ `network` — The name of network protocol to generate an address for
-      # 
+      #
       # _@return_ — A Bitcoin address
       sig { params(network: Symbol).returns(::String) }
       def self.address_for(network); end
@@ -6831,7 +6831,7 @@ module Faker
 
     class Ethereum < Faker::Base
       # Produces a random Ethereum wallet address
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Ethereum.address
       #   #=> "0xd392b0c0500700d02d27ab30805ec80ddd3320ff"
@@ -6842,7 +6842,7 @@ module Faker
 
     class Aeternity < Faker::Base
       # Produces a random Aeternity wallet address
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Aeternity.address
       #   #=> "ak_zvU8YQLagjcfng7Tg8yCdiZ1rpiWNp1PBn3vtUs44utSvbJVR"
@@ -6851,7 +6851,7 @@ module Faker
       def self.address; end
 
       # Produces a random Aeternity transaction
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Aeternity.transaction
       #   #=> "th_147nDP22h3pHrLt2qykTH4txUwQh1ccaXp"
@@ -6860,7 +6860,7 @@ module Faker
       def self.transaction; end
 
       # Produces a random Aeternity contract
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Aeternity.contract
       #   #=> "ct_Hk2JsNeWGEYQEHHQCfcBeGrwbhtYSwFTPdDhW2SvjFYVojyhW"
@@ -6869,7 +6869,7 @@ module Faker
       def self.contract; end
 
       # Produces a random Aeternity oracle
-      # 
+      #
       # ```ruby
       # Faker::Blockchain::Aeternity.oracle
       #   #=> "ok_28QDg7fkF5qiKueSdUvUBtCYPJdmMEoS73CztzXCRAwMGKHKZh"
@@ -6884,7 +6884,7 @@ module Faker
 
   class Business < Faker::Base
     # Produces a credit card number.
-    # 
+    #
     # ```ruby
     # Faker::Business.credit_card_number #=> "1228-1221-1221-1431"
     # ```
@@ -6892,7 +6892,7 @@ module Faker
     def self.credit_card_number; end
 
     # Produces a credit card expiration date.
-    # 
+    #
     # ```ruby
     # Faker::Business.credit_card_expiry_date #=> <Date: 2015-11-11 ((2457338j,0s,0n),+0s,2299161j)>
     # ```
@@ -6900,7 +6900,7 @@ module Faker
     def self.credit_card_expiry_date; end
 
     # Produces a type of credit card.
-    # 
+    #
     # ```ruby
     # Faker::Business.credit_card_type #=> "visa"
     # ```
@@ -6910,7 +6910,7 @@ module Faker
 
   class Cannabis < Faker::Base
     # Produces a random strain.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.strain #=> "Super Glue"
     # ```
@@ -6918,7 +6918,7 @@ module Faker
     def self.strain; end
 
     # Produces a random abbreviation.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.cannabinoid_abbreviation #=> "CBGa"
     # ```
@@ -6926,7 +6926,7 @@ module Faker
     def self.cannabinoid_abbreviation; end
 
     # Produces a random cannabinoid type.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.cannabinoid #=> "Cannabinolic Acid"
     # ```
@@ -6934,7 +6934,7 @@ module Faker
     def self.cannabinoid; end
 
     # Produces a random terpene type.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.terpene #=> "Terpinene"
     # ```
@@ -6942,7 +6942,7 @@ module Faker
     def self.terpene; end
 
     # Produces a random kind of medical use.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.medical_use #=> "anti-cancer"
     # ```
@@ -6950,7 +6950,7 @@ module Faker
     def self.medical_use; end
 
     # Produces a random health benefit.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.health_benefit #=> "prevents infection"
     # ```
@@ -6958,7 +6958,7 @@ module Faker
     def self.health_benefit; end
 
     # Produces a random category.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.category #=> "crystalline"
     # ```
@@ -6966,7 +6966,7 @@ module Faker
     def self.category; end
 
     # Produces a random type.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.type #=> "indica"
     # ```
@@ -6974,7 +6974,7 @@ module Faker
     def self.type; end
 
     # Produces a random buzzword.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.buzzword #=> "high"
     # ```
@@ -6982,7 +6982,7 @@ module Faker
     def self.buzzword; end
 
     # Produces a random brand.
-    # 
+    #
     # ```ruby
     # Faker::Cannabis.brand #=> "Cannavore Confections"
     # ```
@@ -6992,7 +6992,7 @@ module Faker
 
   class Commerce < Faker::Base
     # Produces a random color.
-    # 
+    #
     # ```ruby
     # Faker::Commerce.color #=> "lavender"
     # ```
@@ -7000,9 +7000,9 @@ module Faker
     def self.color; end
 
     # Produces a random promotion code.
-    # 
+    #
     # _@param_ `digits` — Updates the number of numerical digits used to generate the promotion code.
-    # 
+    #
     # ```ruby
     # Faker::Commerce.promotion_code #=> "AmazingDeal829102"
     # Faker::Commerce.promotion_code(digits: 2) #=> "AmazingPrice57"
@@ -7011,11 +7011,11 @@ module Faker
     def self.promotion_code(legacy_digits = T.unsafe(nil), digits: 6); end
 
     # Produces a random department.
-    # 
+    #
     # _@param_ `max` — Updates the maximum number of names used to generate the department name.
-    # 
+    #
     # _@param_ `fixed_amount` — Fixes the amount of departments to use instead of using a range.
-    # 
+    #
     # ```ruby
     # Faker::Commerce.department #=> "Grocery, Health & Beauty"
     # Faker::Commerce.department(max: 5) #=> "Grocery, Books, Health & Beauty"
@@ -7032,7 +7032,7 @@ module Faker
     def self.department(legacy_max = T.unsafe(nil), legacy_fixed_amount = T.unsafe(nil), max: 3, fixed_amount: false); end
 
     # Produces a random product name.
-    # 
+    #
     # ```ruby
     # Faker::Commerce.product_name #=> "Practical Granite Shirt"
     # ```
@@ -7040,7 +7040,7 @@ module Faker
     def self.product_name; end
 
     # Produces a random material.
-    # 
+    #
     # ```ruby
     # Faker::Commerce.material #=> "Plastic"
     # ```
@@ -7048,11 +7048,11 @@ module Faker
     def self.material; end
 
     # Produces a random product price.
-    # 
+    #
     # _@param_ `range` — A range to generate the random number within.
-    # 
+    #
     # _@param_ `as_string` — Changes the return value to [String].
-    # 
+    #
     # ```ruby
     # Faker::Commerce.price #=> 44.6
     # Faker::Commerce.price(range: 0..10.0, as_string: true) #=> "2.18"
@@ -7076,7 +7076,7 @@ module Faker
 
   class Computer < Faker::Base
     # Produces the name of a computer platform.
-    # 
+    #
     # ```ruby
     # Faker::Computer.platform #=> "Linux"
     # ```
@@ -7084,7 +7084,7 @@ module Faker
     def self.platform; end
 
     # Produces the name of a computer type.
-    # 
+    #
     # ```ruby
     # Faker::Computer.type #=> "server"
     # ```
@@ -7092,9 +7092,9 @@ module Faker
     def self.type; end
 
     # Produces the name of a computer os.
-    # 
+    #
     # _@param_ `platform` — optionally specify the platform `linux`, `macos`, or `windows`.
-    # 
+    #
     # ```ruby
     # Faker::Computer.os #=> "RHEL 6.10"
     # ```
@@ -7102,7 +7102,7 @@ module Faker
     def self.os(platform: self.platform); end
 
     # Produces a string with computer platform and os
-    # 
+    #
     # ```ruby
     # Faker::Computer.stack #=> "Linux, RHEL 6.10"
     # ```
@@ -7112,7 +7112,7 @@ module Faker
 
   class Currency < Faker::Base
     # Produces the name of a currency.
-    # 
+    #
     # ```ruby
     # Faker::Currency.name #=> "Swedish Krona"
     # ```
@@ -7120,7 +7120,7 @@ module Faker
     def self.name; end
 
     # Produces a currency code.
-    # 
+    #
     # ```ruby
     # Faker::Currency.code #=> "USD"
     # ```
@@ -7128,7 +7128,7 @@ module Faker
     def self.code; end
 
     # Produces a currency symbol.
-    # 
+    #
     # ```ruby
     # Faker::Currency.symbol #=> "$"
     # ```
@@ -7138,7 +7138,7 @@ module Faker
 
   class Educator < Faker::Base
     # Produces a university name.
-    # 
+    #
     # ```ruby
     # Faker::Educator.university #=> "Mallowtown Technical College"
     # ```
@@ -7146,7 +7146,7 @@ module Faker
     def self.university; end
 
     # Produces a university degree.
-    # 
+    #
     # ```ruby
     # Faker::Educator.degree #=> "Associate Degree in Criminology"
     # ```
@@ -7154,7 +7154,7 @@ module Faker
     def self.degree; end
 
     # Produces a university subject.
-    # 
+    #
     # ```ruby
     # Faker::Educator.subject #=> "Criminology"
     # ```
@@ -7162,7 +7162,7 @@ module Faker
     def self.subject; end
 
     # Produces a course name.
-    # 
+    #
     # ```ruby
     # Faker::Educator.course_name #=> "Criminology 101"
     # ```
@@ -7170,7 +7170,7 @@ module Faker
     def self.course_name; end
 
     # Produces a secondary school.
-    # 
+    #
     # ```ruby
     # Faker::Educator.secondary_school #=> "Iceborough Secondary College"
     # ```
@@ -7178,7 +7178,7 @@ module Faker
     def self.secondary_school; end
 
     # Produces a campus name.
-    # 
+    #
     # ```ruby
     # Faker::Educator.campus #=> "Vertapple Campus"
     # ```
@@ -7215,31 +7215,31 @@ module Faker
     def self.username(legacy_specifier = T.unsafe(nil), legacy_separators = T.unsafe(nil), specifier: nil, separators: %w[. _]); end
 
     # Produces a randomized string of characters suitable for passwords
-    # 
+    #
     # _@param_ `min_length` — The minimum length of the password
-    # 
+    #
     # _@param_ `max_length` — The maximum length of the password
-    # 
+    #
     # _@param_ `mix_case` — Toggles if uppercased letters are allowed. If true, at least one will be added.
-    # 
+    #
     # _@param_ `special_characters` — Toggles if special characters are allowed. If true, at least one will be added.
-    # 
+    #
     # ```ruby
     # Faker::Internet.password #=> "Vg5mSvY1UeRg7"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Internet.password(min_length: 8) #=> "YfGjIk0hGzDqS0"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Internet.password(min_length: 10, max_length: 20) #=> "EoC9ShWd1hWq4vBgFw"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true) #=> "3k5qS15aNmG"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Internet.password(min_length: 10, max_length: 20, mix_case: true, special_characters: true) #=> "*%NkOnJsH4"
     # ```
@@ -7335,18 +7335,18 @@ module Faker
     def self.uuid; end
 
     # Produces a random string of alphabetic characters, (no digits)
-    # 
+    #
     # _@param_ `length` — The length of the string to generate
-    # 
+    #
     # _@param_ `padding` — Toggles if a final equal '=' will be added.
-    # 
+    #
     # _@param_ `urlsafe` — Toggles charset to '-' and '_' instead of '+' and '/'.
-    # 
+    #
     # ```ruby
     # Faker::Internet.base64
     #   #=> "r_hbZ2DSD-ZACzZT"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Internet.base64(length: 4, padding: true, urlsafe: false)
     #   #=> "x1/R="
@@ -7362,27 +7362,27 @@ module Faker
 
     class HTTP < Faker::Base
       # Produces an HTTP status code
-      # 
+      #
       # ```ruby
       # Faker::Internet::HTTP.status_code #=> 418
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Internet::HTTP.status_code(group: :information) #=> 102
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Internet::HTTP.status_code(group: :successful) #=> 200
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Internet::HTTP.status_code(group: :redirect) #=> 306
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Internet::HTTP.status_code(group: :client_error) #=> 451
       # ```
-      # 
+      #
       # ```ruby
       # Faker::Internet::HTTP.status_code(group: :server_error) #=> 502
       # ```
@@ -7393,7 +7393,7 @@ module Faker
 
   class Markdown < Faker::Base
     # Produces a random header format.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.headers #=> "##### Autem"
     # ```
@@ -7401,7 +7401,7 @@ module Faker
     def self.headers; end
 
     # Produces a random emphasis formatting on a random word in two sentences.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.emphasis #=> "_Incidunt atque quis repellat id impedit.  Quas numquam quod incidunt dicta non. Blanditiis delectus laudantium atque reiciendis qui._"
     # ```
@@ -7409,7 +7409,7 @@ module Faker
     def self.emphasis; end
 
     # Produces a random ordered list of items between 1 and 10 randomly.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.ordered_list #=> "1. Qui reiciendis non consequatur atque.\n2. Quo doloremque veritatis tempora aut.\n3. Aspernatur.\n4. Ea ab.\n5. Qui.\n6. Sit pariatur nemo eveniet.\n7. Molestiae aut.\n8. Nihil molestias iure placeat.\n9. Dolore autem quisquam."
     # ```
@@ -7417,7 +7417,7 @@ module Faker
     def self.ordered_list; end
 
     # Produces a random unordered list of items between 1 and 10 randomly.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.unordered_list #=> "* Voluptatum aliquid tempora molestiae facilis non sed.\n* Nostrum omnis iste impedit voluptatum dolor.\n* Esse quidem et facere."
     # ```
@@ -7425,7 +7425,7 @@ module Faker
     def self.unordered_list; end
 
     # Produces a random inline code snippet between two sentences.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.inline_code #=> "Aut eos quis suscipit. `Dignissimos voluptatem expedita qui.` Quo doloremque veritatis tempora aut."
     # ```
@@ -7433,7 +7433,7 @@ module Faker
     def self.inline_code; end
 
     # Produces a random code block formatted in Ruby.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.block_code #=> "```ruby\nEos quasi qui.\n```"
     # ```
@@ -7441,7 +7441,7 @@ module Faker
     def self.block_code; end
 
     # Produces a random 3x4 table with a row of headings, a row of hyphens and two rows of data
-    # 
+    #
     # ```ruby
     # Faker::Markdown.table #=> "ad | similique | voluptatem\n---- | ---- | ----\ncorrupti | est | rerum\nmolestiae | quidem | et"
     # ```
@@ -7449,9 +7449,9 @@ module Faker
     def self.table; end
 
     # Produces a random method from the methods above or the methods listed in the arguments.
-    # 
+    #
     # _@param_ `methods` — Specify which methods to use.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.random #=> returns output from a single method outlined above
     # Faker::Markdown.random("table") #=> returns output from any single method outlined above except for "table"
@@ -7461,13 +7461,13 @@ module Faker
     def self.random(*args); end
 
     # Produces a simulated blog-esque text-heavy block in markdown
-    # 
+    #
     # Keyword arguments: sentences, repeat
-    # 
+    #
     # _@param_ `sentences` — Specifies how many sentences make a text block.
-    # 
+    #
     # _@param_ `repeat` — Specifies how many times the text block repeats.
-    # 
+    #
     # ```ruby
     # Faker::Markdown.sandwich #=> returns newline separated content of 1 header, 1 default lorem paragraph, and 1 random markdown element
     # Faker::Markdown.sandwich(sentences: 5) #=> returns newline separated content of 1 header, 1 5-sentence lorem paragraph, and 1 random markdown element
@@ -7489,7 +7489,7 @@ module Faker
 
   class Military < Faker::Base
     # Produces a rank in the U.S. Army.
-    # 
+    #
     # ```ruby
     # Faker::Military.army_rank #=> "Staff Sergeant"
     # ```
@@ -7497,7 +7497,7 @@ module Faker
     def self.army_rank; end
 
     # Produces a rank in the U.S. Marines.
-    # 
+    #
     # ```ruby
     # Faker::Military.marines_rank #=> "Gunnery Sergeant"
     # ```
@@ -7505,7 +7505,7 @@ module Faker
     def self.marines_rank; end
 
     # Produces a rank in the U.S. Navy.
-    # 
+    #
     # ```ruby
     # Faker::Military.navy_rank #=> "Seaman"
     # ```
@@ -7513,7 +7513,7 @@ module Faker
     def self.navy_rank; end
 
     # Produces a rank in the U.S. Air Force.
-    # 
+    #
     # ```ruby
     # Faker::Military.air_force_rank #=> "Captain"
     # ```
@@ -7521,7 +7521,7 @@ module Faker
     def self.air_force_rank; end
 
     # Produces a U.S. Department of Defense Paygrade.
-    # 
+    #
     # ```ruby
     # Faker::Military.dod_paygrade #=> "E-6"
     # ```
@@ -7550,15 +7550,15 @@ module Faker
     def initialize(name: nil, email: nil); end
 
     # Generate a mock Omniauth response from Google.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `name` — A specific name to return in the response.
-    # 
+    #
     # _@param_ `email` — A specific email to return in the response.
-    # 
+    #
     # _@param_ `uid` — A specific UID to return in the response.
-    # 
+    #
     # _@return_ — An auth hash in the format provided by omniauth-google.
     sig do
       params(
@@ -7573,17 +7573,17 @@ module Faker
     def self.google(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, uid: Number.number(digits: 9).to_s); end
 
     # Generate a mock Omniauth response from Facebook.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `name` — A specific name to return in the response.
-    # 
+    #
     # _@param_ `email` — A specific email to return in the response.
-    # 
+    #
     # _@param_ `username` — A specific username to return in the response.
-    # 
+    #
     # _@param_ `uid` — A specific UID to return in the response.
-    # 
+    #
     # _@return_ — An auth hash in the format provided by omniauth-facebook.
     sig do
       params(
@@ -7600,15 +7600,15 @@ module Faker
     def self.facebook(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_username = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, username: nil, uid: Number.number(digits: 7).to_s); end
 
     # Generate a mock Omniauth response from Twitter.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `name` — A specific name to return in the response.
-    # 
+    #
     # _@param_ `nickname` — A specific nickname to return in the response.
-    # 
+    #
     # _@param_ `uid` — A specific UID to return in the response.
-    # 
+    #
     # _@return_ — An auth hash in the format provided by omniauth-twitter.
     sig do
       params(
@@ -7623,15 +7623,15 @@ module Faker
     def self.twitter(legacy_name = T.unsafe(nil), legacy_nickname = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, nickname: nil, uid: Number.number(digits: 6).to_s); end
 
     # Generate a mock Omniauth response from LinkedIn.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `name` — A specific name to return in the response.
-    # 
+    #
     # _@param_ `email` — A specific email to return in the response.
-    # 
+    #
     # _@param_ `uid` — A specific UID to return in the response.
-    # 
+    #
     # _@return_ — An auth hash in the format provided by omniauth-linkedin.
     sig do
       params(
@@ -7646,15 +7646,15 @@ module Faker
     def self.linkedin(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, uid: Number.number(digits: 6).to_s); end
 
     # Generate a mock Omniauth response from Github.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `name` — A specific name to return in the response.
-    # 
+    #
     # _@param_ `email` — A specific email to return in the response.
-    # 
+    #
     # _@param_ `uid` — A specific UID to return in the response.
-    # 
+    #
     # _@return_ — An auth hash in the format provided by omniauth-github.
     sig do
       params(
@@ -7669,13 +7669,13 @@ module Faker
     def self.github(legacy_name = T.unsafe(nil), legacy_email = T.unsafe(nil), legacy_uid = T.unsafe(nil), name: nil, email: nil, uid: Number.number(digits: 8).to_s); end
 
     # Generate a mock Omniauth response from Apple.
-    # 
+    #
     # _@param_ `name` — A specific name to return in the response.
-    # 
+    #
     # _@param_ `email` — A specific email to return in the response.
-    # 
+    #
     # _@param_ `uid` — A specific UID to return in the response.
-    # 
+    #
     # _@return_ — An auth hash in the format provided by omniauth-apple.
     sig { params(name: T.nilable(::String), email: T.nilable(::String), uid: T.nilable(::String)).returns(T::Hash[T.untyped, T.untyped]) }
     def self.apple(name: nil, email: nil, uid: nil); end
@@ -7701,7 +7701,7 @@ module Faker
 
   class Appliance < Faker::Base
     # Produces the name of an appliance brand.
-    # 
+    #
     # ```ruby
     # Faker::Appliance.brand #=> "Bosch"
     # ```
@@ -7709,7 +7709,7 @@ module Faker
     def self.brand; end
 
     # Produces the name of a type of appliance equipment.
-    # 
+    #
     # ```ruby
     # Faker::Appliance.equipment #=> "Appliance plug"
     # ```
@@ -7719,11 +7719,11 @@ module Faker
 
   class ChileRut < Faker::Base
     # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits).
-    # 
+    #
     # _@param_ `min_rut` — Specifies the minimum value of the rut.
-    # 
+    #
     # _@param_ `fixed` — Determines if the rut is fixed (returns the min_rut value).
-    # 
+    #
     # ```ruby
     # Faker::ChileRut.rut #=> 11235813
     # Faker::ChileRut.rut(min_rut: 20890156) #=> 31853211
@@ -7740,7 +7740,7 @@ module Faker
     def self.rut(legacy_min_rut = T.unsafe(nil), legacy_fixed = T.unsafe(nil), min_rut: 1, fixed: false); end
 
     # Produces a random Chilean digito verificador (check-digit).
-    # 
+    #
     # ```ruby
     # Faker::ChileRut.dv #=> "k"
     # ```
@@ -7749,7 +7749,7 @@ module Faker
 
     # Produces a random Chilean digito verificador (check-digit).
     # Alias for english speaking devs.
-    # 
+    #
     # ```ruby
     # Faker::ChileRut.check_digit #=> "5"
     # ```
@@ -7757,11 +7757,11 @@ module Faker
     def self.check_digit; end
 
     # Produces a random Chilean RUT (Rol Unico Tributario, ID with 8 digits) with a dv (digito verificador, check-digit).
-    # 
+    #
     # _@param_ `min_rut` — Specifies the minimum value of the rut.
-    # 
+    #
     # _@param_ `fixed` — Determines if the rut is fixed (returns the min_rut value).
-    # 
+    #
     # ```ruby
     # Faker::ChileRut.full_rut #=> "30686957-4"
     # Faker::ChileRut.full_rut(min_rut: 20890156) #=> "30686957-4"
@@ -7784,7 +7784,7 @@ module Faker
 
   class DcComics < Faker::Base
     # Produces a hero name from DC Comics
-    # 
+    #
     # ```ruby
     # Faker::DcComics.hero #=> "Batman"
     # ```
@@ -7792,7 +7792,7 @@ module Faker
     def self.hero; end
 
     # Produces a heroine name from DC Comics
-    # 
+    #
     # ```ruby
     # Faker::DcComics.heroine #=> "Supergirl"
     # ```
@@ -7800,7 +7800,7 @@ module Faker
     def self.heroine; end
 
     # Produces a villain name from DC Comics
-    # 
+    #
     # ```ruby
     # Faker::DcComics.villain #=> "The Joker"
     # ```
@@ -7808,7 +7808,7 @@ module Faker
     def self.villain; end
 
     # Produces a character name from DC Comics
-    # 
+    #
     # ```ruby
     # Faker::DcComics.name #=> "Clark Kent"
     # ```
@@ -7816,7 +7816,7 @@ module Faker
     def self.name; end
 
     # Produces a comic book title from DC Comics
-    # 
+    #
     # ```ruby
     # Faker::DcComics.title #=> "Batman: The Long Halloween"
     # ```
@@ -7826,7 +7826,7 @@ module Faker
 
   class IDNumber < Faker::Base
     # Produces a random valid US Social Security number.
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.valid #=> "552-56-3593"
     # ```
@@ -7834,7 +7834,7 @@ module Faker
     def self.valid; end
 
     # Produces a random invalid US Social Security number.
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.invalid #=> "311-72-0000"
     # ```
@@ -7845,7 +7845,7 @@ module Faker
     def self.ssn_valid; end
 
     # Produces a random Spanish citizen identifier (DNI).
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.spanish_citizen_number #=> "53290236-H"
     # ```
@@ -7853,7 +7853,7 @@ module Faker
     def self.spanish_citizen_number; end
 
     # Produces a random Spanish foreign born citizen identifier (NIE).
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.spanish_foreign_citizen_number #=> "Z-1600870-Y"
     # ```
@@ -7861,7 +7861,7 @@ module Faker
     def self.spanish_foreign_citizen_number; end
 
     # Produces a random valid South African ID Number.
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.south_african_id_number #=> "8105128870184"
     # Faker::IDNumber.valid_south_african_id_number #=> "8105128870184"
@@ -7870,7 +7870,7 @@ module Faker
     def self.valid_south_african_id_number; end
 
     # Produces a random invalid South African ID Number.
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.invalid_south_african_id_number #=> "1642972065088"
     # ```
@@ -7878,9 +7878,9 @@ module Faker
     def self.invalid_south_african_id_number; end
 
     # Produces a random Brazilian Citizen Number (CPF).
-    # 
+    #
     # _@param_ `formatted` — Specifies if the number is formatted with dividers.
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.brazilian_citizen_number #=> "53540542221"
     # Faker::IDNumber.brazilian_citizen_number(formatted: true) #=> "535.405.422-21"
@@ -7889,9 +7889,9 @@ module Faker
     def self.brazilian_citizen_number(legacy_formatted = T.unsafe(nil), formatted: false); end
 
     # Produces a random Brazilian ID Number (RG).
-    # 
+    #
     # _@param_ `formatted` — Specifies if the number is formatted with dividers.
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.brazilian_id #=> "493054029"
     # Faker::IDNumber.brazilian_id(formatted: true) #=> "49.305.402-9"
@@ -7900,7 +7900,7 @@ module Faker
     def self.brazilian_id(legacy_formatted = T.unsafe(nil), formatted: false); end
 
     # Produces a random Chilean ID (Rut with 8 digits).
-    # 
+    #
     # ```ruby
     # Faker::IDNumber.chilean_id #=> "15620613-K"
     # ```
@@ -7937,7 +7937,7 @@ module Faker
 
   class Marketing < Faker::Base
     # Produces the name of a video game console or platform.
-    # 
+    #
     # ```ruby
     # Faker::Marketing.buzzwords #=> "rubber meets the road"
     # ```
@@ -7947,7 +7947,7 @@ module Faker
 
   class Superhero < Faker::Base
     # Produces a superpower.
-    # 
+    #
     # ```ruby
     # Faker::Superhero.power #=> "Photokinesis"
     # ```
@@ -7955,7 +7955,7 @@ module Faker
     def self.power; end
 
     # Produces a superhero name prefix.
-    # 
+    #
     # ```ruby
     # Faker::Superhero.prefix #=> "the Fated"
     # ```
@@ -7963,7 +7963,7 @@ module Faker
     def self.prefix; end
 
     # Produces a superhero name suffix.
-    # 
+    #
     # ```ruby
     # Faker::Superhero.suffix #=> "Captain"
     # ```
@@ -7971,7 +7971,7 @@ module Faker
     def self.suffix; end
 
     # Produces a superhero descriptor.
-    # 
+    #
     # ```ruby
     # Faker::Superhero.descriptor #=> "Bizarro"
     # ```
@@ -7979,7 +7979,7 @@ module Faker
     def self.descriptor; end
 
     # Produces a random superhero name.
-    # 
+    #
     # ```ruby
     # Faker::Superhero.name #=> "Magnificent Shatterstar"
     # ```
@@ -7989,7 +7989,7 @@ module Faker
 
   class WorldCup < Faker::Base
     # Produces a national team name.
-    # 
+    #
     # ```ruby
     # Faker::WorldCup.team #=> "Iran"
     # ```
@@ -7997,7 +7997,7 @@ module Faker
     def self.team; end
 
     # Produces a city name hosting the World Cup match.
-    # 
+    #
     # ```ruby
     # Faker::WorldCup.city #=> "Moscow"
     # ```
@@ -8005,7 +8005,7 @@ module Faker
     def self.city; end
 
     # Produces the name of a stadium that has hosted a World Cup match.
-    # 
+    #
     # ```ruby
     # Faker::WorldCup.stadium #=> "Rostov Arena"
     # ```
@@ -8013,11 +8013,11 @@ module Faker
     def self.stadium; end
 
     # Produces a random national team name from a group.
-    # 
+    #
     # ```ruby
     # Faker::WorldCup.group(group: 'group_B') #=> "Spain"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::WorldCup.group #=> "Russia"
     # ```
@@ -8025,11 +8025,11 @@ module Faker
     def self.group(legacy_group = T.unsafe(nil), group: 'group_A'); end
 
     # Produces a random name from national team roster.
-    # 
+    #
     # ```ruby
     # Faker::WorldCup.roster #=> "Hector Cuper"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::WorldCup.roster(country: 'Spain', type: 'forwards') #=> "Diego Costa"
     # ```
@@ -8046,7 +8046,7 @@ module Faker
 
   class BossaNova < Faker::Base
     # Produces the name of a bossa nova artist.
-    # 
+    #
     # ```ruby
     # Faker::BossaNova.artist #=> "Tom Jobin"
     # ```
@@ -8054,7 +8054,7 @@ module Faker
     def self.artist; end
 
     # Produces a bossa nova song.
-    # 
+    #
     # ```ruby
     # Faker::BossaNova.song #=> "Chega de Saudade"
     # ```
@@ -8065,22 +8065,22 @@ module Faker
   class Fillmurray < Faker::Base
     # Produces the URL of an image from Fill Murray, a site which hosts
     # exclusively photographs of actor Bill Murray.
-    # 
+    #
     # _@param_ `grayscale` — Whether to return a grayscale image.
-    # 
+    #
     # _@param_ `width` — The iamage width.
-    # 
+    #
     # _@param_ `height` — The image height.
-    # 
+    #
     # ```ruby
     # Faker::Fillmurray.image #=> "https://www.fillmurray.com/300/300"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Fillmurray.image(grayscale: true)
     #   #=> "https://fillmurray.com/g/300/300"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Fillmurray.image(grayscale: false, width: 200, height: 400)
     #   #=> "https://fillmurray.com/200/400"
@@ -8100,7 +8100,7 @@ module Faker
 
   class FunnyName < Faker::Base
     # Retrieves a funny name.
-    # 
+    #
     # ```ruby
     # Faker::FunnyName.name #=> "Sam Pull"
     # ```
@@ -8108,7 +8108,7 @@ module Faker
     def self.name; end
 
     # Retrieves a funny two word name.
-    # 
+    #
     # ```ruby
     # Faker::FunnyName.two_word_name #=> "Shirley Knot"
     # ```
@@ -8116,7 +8116,7 @@ module Faker
     def self.two_word_name; end
 
     # Retrieves a funny three word name.
-    # 
+    #
     # ```ruby
     # Faker::FunnyName.three_word_name #=> "Carson O. Gin"
     # ```
@@ -8124,7 +8124,7 @@ module Faker
     def self.three_word_name; end
 
     # Retrieves a funny four word name.
-    # 
+    #
     # ```ruby
     # Faker::FunnyName.four_word_name #=> "Maude L. T. Ford"
     # ```
@@ -8132,7 +8132,7 @@ module Faker
     def self.four_word_name; end
 
     # Retrieves a funny name with an initial.
-    # 
+    #
     # ```ruby
     # Faker::FunnyName.name_with_initial #=> "Heather N. Yonn"
     # ```
@@ -8142,7 +8142,7 @@ module Faker
 
   class Restaurant < Faker::Base
     # Produces the name of a restaurant.
-    # 
+    #
     # ```ruby
     # Faker::Restaurant.name #=> "Curry King"
     # ```
@@ -8150,7 +8150,7 @@ module Faker
     def self.name; end
 
     # Produces a type of restaurant.
-    # 
+    #
     # ```ruby
     # Faker::Restaurant.type #=> "Comfort Food"
     # ```
@@ -8158,7 +8158,7 @@ module Faker
     def self.type; end
 
     # Produces a description of a restaurant.
-    # 
+    #
     # ```ruby
     # Faker::Restaurant.description
     #   #=> "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat."
@@ -8167,7 +8167,7 @@ module Faker
     def self.description; end
 
     # Produces a review for a restaurant.
-    # 
+    #
     # ```ruby
     # Faker::Restaurant.review
     #   #=> "Brand new. Great design. Odd to hear pop music in a Mexican establishment. Music is a bit loud. It should be background."
@@ -8178,7 +8178,7 @@ module Faker
 
   class University < Faker::Base
     # Produces a random university name.
-    # 
+    #
     # ```ruby
     # Faker::University.name #=> "Eastern Mississippi Academy"
     # ```
@@ -8186,7 +8186,7 @@ module Faker
     def self.name; end
 
     # Produces a random university prefix.
-    # 
+    #
     # ```ruby
     # Faker::University.prefix #=> "Western"
     # ```
@@ -8194,7 +8194,7 @@ module Faker
     def self.prefix; end
 
     # Produces a random university suffix.
-    # 
+    #
     # ```ruby
     # Faker::University.suffix #=> "Academy"
     # ```
@@ -8202,7 +8202,7 @@ module Faker
     def self.suffix; end
 
     # Produces a random greek organization.
-    # 
+    #
     # ```ruby
     # Faker::University.greek_organization #=> "BEX"
     # ```
@@ -8210,7 +8210,7 @@ module Faker
     def self.greek_organization; end
 
     # Produces a greek alphabet.
-    # 
+    #
     # ```ruby
     # Faker::University.greek_alphabet #=> ["Α", "B", "Γ", "Δ", ...]
     # ```
@@ -8246,7 +8246,7 @@ module Faker
 
   class CryptoCoin < Faker::Base
     # Produces a random crypto coin name.
-    # 
+    #
     # ```ruby
     # Faker::CryptoCoin.coin_name #=> "Bitcoin"
     # ```
@@ -8254,7 +8254,7 @@ module Faker
     def self.coin_name(legacy_coin = T.unsafe(nil), coin: coin_array); end
 
     # Produces a random crypto coin acronym.
-    # 
+    #
     # ```ruby
     # Faker::CryptoCoin.acronym #=> "BTC"
     # ```
@@ -8262,7 +8262,7 @@ module Faker
     def self.acronym(legacy_coin = T.unsafe(nil), coin: coin_array); end
 
     # Produces a random crypto coin logo url.
-    # 
+    #
     # ```ruby
     # Faker::CryptoCoin.url_logo #=> "https://i.imgur.com/EFz61Ei.png"
     # ```
@@ -8270,7 +8270,7 @@ module Faker
     def self.url_logo(legacy_coin = T.unsafe(nil), coin: coin_array); end
 
     # Produces a random crypto coin's name, acronym and logo in an array.
-    # 
+    #
     # ```ruby
     # Faker::CryptoCoin.coin_array #=> ["Dash", "DASH", "https://i.imgur.com/2uX91cb.png"]
     # ```
@@ -8278,7 +8278,7 @@ module Faker
     def self.coin_array; end
 
     # Produces a random crypto coin's name, acronym and logo in a hash.
-    # 
+    #
     # ```ruby
     # Faker::CryptoCoin.coin_hash {:name=>"Ethereum", :acronym=>"ETH", :url_logo=>"https://i.imgur.com/uOPFCXj.png"}
     # ```
@@ -8288,7 +8288,7 @@ module Faker
 
   class Demographic < Faker::Base
     # Produces the name of a race.
-    # 
+    #
     # ```ruby
     # Faker::Demographic.race #=> "Native Hawaiian or Other Pacific Islander"
     # ```
@@ -8296,7 +8296,7 @@ module Faker
     def self.race; end
 
     # Produces a level of educational attainment.
-    # 
+    #
     # ```ruby
     # Faker::Demographic.educational_attainment #=> "GED or alternative credential"
     # ```
@@ -8304,7 +8304,7 @@ module Faker
     def self.educational_attainment; end
 
     # Produces a denonym.
-    # 
+    #
     # ```ruby
     # Faker::Demographic.denonym #=> "Panamanian"
     # ```
@@ -8312,7 +8312,7 @@ module Faker
     def self.demonym; end
 
     # Produces a marital status.
-    # 
+    #
     # ```ruby
     # Faker::Demographic.marital_status #=> "Widowed"
     # ```
@@ -8320,7 +8320,7 @@ module Faker
     def self.marital_status; end
 
     # Produces a sex for demographic purposes.
-    # 
+    #
     # ```ruby
     # Faker::Demographic.sex #=> "Female"
     # ```
@@ -8328,13 +8328,13 @@ module Faker
     def self.sex; end
 
     # Produces a height as a string.
-    # 
+    #
     # _@param_ `unit` — either `:metric` or `imperial`.
-    # 
+    #
     # ```ruby
     # Faker::Demographic.height #=> "1.61"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Demographic.height(unit: :imperial) #=> "6 ft, 2 in"
     # ```
@@ -8344,21 +8344,21 @@ module Faker
 
   class LoremPixel < Faker::Base
     # Produces a random image URL from lorempixel.com.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `size` — Specifies the size of image to generate.
-    # 
+    #
     # _@param_ `is_gray` — Determines if the image is gray.
-    # 
+    #
     # _@param_ `category` — Adds the category of the generated image to the URL.
-    # 
+    #
     # _@param_ `number` — Adds a number as part of the URL.
-    # 
+    #
     # _@param_ `text` — Adds dummy text as part of the URL.
-    # 
+    #
     # _@param_ `secure` — Changes the image URL between http and https.
-    # 
+    #
     # ```ruby
     # Faker::LoremPixel.image #=> "https://lorempixel.com/300/300"
     # Faker::LoremPixel.image(size: "50x60") #=> "https://lorempixel.com/50/60"
@@ -8390,9 +8390,9 @@ module Faker
 
   class Measurement < Faker::Base
     # Produces a random height measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random height value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.height #=> "6 inches"
     # Faker::Measurement.height(amount: 1.4) #=> "1.4 inches"
@@ -8403,9 +8403,9 @@ module Faker
     def self.height(legacy_amount = T.unsafe(nil), amount: rand(10)); end
 
     # Produces a random length measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random length value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.length #=> "1 yard"
     # Faker::Measurement.length(amount: 1.4) #=> "1.4 yards"
@@ -8414,9 +8414,9 @@ module Faker
     def self.length(legacy_amount = T.unsafe(nil), amount: rand(10)); end
 
     # Produces a random volume measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random volume value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.volume #=> "10 cups"
     # Faker::Measurement.volume(amount: 1.4) #=> "1.4 cups"
@@ -8425,9 +8425,9 @@ module Faker
     def self.volume(legacy_amount = T.unsafe(nil), amount: rand(10)); end
 
     # Produces a random weight measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random weight value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.weight #=> "3 pounds"
     # Faker::Measurement.weight(amount: 1.4) #=> "1.4 pounds"
@@ -8436,9 +8436,9 @@ module Faker
     def self.weight(legacy_amount = T.unsafe(nil), amount: rand(10)); end
 
     # Produces a random metric height measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random height value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.metric_height #=> "2 meters"
     # Faker::Measurement.metric_height(amount: 1.4) #=> "1.4 meters"
@@ -8447,9 +8447,9 @@ module Faker
     def self.metric_height(legacy_amount = T.unsafe(nil), amount: rand(10)); end
 
     # Produces a random metric length measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random length value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.metric_length #=> "0 decimeters"
     # Faker::Measurement.metric_length(amount: 1.4) #=> "1.4 decimeters"
@@ -8458,9 +8458,9 @@ module Faker
     def self.metric_length(legacy_amount = T.unsafe(nil), amount: rand(10)); end
 
     # Produces a random metric volume measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random volume value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.metric_volume #=> "1 liter"
     # Faker::Measurement.metric_volume(amount: 1.4) #=> "1.4 liters"
@@ -8469,9 +8469,9 @@ module Faker
     def self.metric_volume(legacy_amount = T.unsafe(nil), amount: rand(10)); end
 
     # Produces a random metric weight measurement.
-    # 
+    #
     # _@param_ `amount` — Speficies the random weight value.
-    # 
+    #
     # ```ruby
     # Faker::Measurement.metric_weight #=> "8 grams"
     # Faker::Measurement.metric_weight(amount: 1.4) #=> "1.4 grams"
@@ -8494,7 +8494,7 @@ module Faker
 
   class Placeholdit < Faker::Base
     # Produces a random placeholder image from https://placehold.it.
-    # 
+    #
     #   Faker::Placeholdit.image #=> "https://placehold.it/300x300.png"
     #   Faker::Placeholdit.image(size: '50x50') #=> "https://placehold.it/50x50.png"
     #   Faker::Placeholdit.image(size: '50x50', format: 'jpg') #=> "https://placehold.it/50x50.jpg"
@@ -8502,19 +8502,19 @@ module Faker
     #   Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: :random) #=> "https://placehold.it/50x50.jpeg/39eba7"
     #   Faker::Placeholdit.image(size: '50x50', format: 'jpeg', background_color: 'ffffff', text_color: '000') #=> "https://placehold.it/50x50.jpeg/ffffff/000"
     #   Faker::Placeholdit.image(size: '50x50', format: 'jpg', background_color: 'ffffff', text_color: '000', text: 'Some Custom Text') #=> "https://placehold.it/50x50.jpg/ffffff/000?text=Some Custom Text"
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `size` — Specifies the image's size, dimensions separated by 'x'.
-    # 
+    #
     # _@param_ `format` — Specifies the image's extension.
-    # 
+    #
     # _@param_ `background_color` — Specifies the background color, either in hexadecimal format (without #) or as :random.
-    # 
+    #
     # _@param_ `text_color` — Specifies the text color, either in hexadecimal format (without #) or as :random.
-    # 
+    #
     # _@param_ `text` — Specifies a custom text to be used.
-    # 
+    #
     # ```ruby
     # # Keyword arguments: size, format, background_color, text_color, text
     # ```
@@ -8540,7 +8540,7 @@ module Faker
 
   class SlackEmoji < Faker::Base
     # Produces a random slack emoji from people category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.people #=> ":sleepy:"
     # ```
@@ -8548,7 +8548,7 @@ module Faker
     def self.people; end
 
     # Produces a random slack emoji from nature category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.nature #=> ":mount_fuji:"
     # ```
@@ -8556,7 +8556,7 @@ module Faker
     def self.nature; end
 
     # Produces a random slack emoji from food and drink category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.food_and_drink #=> ":beers:"
     # ```
@@ -8564,7 +8564,7 @@ module Faker
     def self.food_and_drink; end
 
     # Produces a random slack emoji from celebration category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.celebration #=> ":tada:"
     # ```
@@ -8572,7 +8572,7 @@ module Faker
     def self.celebration; end
 
     # Produces a random slack emoji from activity category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.activity #=> ":soccer:"
     # ```
@@ -8580,7 +8580,7 @@ module Faker
     def self.activity; end
 
     # Produces a random slack emoji from travel and places category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.travel_and_places #=> ":metro:"
     # ```
@@ -8588,7 +8588,7 @@ module Faker
     def self.travel_and_places; end
 
     # Produces a random slack emoji from objects and symbols category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.objects_and_symbols #=> ":id:"
     # ```
@@ -8596,7 +8596,7 @@ module Faker
     def self.objects_and_symbols; end
 
     # Produces a random slack emoji from custom category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.custom #=> ":slack:"
     # ```
@@ -8604,7 +8604,7 @@ module Faker
     def self.custom; end
 
     # Produces a random slack emoji from any category.
-    # 
+    #
     # ```ruby
     # Faker::SlackEmoji.emoji #=> ":pizza:"
     # ```
@@ -8614,9 +8614,9 @@ module Faker
 
   class Alphanumeric < Faker::Base
     # Produces a random string of alphabetic characters (no digits)
-    # 
+    #
     # _@param_ `number` — The length of the string to generate
-    # 
+    #
     # ```ruby
     # Faker::Alphanumeric.alpha(number: 10) #=> "zlvubkrwga"
     # ```
@@ -8624,21 +8624,21 @@ module Faker
     def self.alpha(legacy_number = T.unsafe(nil), number: 32); end
 
     # Produces a random string of alphanumeric characters
-    # 
+    #
     # _@param_ `number` — The number of characters to generate
-    # 
+    #
     # _@param_ `min_alpha` — The minimum number of alphabetic to add to the string
-    # 
+    #
     # _@param_ `min_numeric` — The minimum number of numbers to add to the string
-    # 
+    #
     # ```ruby
     # Faker::Alphanumeric.alphanumeric(number: 10) #=> "3yfq2phxtb"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3) #=> "3yfq2phxtb"
     # ```
-    # 
+    #
     # ```ruby
     # Faker::Alphanumeric.alphanumeric(number: 10, min_alpha: 3, min_numeric: 3) #=> "3yfq2phx8b"
     # ```
@@ -8657,7 +8657,7 @@ module Faker
     # Produces a Chuck Norris Fact.
     # Original list of facts:
     # https://github.com/jenkinsci/chucknorris-plugin/blob/master/src/main/java/hudson/plugins/chucknorris/FactGenerator.java
-    # 
+    #
     # ```ruby
     # Faker::ChuckNorris.fact
     #   #=> "Chuck Norris can solve the Towers of Hanoi in one move."
@@ -8668,7 +8668,7 @@ module Faker
 
   class Construction < Faker::Base
     # Produces a random material.
-    # 
+    #
     # ```ruby
     # Faker::Construction.material #=> "Wood"
     # ```
@@ -8676,7 +8676,7 @@ module Faker
     def self.material; end
 
     # Produces a random heavy equipment.
-    # 
+    #
     # ```ruby
     # Faker::Construction.heavy_equipment #=> "Excavator"
     # ```
@@ -8684,7 +8684,7 @@ module Faker
     def self.heavy_equipment; end
 
     # Produces a random trade.
-    # 
+    #
     # ```ruby
     # Faker::Construction.trade #=> "Carpenter"
     # ```
@@ -8692,7 +8692,7 @@ module Faker
     def self.trade; end
 
     # Produces a random subcontract category.
-    # 
+    #
     # ```ruby
     # Faker::Construction.subcontract_category #=> "Curb & Gutter"
     # ```
@@ -8700,7 +8700,7 @@ module Faker
     def self.subcontract_category; end
 
     # Produces a random standard cost code.
-    # 
+    #
     # ```ruby
     # Faker::Construction.standard_cost_code #=> "1-000 - Purpose"
     # ```
@@ -8708,7 +8708,7 @@ module Faker
     def self.standard_cost_code; end
 
     # Produces a random role.
-    # 
+    #
     # ```ruby
     # Faker::Construction.role #=> "Engineer"
     # ```
@@ -8718,15 +8718,15 @@ module Faker
 
   class LoremFlickr < Faker::Base
     # Produces a random image URL from loremflickr.com.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `size` — Specifies the size of image to generate.
-    # 
+    #
     # _@param_ `search_terms` — Adds search terms to the image URL.
-    # 
+    #
     # _@param_ `match_all` — Add "all" as part of the URL.
-    # 
+    #
     # ```ruby
     # Faker::LoremFlickr.image #=> "https://loremflickr.com/300/300"
     # Faker::LoremFlickr.image(size: "50x60") #=> "https://loremflickr.com/50/60"
@@ -8747,15 +8747,15 @@ module Faker
     def self.image(legacy_size = T.unsafe(nil), legacy_search_terms = T.unsafe(nil), legacy_match_all = T.unsafe(nil), size: '300x300', search_terms: [], match_all: false); end
 
     # Produces a random grayscale image URL from loremflickr.com.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `size` — Specifies the size of image to generate.
-    # 
+    #
     # _@param_ `search_terms` — Adds search terms to the image URL.
-    # 
+    #
     # _@param_ `match_all` — Add "all" as part of the URL.
-    # 
+    #
     # ```ruby
     # Faker::LoremFlickr.grayscale_image #=> "https://loremflickr.com/g/300/300/all"
     # Faker::LoremFlickr.grayscale_image(size: "50x60") #=> "https://loremflickr.com/g/50/60/all"
@@ -8776,15 +8776,15 @@ module Faker
     def self.grayscale_image(legacy_size = T.unsafe(nil), legacy_search_terms = T.unsafe(nil), legacy_match_all = T.unsafe(nil), size: '300x300', search_terms: ['all'], match_all: false); end
 
     # Produces a random pixelated image URL from loremflickr.com.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `size` — Specifies the size of image to generate.
-    # 
+    #
     # _@param_ `search_terms` — Adds search terms to the image URL.
-    # 
+    #
     # _@param_ `match_all` — Add "all" as part of the URL.
-    # 
+    #
     # ```ruby
     # Faker::LoremFlickr.pixelated_image #=> "https://loremflickr.com/p/300/300/all"
     # Faker::LoremFlickr.pixelated_image(size: "50x60") #=> "https://loremflickr.com/p/50/60/all"
@@ -8805,17 +8805,17 @@ module Faker
     def self.pixelated_image(legacy_size = T.unsafe(nil), legacy_search_terms = T.unsafe(nil), legacy_match_all = T.unsafe(nil), size: '300x300', search_terms: ['all'], match_all: false); end
 
     # Produces a random colorized image URL from loremflickr.com.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `size` — Specifies the size of image to generate.
-    # 
+    #
     # _@param_ `color` — Specifies the color of image to generate.
-    # 
+    #
     # _@param_ `search_terms` — Adds search terms to the image URL.
-    # 
+    #
     # _@param_ `match_all` — Add "all" as part of the URL.
-    # 
+    #
     # ```ruby
     # Faker::LoremFlickr.image #=> "https://loremflickr.com/red/300/300/all"
     # Faker::LoremFlickr.image(size: "50x60", color: 'blue') #=> "https://loremflickr.com/blue/50/60/all"
@@ -8850,7 +8850,7 @@ module Faker
 
   class PhoneNumber < Faker::Base
     # Produces a random phone number in a random format (may or may not have a country code, extension and can have different dividers).
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.phone_number #=> "397.693.1309 x4321"
     # ```
@@ -8858,7 +8858,7 @@ module Faker
     def self.phone_number; end
 
     # Produces a random cell phone number in a random format (may or may not have a country code and can have different dividers).
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.cell_phone #=> "(186)285-7925"
     # ```
@@ -8866,7 +8866,7 @@ module Faker
     def self.cell_phone; end
 
     # Produces a random country code.
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.country_code #=> "+20"
     # ```
@@ -8874,7 +8874,7 @@ module Faker
     def self.country_code; end
 
     # Produces a random phone number with country code.
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.phone_number_with_country_code #=> "+95 1-672-173-8153"
     # ```
@@ -8882,7 +8882,7 @@ module Faker
     def self.phone_number_with_country_code; end
 
     # Produces a random cell phone number with country code.
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.cell_phone_with_country_code #=> "+974 (190) 987-9034"
     # ```
@@ -8890,7 +8890,7 @@ module Faker
     def self.cell_phone_with_country_code; end
 
     # Produces a random phone number in e164 format.
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.cell_phone_in_e164 #=> "+944937040625"
     # ```
@@ -8898,7 +8898,7 @@ module Faker
     def self.cell_phone_in_e164; end
 
     # Produces a random US or Canada-based area code.
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.area_code #=> "201"
     # ```
@@ -8906,7 +8906,7 @@ module Faker
     def self.area_code; end
 
     # Produces a random US or Canada-based exchange code.
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.exchange_code #=> "208"
     # ```
@@ -8914,9 +8914,9 @@ module Faker
     def self.exchange_code; end
 
     # Produces a random US or Canada-based extension / subscriber number. Can be used for both extensions and last four digits of phone number.
-    # 
+    #
     # _@param_ `length` — Speficies the length of the return value.
-    # 
+    #
     # ```ruby
     # Faker::PhoneNumber.subscriber_number #=> "3873"
     # Faker::PhoneNumber.subscriber_number(length: 2) #=> "39"
@@ -8928,7 +8928,7 @@ module Faker
 
   class Relationship < Faker::Base
     # Produces a random family relationship.
-    # 
+    #
     # ```ruby
     # Faker::Relationship.familial #=> "Grandfather"
     # ```
@@ -8936,7 +8936,7 @@ module Faker
     def self.familial(legacy_connection = T.unsafe(nil), connection: nil); end
 
     # Produces a random in-law relationship.
-    # 
+    #
     # ```ruby
     # Faker::Relationship.in_law #=> "Brother-in-law"
     # ```
@@ -8944,7 +8944,7 @@ module Faker
     def self.in_law; end
 
     # Produces a random spouse relationship.
-    # 
+    #
     # ```ruby
     # Faker::Relationship.spouse #=> "Husband"
     # ```
@@ -8952,7 +8952,7 @@ module Faker
     def self.spouse; end
 
     # Produces a random parent relationship.
-    # 
+    #
     # ```ruby
     # Faker::Relationship.parent #=> "Father"
     # ```
@@ -8960,7 +8960,7 @@ module Faker
     def self.parent; end
 
     # Produces a random sibling relationship.
-    # 
+    #
     # ```ruby
     # Faker::Relationship.sibling #=> "Sister"
     # ```
@@ -8970,7 +8970,7 @@ module Faker
 
   class SouthAfrica < Faker::Base
     # Produces a South African ID number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.id_number #=> "6110311856083"
     # ```
@@ -8978,7 +8978,7 @@ module Faker
     def self.id_number; end
 
     # Produces a valid South African ID number
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.valid_id_number #=> "6110311856083"
     # ```
@@ -8986,7 +8986,7 @@ module Faker
     def self.valid_id_number; end
 
     # Produces an invalid South African ID number
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.invalid_id_number #=> "7018356904081"
     # ```
@@ -8994,7 +8994,7 @@ module Faker
     def self.invalid_id_number; end
 
     # Produces a South African phone number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.phone_number #=> "010 788 5009"
     # ```
@@ -9002,7 +9002,7 @@ module Faker
     def self.phone_number; end
 
     # Produces a South African cell phone number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.cell_phone #=> "082 946 7470"
     # ```
@@ -9010,7 +9010,7 @@ module Faker
     def self.cell_phone; end
 
     # Produces a South African private company registration number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.pty_ltd_registration_number #=> "5301/714689/07"
     # ```
@@ -9018,7 +9018,7 @@ module Faker
     def self.pty_ltd_registration_number; end
 
     # Produces a South African close corporation registration number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.close_corporation_registration_number #=> "CK74/7585/23"
     # ```
@@ -9026,7 +9026,7 @@ module Faker
     def self.close_corporation_registration_number; end
 
     # Produces a South African listed company registration number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.listed_company_registration_number #=> "7039/3135/06"
     # ```
@@ -9034,7 +9034,7 @@ module Faker
     def self.listed_company_registration_number; end
 
     # Produces a South African trust registration number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.trust_registration_number #=> "IT38/6489900"
     # ```
@@ -9042,7 +9042,7 @@ module Faker
     def self.trust_registration_number; end
 
     # Produces a South African VAT number.
-    # 
+    #
     # ```ruby
     # Faker::SouthAfrica.vat_number #=> "ZA79494416181"
     # ```
@@ -9052,7 +9052,7 @@ module Faker
 
   class Subscription < Faker::Base
     # Produces the name of a subscription plan.
-    # 
+    #
     # ```ruby
     # Faker::Subscription.plan #=> "Platinum"
     # ```
@@ -9060,7 +9060,7 @@ module Faker
     def self.plan; end
 
     # Produces a subscription status.
-    # 
+    #
     # ```ruby
     # Faker::Subscription.status #=> "Active"
     # ```
@@ -9068,7 +9068,7 @@ module Faker
     def self.status; end
 
     # Produces the name of a payment method.
-    # 
+    #
     # ```ruby
     # Faker::Subscription.payment_method #=> "PayPal"
     # ```
@@ -9076,7 +9076,7 @@ module Faker
     def self.payment_method; end
 
     # Produces the name of a subscription term.
-    # 
+    #
     # ```ruby
     # Faker::Subscription.subscription_term #=> "Annual"
     # ```
@@ -9084,7 +9084,7 @@ module Faker
     def self.subscription_term; end
 
     # Produces the name of a payment term.
-    # 
+    #
     # ```ruby
     # Faker::Subscription.payment_term #=> "Monthly"
     # ```
@@ -9094,17 +9094,17 @@ module Faker
 
   class DrivingLicence < Faker::Base
     # Produces a random British driving licence number.
-    # 
+    #
     # rubocop:disable Metrics/ParameterLists
-    # 
+    #
     # _@param_ `last_name` — The last name of the driving licence's owner.
-    # 
+    #
     # _@param_ `initials` — The initials of the driving licence's owner.
-    # 
+    #
     # _@param_ `gender` — The gender of the driving licence's owner.
-    # 
+    #
     # _@param_ `date_of_birth` — The date of birth of the driving licence's owner.
-    # 
+    #
     # ```ruby
     # Faker::DrivingLicence.british_driving_licence        #=> "MCDER712081VF7EK"
     # Faker::DrivingLicence.british_driving_licence(last_name: "O'Carroll",
@@ -9127,7 +9127,7 @@ module Faker
     def self.british_driving_licence(legacy_last_name = T.unsafe(nil), legacy_initials = T.unsafe(nil), legacy_gender = T.unsafe(nil), legacy_date_of_birth = T.unsafe(nil), last_name: Faker::Name.last_name, initials: Faker::Name.initials, gender: random_gender, date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)); end
 
     # Produces a random Northern Irish licence number.
-    # 
+    #
     # ```ruby
     # Faker::DrivingLicence.northern_irish_driving_licence #=> "70702548"
     # ```
@@ -9135,7 +9135,7 @@ module Faker
     def self.northern_irish_driving_licence; end
 
     # Produces a random UK driving licence number in either GB or NI format, at a rate consistent with their relative populations
-    # 
+    #
     # ```ruby
     # Faker::DrivingLicence.uk_driving_licence             #=> "OCARR815246J91HT"
     # Faker::DrivingLicence.uk_driving_licence             #=> "70702548"
@@ -9159,7 +9159,7 @@ module Faker
   class JapaneseMedia
     class OnePiece < Faker::Base
       # Produces a character from One Piece.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::OnePiece.character #=> "Monkey D. Luffy"
       # ```
@@ -9167,7 +9167,7 @@ module Faker
       def self.character; end
 
       # Produces a sea from One Piece.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::OnePiece.sea #=> "East Blue"
       # ```
@@ -9175,7 +9175,7 @@ module Faker
       def self.sea; end
 
       # Produces an island from One Piece.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::OnePiece.island #=> "Laftel"
       # ```
@@ -9183,7 +9183,7 @@ module Faker
       def self.island; end
 
       # Produces a location from One Piece.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::OnePiece.location #=> "Foosha Village"
       # ```
@@ -9191,7 +9191,7 @@ module Faker
       def self.location; end
 
       # Produces a quote from One Piece.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::OnePiece.quote #=> "ONE PIECE IS REAL!"
       # ```
@@ -9199,7 +9199,7 @@ module Faker
       def self.quote; end
 
       # Produces an akuma no mi from One Piece.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::OnePiece.akuma_no_mi #=> "Gomu Gomu no Mi"
       # ```
@@ -9209,7 +9209,7 @@ module Faker
 
     class DragonBall < Faker::Base
       # Produces the name of a character from Dragon Ball.
-      # 
+      #
       # ```ruby
       # Faker::Games::DragonBall.character #=> "Goku"
       # ```
@@ -9219,7 +9219,7 @@ module Faker
 
     class SwordArtOnline < Faker::Base
       # Produces the real name of a character from Sword Art Online.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::SwordArtOnline.real_name #=> "Kirigaya Kazuto"
       # ```
@@ -9227,7 +9227,7 @@ module Faker
       def self.real_name; end
 
       # Produces the in-game name of a character from Sword Art Online.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::SwordArtOnline.game_name #=> "Silica"
       # ```
@@ -9235,7 +9235,7 @@ module Faker
       def self.game_name; end
 
       # Produces the name of a location from Sword Art Online.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::SwordArtOnline.location #=> "Ruby Palace"
       # ```
@@ -9243,7 +9243,7 @@ module Faker
       def self.location; end
 
       # Produces the name of an item from Sword Art Online.
-      # 
+      #
       # ```ruby
       # Faker::JapaneseMedia::SwordArtOnline.item #=> "Blackwyrm Coat"
       # ```
@@ -9254,7 +9254,7 @@ module Faker
 
   class IndustrySegments < Faker::Base
     # Produces the name of an industry.
-    # 
+    #
     # ```ruby
     # Faker::IndustrySegments.industry #=> "Basic Materials"
     # ```
@@ -9262,7 +9262,7 @@ module Faker
     def self.industry; end
 
     # Produces the name of a super-sector of an industry.
-    # 
+    #
     # ```ruby
     # Faker::IndustrySegments.super_sector #=> "Basic Resources"
     # ```
@@ -9270,7 +9270,7 @@ module Faker
     def self.super_sector; end
 
     # Produces the name of a sector of an industry.
-    # 
+    #
     # ```ruby
     # Faker::IndustrySegments.sector #=> "Industrial Metals & Mining"
     # ```
@@ -9278,7 +9278,7 @@ module Faker
     def self.sector; end
 
     # Produces the name of a subsector of an industry.
-    # 
+    #
     # ```ruby
     # Faker::IndustrySegments.industry #=> "Basic Materials"
     # ```
@@ -9288,7 +9288,7 @@ module Faker
 
   class GreekPhilosophers < Faker::Base
     # Produces the name of a Greek philosopher.
-    # 
+    #
     # ```ruby
     # Faker::GreekPhilosophers.name #=> "Socrates"
     # ```
@@ -9296,7 +9296,7 @@ module Faker
     def self.name; end
 
     # Produces a quote from a Greek philosopher.
-    # 
+    #
     # ```ruby
     # Faker::GreekPhilosophers.quote #=> "Only the educated are free."
     # ```
@@ -9306,7 +9306,7 @@ module Faker
 
   class ProgrammingLanguage < Faker::Base
     # Produces the name of a programming language.
-    # 
+    #
     # ```ruby
     # Faker::ProgrammingLanguage.name #=> "Ruby"
     # ```
@@ -9314,7 +9314,7 @@ module Faker
     def self.name; end
 
     # Produces the name of a programming language's creator.
-    # 
+    #
     # ```ruby
     # Faker::ProgrammingLanguage.creator #=> "Yukihiro Matsumoto"
     # ```
@@ -9324,7 +9324,7 @@ module Faker
 
   class ElectricalComponents < Faker::Base
     # Produces an active electrical component.
-    # 
+    #
     # ```ruby
     # Faker::ElectricalComponents.active #=> "Transistor"
     # ```
@@ -9332,7 +9332,7 @@ module Faker
     def self.active; end
 
     # Produces a passive electrical component.
-    # 
+    #
     # ```ruby
     # Faker::ElectricalComponents.passive #=> "Resistor"
     # ```
@@ -9340,7 +9340,7 @@ module Faker
     def self.passive; end
 
     # Produces an electromechanical electrical component.
-    # 
+    #
     # ```ruby
     # Faker::ElectricalComponents.electromechanical #=> "Toggle Switch"
     # ```
@@ -9350,11 +9350,25 @@ module Faker
 
   class NatoPhoneticAlphabet < Faker::Base
     # Produces a code word from the NATO phonetic alphabet.
-    # 
+    #
     # ```ruby
     # Faker::NatoPhoneticAlphabet.code_word #=> "Hotel"
     # ```
     sig { returns(::String) }
     def self.code_word; end
+  end
+
+  class String < Faker::Base
+    # Produces a random UTF-8 string with optional nested length selectors.
+    #
+    # ```ruby
+    #   Faker::String.random #=> "3 뇦\u0017&y\u{3A109}$8^4* 녹豿4좘툢ꔾ쉙6ɉ\uA6 8TN畀챵|\"3쇤Ŵ"
+    #   Faker::String.random(length: 4) #=> "⼨%0*"
+    #   Faker::String.random(length: 3..12) #=> "\u{69FDC};秨툫"
+    #   Faker::String.random(length: [0, 6]) #=> "I轤𣴒P溟L"
+    #   Faker::String.random(length: [1, (2..5), [3, 6], nil]) #=> "葓L#ћ"
+    # ```
+    sig { params(length: Integer).returns(::String) }
+    def self.random(length: T.unsafe(nil)); end
   end
 end
